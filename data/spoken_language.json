@@ -1,0 +1,738 @@
+[
+  {
+    "spoken_language": "ab",
+    "locale": "Abkhazian"
+  },
+  {
+    "spoken_language": "aa",
+    "locale": "Afar"
+  },
+  {
+    "spoken_language": "af",
+    "locale": "Afrikaans"
+  },
+  {
+    "spoken_language": "ak",
+    "locale": "Akan"
+  },
+  {
+    "spoken_language": "sq",
+    "locale": "Albanian"
+  },
+  {
+    "spoken_language": "am",
+    "locale": "Amharic"
+  },
+  {
+    "spoken_language": "ar",
+    "locale": "Arabic"
+  },
+  {
+    "spoken_language": "an",
+    "locale": "Aragonese"
+  },
+  {
+    "spoken_language": "hy",
+    "locale": "Armenian"
+  },
+  {
+    "spoken_language": "as",
+    "locale": "Assamese"
+  },
+  {
+    "spoken_language": "av",
+    "locale": "Avaric"
+  },
+  {
+    "spoken_language": "ae",
+    "locale": "Avestan"
+  },
+  {
+    "spoken_language": "ay",
+    "locale": "Aymara"
+  },
+  {
+    "spoken_language": "az",
+    "locale": "Azerbaijani"
+  },
+  {
+    "spoken_language": "bm",
+    "locale": "Bambara"
+  },
+  {
+    "spoken_language": "ba",
+    "locale": "Bashkir"
+  },
+  {
+    "spoken_language": "eu",
+    "locale": "Basque"
+  },
+  {
+    "spoken_language": "be",
+    "locale": "Belarusian"
+  },
+  {
+    "spoken_language": "bn",
+    "locale": "Bengali"
+  },
+  {
+    "spoken_language": "bh",
+    "locale": "Bihari languages"
+  },
+  {
+    "spoken_language": "bi",
+    "locale": "Bislama"
+  },
+  {
+    "spoken_language": "bs",
+    "locale": "Bosnian"
+  },
+  {
+    "spoken_language": "br",
+    "locale": "Breton"
+  },
+  {
+    "spoken_language": "bg",
+    "locale": "Bulgarian"
+  },
+  {
+    "spoken_language": "my",
+    "locale": "Burmese"
+  },
+  {
+    "spoken_language": "ca",
+    "locale": "Catalan, Valencian"
+  },
+  {
+    "spoken_language": "ch",
+    "locale": "Chamorro"
+  },
+  {
+    "spoken_language": "ce",
+    "locale": "Chechen"
+  },
+  {
+    "spoken_language": "ny",
+    "locale": "Chichewa, Chewa, Nyanja"
+  },
+  {
+    "spoken_language": "zh",
+    "locale": "Chinese"
+  },
+  {
+    "spoken_language": "cv",
+    "locale": "Chuvash"
+  },
+  {
+    "spoken_language": "kw",
+    "locale": "Cornish"
+  },
+  {
+    "spoken_language": "co",
+    "locale": "Corsican"
+  },
+  {
+    "spoken_language": "cr",
+    "locale": "Cree"
+  },
+  {
+    "spoken_language": "hr",
+    "locale": "Croatian"
+  },
+  {
+    "spoken_language": "cs",
+    "locale": "Czech"
+  },
+  {
+    "spoken_language": "da",
+    "locale": "Danish"
+  },
+  {
+    "spoken_language": "dv",
+    "locale": "Divehi, Dhivehi, Maldivian"
+  },
+  {
+    "spoken_language": "nl",
+    "locale": "Dutch, Flemish"
+  },
+  {
+    "spoken_language": "dz",
+    "locale": "Dzongkha"
+  },
+  {
+    "spoken_language": "en",
+    "locale": "English"
+  },
+  {
+    "spoken_language": "eo",
+    "locale": "Esperanto"
+  },
+  {
+    "spoken_language": "et",
+    "locale": "Estonian"
+  },
+  {
+    "spoken_language": "ee",
+    "locale": "Ewe"
+  },
+  {
+    "spoken_language": "fo",
+    "locale": "Faroese"
+  },
+  {
+    "spoken_language": "fj",
+    "locale": "Fijian"
+  },
+  {
+    "spoken_language": "fi",
+    "locale": "Finnish"
+  },
+  {
+    "spoken_language": "fr",
+    "locale": "French"
+  },
+  {
+    "spoken_language": "ff",
+    "locale": "Fulah"
+  },
+  {
+    "spoken_language": "gl",
+    "locale": "Galician"
+  },
+  {
+    "spoken_language": "ka",
+    "locale": "Georgian"
+  },
+  {
+    "spoken_language": "de",
+    "locale": "German"
+  },
+  {
+    "spoken_language": "el",
+    "locale": "Greek, Modern"
+  },
+  {
+    "spoken_language": "gn",
+    "locale": "Guarani"
+  },
+  {
+    "spoken_language": "gu",
+    "locale": "Gujarati"
+  },
+  {
+    "spoken_language": "ht",
+    "locale": "Haitian, Haitian Creole"
+  },
+  {
+    "spoken_language": "ha",
+    "locale": "Hausa"
+  },
+  {
+    "spoken_language": "he",
+    "locale": "Hebrew"
+  },
+  {
+    "spoken_language": "hz",
+    "locale": "Herero"
+  },
+  {
+    "spoken_language": "hi",
+    "locale": "Hindi"
+  },
+  {
+    "spoken_language": "ho",
+    "locale": "Hiri Motu"
+  },
+  {
+    "spoken_language": "hu",
+    "locale": "Hungarian"
+  },
+  {
+    "spoken_language": "ia",
+    "locale": "Interlingua (International Auxil..."
+  },
+  {
+    "spoken_language": "id",
+    "locale": "Indonesian"
+  },
+  {
+    "spoken_language": "ie",
+    "locale": "Interlingue, Occidental"
+  },
+  {
+    "spoken_language": "ga",
+    "locale": "Irish"
+  },
+  {
+    "spoken_language": "ig",
+    "locale": "Igbo"
+  },
+  {
+    "spoken_language": "ik",
+    "locale": "Inupiaq"
+  },
+  {
+    "spoken_language": "io",
+    "locale": "Ido"
+  },
+  {
+    "spoken_language": "is",
+    "locale": "Icelandic"
+  },
+  {
+    "spoken_language": "it",
+    "locale": "Italian"
+  },
+  {
+    "spoken_language": "iu",
+    "locale": "Inuktitut"
+  },
+  {
+    "spoken_language": "ja",
+    "locale": "Japanese"
+  },
+  {
+    "spoken_language": "jv",
+    "locale": "Javanese"
+  },
+  {
+    "spoken_language": "kl",
+    "locale": "Kalaallisut, Greenlandic"
+  },
+  {
+    "spoken_language": "kn",
+    "locale": "Kannada"
+  },
+  {
+    "spoken_language": "kr",
+    "locale": "Kanuri"
+  },
+  {
+    "spoken_language": "ks",
+    "locale": "Kashmiri"
+  },
+  {
+    "spoken_language": "kk",
+    "locale": "Kazakh"
+  },
+  {
+    "spoken_language": "km",
+    "locale": "Central Khmer"
+  },
+  {
+    "spoken_language": "ki",
+    "locale": "Kikuyu, Gikuyu"
+  },
+  {
+    "spoken_language": "rw",
+    "locale": "Kinyarwanda"
+  },
+  {
+    "spoken_language": "ky",
+    "locale": "Kirghiz, Kyrgyz"
+  },
+  {
+    "spoken_language": "kv",
+    "locale": "Komi"
+  },
+  {
+    "spoken_language": "kg",
+    "locale": "Kongo"
+  },
+  {
+    "spoken_language": "ko",
+    "locale": "Korean"
+  },
+  {
+    "spoken_language": "ku",
+    "locale": "Kurdish"
+  },
+  {
+    "spoken_language": "kj",
+    "locale": "Kuanyama, Kwanyama"
+  },
+  {
+    "spoken_language": "la",
+    "locale": "Latin"
+  },
+  {
+    "spoken_language": "lb",
+    "locale": "Luxembourgish, Letzeburgesch"
+  },
+  {
+    "spoken_language": "lg",
+    "locale": "Ganda"
+  },
+  {
+    "spoken_language": "li",
+    "locale": "Limburgan, Limburger, Limburgish"
+  },
+  {
+    "spoken_language": "ln",
+    "locale": "Lingala"
+  },
+  {
+    "spoken_language": "lo",
+    "locale": "Lao"
+  },
+  {
+    "spoken_language": "lt",
+    "locale": "Lithuanian"
+  },
+  {
+    "spoken_language": "lu",
+    "locale": "Luba-Katanga"
+  },
+  {
+    "spoken_language": "lv",
+    "locale": "Latvian"
+  },
+  {
+    "spoken_language": "gv",
+    "locale": "Manx"
+  },
+  {
+    "spoken_language": "mk",
+    "locale": "Macedonian"
+  },
+  {
+    "spoken_language": "mg",
+    "locale": "Malagasy"
+  },
+  {
+    "spoken_language": "ms",
+    "locale": "Malay"
+  },
+  {
+    "spoken_language": "ml",
+    "locale": "Malayalam"
+  },
+  {
+    "spoken_language": "mt",
+    "locale": "Maltese"
+  },
+  {
+    "spoken_language": "mi",
+    "locale": "Maori"
+  },
+  {
+    "spoken_language": "mr",
+    "locale": "Marathi"
+  },
+  {
+    "spoken_language": "mh",
+    "locale": "Marshallese"
+  },
+  {
+    "spoken_language": "mn",
+    "locale": "Mongolian"
+  },
+  {
+    "spoken_language": "na",
+    "locale": "Nauru"
+  },
+  {
+    "spoken_language": "nv",
+    "locale": "Navajo, Navaho"
+  },
+  {
+    "spoken_language": "nd",
+    "locale": "North Ndebele"
+  },
+  {
+    "spoken_language": "ne",
+    "locale": "Nepali"
+  },
+  {
+    "spoken_language": "ng",
+    "locale": "Ndonga"
+  },
+  {
+    "spoken_language": "nb",
+    "locale": "Norwegian Bokmål"
+  },
+  {
+    "spoken_language": "nn",
+    "locale": "Norwegian Nynorsk"
+  },
+  {
+    "spoken_language": "no",
+    "locale": "Norwegian"
+  },
+  {
+    "spoken_language": "ii",
+    "locale": "Sichuan Yi, Nuosu"
+  },
+  {
+    "spoken_language": "nr",
+    "locale": "South Ndebele"
+  },
+  {
+    "spoken_language": "oc",
+    "locale": "Occitan"
+  },
+  {
+    "spoken_language": "oj",
+    "locale": "Ojibwa"
+  },
+  {
+    "spoken_language": "cu",
+    "locale": "Church Slavic, Old Slavonic, Chu..."
+  },
+  {
+    "spoken_language": "om",
+    "locale": "Oromo"
+  },
+  {
+    "spoken_language": "or",
+    "locale": "Oriya"
+  },
+  {
+    "spoken_language": "os",
+    "locale": "Ossetian, Ossetic"
+  },
+  {
+    "spoken_language": "pa",
+    "locale": "Punjabi, Panjabi"
+  },
+  {
+    "spoken_language": "pi",
+    "locale": "Pali"
+  },
+  {
+    "spoken_language": "fa",
+    "locale": "Persian"
+  },
+  {
+    "spoken_language": "pl",
+    "locale": "Polish"
+  },
+  {
+    "spoken_language": "ps",
+    "locale": "Pashto, Pushto"
+  },
+  {
+    "spoken_language": "pt",
+    "locale": "Portuguese"
+  },
+  {
+    "spoken_language": "qu",
+    "locale": "Quechua"
+  },
+  {
+    "spoken_language": "rm",
+    "locale": "Romansh"
+  },
+  {
+    "spoken_language": "rn",
+    "locale": "Rundi"
+  },
+  {
+    "spoken_language": "ro",
+    "locale": "Romanian, Moldavian, Moldovan"
+  },
+  {
+    "spoken_language": "ru",
+    "locale": "Russian"
+  },
+  {
+    "spoken_language": "sa",
+    "locale": "Sanskrit"
+  },
+  {
+    "spoken_language": "sc",
+    "locale": "Sardinian"
+  },
+  {
+    "spoken_language": "sd",
+    "locale": "Sindhi"
+  },
+  {
+    "spoken_language": "se",
+    "locale": "Northern Sami"
+  },
+  {
+    "spoken_language": "sm",
+    "locale": "Samoan"
+  },
+  {
+    "spoken_language": "sg",
+    "locale": "Sango"
+  },
+  {
+    "spoken_language": "sr",
+    "locale": "Serbian"
+  },
+  {
+    "spoken_language": "gd",
+    "locale": "Gaelic, Scottish Gaelic"
+  },
+  {
+    "spoken_language": "sn",
+    "locale": "Shona"
+  },
+  {
+    "spoken_language": "si",
+    "locale": "Sinhala, Sinhalese"
+  },
+  {
+    "spoken_language": "sk",
+    "locale": "Slovak"
+  },
+  {
+    "spoken_language": "sl",
+    "locale": "Slovenian"
+  },
+  {
+    "spoken_language": "so",
+    "locale": "Somali"
+  },
+  {
+    "spoken_language": "st",
+    "locale": "Southern Sotho"
+  },
+  {
+    "spoken_language": "es",
+    "locale": "Spanish, Castilian"
+  },
+  {
+    "spoken_language": "su",
+    "locale": "Sundanese"
+  },
+  {
+    "spoken_language": "sw",
+    "locale": "Swahili"
+  },
+  {
+    "spoken_language": "ss",
+    "locale": "Swati"
+  },
+  {
+    "spoken_language": "sv",
+    "locale": "Swedish"
+  },
+  {
+    "spoken_language": "ta",
+    "locale": "Tamil"
+  },
+  {
+    "spoken_language": "te",
+    "locale": "Telugu"
+  },
+  {
+    "spoken_language": "tg",
+    "locale": "Tajik"
+  },
+  {
+    "spoken_language": "th",
+    "locale": "Thai"
+  },
+  {
+    "spoken_language": "ti",
+    "locale": "Tigrinya"
+  },
+  {
+    "spoken_language": "bo",
+    "locale": "Tibetan"
+  },
+  {
+    "spoken_language": "tk",
+    "locale": "Turkmen"
+  },
+  {
+    "spoken_language": "tl",
+    "locale": "Tagalog"
+  },
+  {
+    "spoken_language": "tn",
+    "locale": "Tswana"
+  },
+  {
+    "spoken_language": "to",
+    "locale": "Tonga (Tonga Islands)"
+  },
+  {
+    "spoken_language": "tr",
+    "locale": "Turkish"
+  },
+  {
+    "spoken_language": "ts",
+    "locale": "Tsonga"
+  },
+  {
+    "spoken_language": "tt",
+    "locale": "Tatar"
+  },
+  {
+    "spoken_language": "tw",
+    "locale": "Twi"
+  },
+  {
+    "spoken_language": "ty",
+    "locale": "Tahitian"
+  },
+  {
+    "spoken_language": "ug",
+    "locale": "Uighur, Uyghur"
+  },
+  {
+    "spoken_language": "uk",
+    "locale": "Ukrainian"
+  },
+  {
+    "spoken_language": "ur",
+    "locale": "Urdu"
+  },
+  {
+    "spoken_language": "uz",
+    "locale": "Uzbek"
+  },
+  {
+    "spoken_language": "ve",
+    "locale": "Venda"
+  },
+  {
+    "spoken_language": "vi",
+    "locale": "Vietnamese"
+  },
+  {
+    "spoken_language": "vo",
+    "locale": "Volapük"
+  },
+  {
+    "spoken_language": "wa",
+    "locale": "Walloon"
+  },
+  {
+    "spoken_language": "cy",
+    "locale": "Welsh"
+  },
+  {
+    "spoken_language": "wo",
+    "locale": "Wolof"
+  },
+  {
+    "spoken_language": "fy",
+    "locale": "Western Frisian"
+  },
+  {
+    "spoken_language": "xh",
+    "locale": "Xhosa"
+  },
+  {
+    "spoken_language": "yi",
+    "locale": "Yiddish"
+  },
+  {
+    "spoken_language": "yo",
+    "locale": "Yoruba"
+  },
+  {
+    "spoken_language": "za",
+    "locale": "Zhuang, Chuang"
+  },
+  {
+    "spoken_language": "zu",
+    "locale": "Zulu"
+  }
+]

@@ -1,0 +1,2194 @@
+[
+  {
+    "language": "c++",
+    "name": "C++"
+  },
+  {
+    "language": "css",
+    "name": "CSS"
+  },
+  {
+    "language": "go",
+    "name": "Go"
+  },
+  {
+    "language": "javascript",
+    "name": "JavaScript"
+  },
+  {
+    "language": "jupyter-notebook",
+    "name": "Jupyter Notebook"
+  },
+  {
+    "language": "php",
+    "name": "PHP"
+  },
+  {
+    "language": "python",
+    "name": "Python"
+  },
+  {
+    "language": "unknown",
+    "name": "Unknown languages"
+  },
+  {
+    "language": "1c-enterprise",
+    "name": "1C Enterprise"
+  },
+  {
+    "language": "4d",
+    "name": "4D"
+  },
+  {
+    "language": "abap",
+    "name": "ABAP"
+  },
+  {
+    "language": "abnf",
+    "name": "ABNF"
+  },
+  {
+    "language": "actionscript",
+    "name": "ActionScript"
+  },
+  {
+    "language": "ada",
+    "name": "Ada"
+  },
+  {
+    "language": "adobe-font-metrics",
+    "name": "Adobe Font Metrics"
+  },
+  {
+    "language": "agda",
+    "name": "Agda"
+  },
+  {
+    "language": "ags-script",
+    "name": "AGS Script"
+  },
+  {
+    "language": "alloy",
+    "name": "Alloy"
+  },
+  {
+    "language": "alpine-abuild",
+    "name": "Alpine Abuild"
+  },
+  {
+    "language": "altium-designer",
+    "name": "Altium Designer"
+  },
+  {
+    "language": "ampl",
+    "name": "AMPL"
+  },
+  {
+    "language": "angelscript",
+    "name": "AngelScript"
+  },
+  {
+    "language": "ant-build-system",
+    "name": "Ant Build System"
+  },
+  {
+    "language": "antlr",
+    "name": "ANTLR"
+  },
+  {
+    "language": "apacheconf",
+    "name": "ApacheConf"
+  },
+  {
+    "language": "apex",
+    "name": "Apex"
+  },
+  {
+    "language": "api-blueprint",
+    "name": "API Blueprint"
+  },
+  {
+    "language": "apl",
+    "name": "APL"
+  },
+  {
+    "language": "apollo-guidance-computer",
+    "name": "Apollo Guidance Computer"
+  },
+  {
+    "language": "applescript",
+    "name": "AppleScript"
+  },
+  {
+    "language": "arc",
+    "name": "Arc"
+  },
+  {
+    "language": "asciidoc",
+    "name": "AsciiDoc"
+  },
+  {
+    "language": "asn.1",
+    "name": "ASN.1"
+  },
+  {
+    "language": "asp",
+    "name": "ASP"
+  },
+  {
+    "language": "aspectj",
+    "name": "AspectJ"
+  },
+  {
+    "language": "assembly",
+    "name": "Assembly"
+  },
+  {
+    "language": "asymptote",
+    "name": "Asymptote"
+  },
+  {
+    "language": "ats",
+    "name": "ATS"
+  },
+  {
+    "language": "augeas",
+    "name": "Augeas"
+  },
+  {
+    "language": "autohotkey",
+    "name": "AutoHotkey"
+  },
+  {
+    "language": "autoit",
+    "name": "AutoIt"
+  },
+  {
+    "language": "awk",
+    "name": "Awk"
+  },
+  {
+    "language": "ballerina",
+    "name": "Ballerina"
+  },
+  {
+    "language": "batchfile",
+    "name": "Batchfile"
+  },
+  {
+    "language": "befunge",
+    "name": "Befunge"
+  },
+  {
+    "language": "bibtex",
+    "name": "BibTeX"
+  },
+  {
+    "language": "bison",
+    "name": "Bison"
+  },
+  {
+    "language": "bitbake",
+    "name": "BitBake"
+  },
+  {
+    "language": "blade",
+    "name": "Blade"
+  },
+  {
+    "language": "blitzbasic",
+    "name": "BlitzBasic"
+  },
+  {
+    "language": "blitzmax",
+    "name": "BlitzMax"
+  },
+  {
+    "language": "bluespec",
+    "name": "Bluespec"
+  },
+  {
+    "language": "boo",
+    "name": "Boo"
+  },
+  {
+    "language": "brainfuck",
+    "name": "Brainfuck"
+  },
+  {
+    "language": "brightscript",
+    "name": "Brightscript"
+  },
+  {
+    "language": "zeek",
+    "name": "Zeek"
+  },
+  {
+    "language": "c",
+    "name": "C"
+  },
+  {
+    "language": "c%23",
+    "name": "C#"
+  },
+  {
+    "language": "c-objdump",
+    "name": "C-ObjDump"
+  },
+  {
+    "language": "c2hs-haskell",
+    "name": "C2hs Haskell"
+  },
+  {
+    "language": "cabal-config",
+    "name": "Cabal Config"
+  },
+  {
+    "language": "cap'n-proto",
+    "name": "Cap'n Proto"
+  },
+  {
+    "language": "cartocss",
+    "name": "CartoCSS"
+  },
+  {
+    "language": "ceylon",
+    "name": "Ceylon"
+  },
+  {
+    "language": "chapel",
+    "name": "Chapel"
+  },
+  {
+    "language": "charity",
+    "name": "Charity"
+  },
+  {
+    "language": "chuck",
+    "name": "ChucK"
+  },
+  {
+    "language": "cirru",
+    "name": "Cirru"
+  },
+  {
+    "language": "clarion",
+    "name": "Clarion"
+  },
+  {
+    "language": "clean",
+    "name": "Clean"
+  },
+  {
+    "language": "click",
+    "name": "Click"
+  },
+  {
+    "language": "clips",
+    "name": "CLIPS"
+  },
+  {
+    "language": "clojure",
+    "name": "Clojure"
+  },
+  {
+    "language": "closure-templates",
+    "name": "Closure Templates"
+  },
+  {
+    "language": "cloud-firestore-security-rules",
+    "name": "Cloud Firestore Security Rules"
+  },
+  {
+    "language": "cmake",
+    "name": "CMake"
+  },
+  {
+    "language": "cobol",
+    "name": "COBOL"
+  },
+  {
+    "language": "coffeescript",
+    "name": "CoffeeScript"
+  },
+  {
+    "language": "coldfusion",
+    "name": "ColdFusion"
+  },
+  {
+    "language": "coldfusion-cfc",
+    "name": "ColdFusion CFC"
+  },
+  {
+    "language": "collada",
+    "name": "COLLADA"
+  },
+  {
+    "language": "common-lisp",
+    "name": "Common Lisp"
+  },
+  {
+    "language": "common-workflow-language",
+    "name": "Common Workflow Language"
+  },
+  {
+    "language": "component-pascal",
+    "name": "Component Pascal"
+  },
+  {
+    "language": "conll-u",
+    "name": "CoNLL-U"
+  },
+  {
+    "language": "cool",
+    "name": "Cool"
+  },
+  {
+    "language": "coq",
+    "name": "Coq"
+  },
+  {
+    "language": "cpp-objdump",
+    "name": "Cpp-ObjDump"
+  },
+  {
+    "language": "creole",
+    "name": "Creole"
+  },
+  {
+    "language": "crystal",
+    "name": "Crystal"
+  },
+  {
+    "language": "cson",
+    "name": "CSON"
+  },
+  {
+    "language": "csound",
+    "name": "Csound"
+  },
+  {
+    "language": "csound-document",
+    "name": "Csound Document"
+  },
+  {
+    "language": "csound-score",
+    "name": "Csound Score"
+  },
+  {
+    "language": "csv",
+    "name": "CSV"
+  },
+  {
+    "language": "cuda",
+    "name": "Cuda"
+  },
+  {
+    "language": "curl-config,cURL Config"
+  },
+  {
+    "language": "cweb",
+    "name": "CWeb"
+  },
+  {
+    "language": "cycript",
+    "name": "Cycript"
+  },
+  {
+    "language": "cython",
+    "name": "Cython"
+  },
+  {
+    "language": "d",
+    "name": "D"
+  },
+  {
+    "language": "d-objdump",
+    "name": "D-ObjDump"
+  },
+  {
+    "language": "darcs-patch",
+    "name": "Darcs Patch"
+  },
+  {
+    "language": "dart",
+    "name": "Dart"
+  },
+  {
+    "language": "dataweave",
+    "name": "DataWeave"
+  },
+  {
+    "language": "desktop,desktop"
+  },
+  {
+    "language": "dhall",
+    "name": "Dhall"
+  },
+  {
+    "language": "diff",
+    "name": "Diff"
+  },
+  {
+    "language": "digital-command-language",
+    "name": "DIGITAL Command Language"
+  },
+  {
+    "language": "dircolors,dircolors"
+  },
+  {
+    "language": "directx-3d-file",
+    "name": "DirectX 3D File"
+  },
+  {
+    "language": "dm",
+    "name": "DM"
+  },
+  {
+    "language": "dns-zone",
+    "name": "DNS Zone"
+  },
+  {
+    "language": "dockerfile",
+    "name": "Dockerfile"
+  },
+  {
+    "language": "dogescript",
+    "name": "Dogescript"
+  },
+  {
+    "language": "dtrace",
+    "name": "DTrace"
+  },
+  {
+    "language": "dylan",
+    "name": "Dylan"
+  },
+  {
+    "language": "e",
+    "name": "E"
+  },
+  {
+    "language": "eagle",
+    "name": "Eagle"
+  },
+  {
+    "language": "easybuild",
+    "name": "Easybuild"
+  },
+  {
+    "language": "ebnf",
+    "name": "EBNF"
+  },
+  {
+    "language": "ec,eC"
+  },
+  {
+    "language": "ecere-projects",
+    "name": "Ecere Projects"
+  },
+  {
+    "language": "ecl",
+    "name": "ECL"
+  },
+  {
+    "language": "eclipse",
+    "name": "ECLiPSe"
+  },
+  {
+    "language": "editorconfig",
+    "name": "EditorConfig"
+  },
+  {
+    "language": "edje-data-collection",
+    "name": "Edje Data Collection"
+  },
+  {
+    "language": "edn,edn"
+  },
+  {
+    "language": "eiffel",
+    "name": "Eiffel"
+  },
+  {
+    "language": "ejs",
+    "name": "EJS"
+  },
+  {
+    "language": "elixir",
+    "name": "Elixir"
+  },
+  {
+    "language": "elm",
+    "name": "Elm"
+  },
+  {
+    "language": "emacs-lisp",
+    "name": "Emacs Lisp"
+  },
+  {
+    "language": "emberscript",
+    "name": "EmberScript"
+  },
+  {
+    "language": "eml",
+    "name": "EML"
+  },
+  {
+    "language": "eq",
+    "name": "EQ"
+  },
+  {
+    "language": "erlang",
+    "name": "Erlang"
+  },
+  {
+    "language": "f%23",
+    "name": "F#"
+  },
+  {
+    "language": "f*",
+    "name": "F*"
+  },
+  {
+    "language": "factor",
+    "name": "Factor"
+  },
+  {
+    "language": "fancy",
+    "name": "Fancy"
+  },
+  {
+    "language": "fantom",
+    "name": "Fantom"
+  },
+  {
+    "language": "faust",
+    "name": "Faust"
+  },
+  {
+    "language": "figlet-font",
+    "name": "FIGlet Font"
+  },
+  {
+    "language": "filebench-wml",
+    "name": "Filebench WML"
+  },
+  {
+    "language": "filterscript",
+    "name": "Filterscript"
+  },
+  {
+    "language": "fish,fish"
+  },
+  {
+    "language": "flux",
+    "name": "FLUX"
+  },
+  {
+    "language": "formatted",
+    "name": "Formatted"
+  },
+  {
+    "language": "forth",
+    "name": "Forth"
+  },
+  {
+    "language": "fortran",
+    "name": "Fortran"
+  },
+  {
+    "language": "freemarker",
+    "name": "FreeMarker"
+  },
+  {
+    "language": "frege",
+    "name": "Frege"
+  },
+  {
+    "language": "g-code",
+    "name": "G-code"
+  },
+  {
+    "language": "game-maker-language",
+    "name": "Game Maker Language"
+  },
+  {
+    "language": "gaml",
+    "name": "GAML"
+  },
+  {
+    "language": "gams",
+    "name": "GAMS"
+  },
+  {
+    "language": "gap",
+    "name": "GAP"
+  },
+  {
+    "language": "gcc-machine-description",
+    "name": "GCC Machine Description"
+  },
+  {
+    "language": "gdb",
+    "name": "GDB"
+  },
+  {
+    "language": "gdscript",
+    "name": "GDScript"
+  },
+  {
+    "language": "genie",
+    "name": "Genie"
+  },
+  {
+    "language": "genshi",
+    "name": "Genshi"
+  },
+  {
+    "language": "gentoo-ebuild",
+    "name": "Gentoo Ebuild"
+  },
+  {
+    "language": "gentoo-eclass",
+    "name": "Gentoo Eclass"
+  },
+  {
+    "language": "gerber-image",
+    "name": "Gerber Image"
+  },
+  {
+    "language": "gettext-catalog",
+    "name": "Gettext Catalog"
+  },
+  {
+    "language": "gherkin",
+    "name": "Gherkin"
+  },
+  {
+    "language": "git-attributes",
+    "name": "Git Attributes"
+  },
+  {
+    "language": "git-config",
+    "name": "Git Config"
+  },
+  {
+    "language": "glsl",
+    "name": "GLSL"
+  },
+  {
+    "language": "glyph",
+    "name": "Glyph"
+  },
+  {
+    "language": "glyph-bitmap-distribution-format",
+    "name": "Glyph Bitmap Distribution Format"
+  },
+  {
+    "language": "gn",
+    "name": "GN"
+  },
+  {
+    "language": "gnuplot",
+    "name": "Gnuplot"
+  },
+  {
+    "language": "golo",
+    "name": "Golo"
+  },
+  {
+    "language": "gosu",
+    "name": "Gosu"
+  },
+  {
+    "language": "grace",
+    "name": "Grace"
+  },
+  {
+    "language": "gradle",
+    "name": "Gradle"
+  },
+  {
+    "language": "grammatical-framework",
+    "name": "Grammatical Framework"
+  },
+  {
+    "language": "graph-modeling-language",
+    "name": "Graph Modeling Language"
+  },
+  {
+    "language": "graphql",
+    "name": "GraphQL"
+  },
+  {
+    "language": "graphviz-(dot)",
+    "name": "Graphviz (DOT)"
+  },
+  {
+    "language": "groovy",
+    "name": "Groovy"
+  },
+  {
+    "language": "groovy-server-pages",
+    "name": "Groovy Server Pages"
+  },
+  {
+    "language": "hack",
+    "name": "Hack"
+  },
+  {
+    "language": "haml",
+    "name": "Haml"
+  },
+  {
+    "language": "handlebars",
+    "name": "Handlebars"
+  },
+  {
+    "language": "haproxy",
+    "name": "HAProxy"
+  },
+  {
+    "language": "harbour",
+    "name": "Harbour"
+  },
+  {
+    "language": "haskell",
+    "name": "Haskell"
+  },
+  {
+    "language": "haxe",
+    "name": "Haxe"
+  },
+  {
+    "language": "hcl",
+    "name": "HCL"
+  },
+  {
+    "language": "hiveql",
+    "name": "HiveQL"
+  },
+  {
+    "language": "hlsl",
+    "name": "HLSL"
+  },
+  {
+    "language": "holyc",
+    "name": "HolyC"
+  },
+  {
+    "language": "html",
+    "name": "HTML"
+  },
+  {
+    "language": "html+django",
+    "name": "HTML+Django"
+  },
+  {
+    "language": "html+ecr",
+    "name": "HTML+ECR"
+  },
+  {
+    "language": "html+eex",
+    "name": "HTML+EEX"
+  },
+  {
+    "language": "html+erb",
+    "name": "HTML+ERB"
+  },
+  {
+    "language": "html+php",
+    "name": "HTML+PHP"
+  },
+  {
+    "language": "html+razor",
+    "name": "HTML+Razor"
+  },
+  {
+    "language": "http",
+    "name": "HTTP"
+  },
+  {
+    "language": "hxml",
+    "name": "HXML"
+  },
+  {
+    "language": "hy",
+    "name": "Hy"
+  },
+  {
+    "language": "hyphy",
+    "name": "HyPhy"
+  },
+  {
+    "language": "idl",
+    "name": "IDL"
+  },
+  {
+    "language": "idris",
+    "name": "Idris"
+  },
+  {
+    "language": "ignore-list",
+    "name": "Ignore List"
+  },
+  {
+    "language": "igor-pro",
+    "name": "IGOR Pro"
+  },
+  {
+    "language": "inform-7",
+    "name": "Inform 7"
+  },
+  {
+    "language": "ini",
+    "name": "INI"
+  },
+  {
+    "language": "inno-setup",
+    "name": "Inno Setup"
+  },
+  {
+    "language": "io",
+    "name": "Io"
+  },
+  {
+    "language": "ioke",
+    "name": "Ioke"
+  },
+  {
+    "language": "irc-log",
+    "name": "IRC log"
+  },
+  {
+    "language": "isabelle",
+    "name": "Isabelle"
+  },
+  {
+    "language": "isabelle-root",
+    "name": "Isabelle ROOT"
+  },
+  {
+    "language": "j",
+    "name": "J"
+  },
+  {
+    "language": "jasmin",
+    "name": "Jasmin"
+  },
+  {
+    "language": "java",
+    "name": "Java"
+  },
+  {
+    "language": "java-properties",
+    "name": "Java Properties"
+  },
+  {
+    "language": "java-server-pages",
+    "name": "Java Server Pages"
+  },
+  {
+    "language": "javascript+erb",
+    "name": "JavaScript+ERB"
+  },
+  {
+    "language": "jflex",
+    "name": "JFlex"
+  },
+  {
+    "language": "jison",
+    "name": "Jison"
+  },
+  {
+    "language": "jison-lex",
+    "name": "Jison Lex"
+  },
+  {
+    "language": "jolie",
+    "name": "Jolie"
+  },
+  {
+    "language": "json",
+    "name": "JSON"
+  },
+  {
+    "language": "json-with-comments",
+    "name": "JSON with Comments"
+  },
+  {
+    "language": "json5",
+    "name": "JSON5"
+  },
+  {
+    "language": "jsoniq",
+    "name": "JSONiq"
+  },
+  {
+    "language": "jsonld",
+    "name": "JSONLD"
+  },
+  {
+    "language": "jsonnet",
+    "name": "Jsonnet"
+  },
+  {
+    "language": "jsx",
+    "name": "JSX"
+  },
+  {
+    "language": "julia",
+    "name": "Julia"
+  },
+  {
+    "language": "kicad-layout",
+    "name": "KiCad Layout"
+  },
+  {
+    "language": "kicad-legacy-layout",
+    "name": "KiCad Legacy Layout"
+  },
+  {
+    "language": "kicad-schematic",
+    "name": "KiCad Schematic"
+  },
+  {
+    "language": "kit",
+    "name": "Kit"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin"
+  },
+  {
+    "language": "krl",
+    "name": "KRL"
+  },
+  {
+    "language": "labview",
+    "name": "LabVIEW"
+  },
+  {
+    "language": "lasso",
+    "name": "Lasso"
+  },
+  {
+    "language": "latte",
+    "name": "Latte"
+  },
+  {
+    "language": "lean",
+    "name": "Lean"
+  },
+  {
+    "language": "less",
+    "name": "Less"
+  },
+  {
+    "language": "lex",
+    "name": "Lex"
+  },
+  {
+    "language": "lfe",
+    "name": "LFE"
+  },
+  {
+    "language": "lilypond",
+    "name": "LilyPond"
+  },
+  {
+    "language": "limbo",
+    "name": "Limbo"
+  },
+  {
+    "language": "linker-script",
+    "name": "Linker Script"
+  },
+  {
+    "language": "linux-kernel-module",
+    "name": "Linux Kernel Module"
+  },
+  {
+    "language": "liquid",
+    "name": "Liquid"
+  },
+  {
+    "language": "literate-agda",
+    "name": "Literate Agda"
+  },
+  {
+    "language": "literate-coffeescript",
+    "name": "Literate CoffeeScript"
+  },
+  {
+    "language": "literate-haskell",
+    "name": "Literate Haskell"
+  },
+  {
+    "language": "livescript",
+    "name": "LiveScript"
+  },
+  {
+    "language": "llvm",
+    "name": "LLVM"
+  },
+  {
+    "language": "logos",
+    "name": "Logos"
+  },
+  {
+    "language": "logtalk",
+    "name": "Logtalk"
+  },
+  {
+    "language": "lolcode",
+    "name": "LOLCODE"
+  },
+  {
+    "language": "lookml",
+    "name": "LookML"
+  },
+  {
+    "language": "loomscript",
+    "name": "LoomScript"
+  },
+  {
+    "language": "lsl",
+    "name": "LSL"
+  },
+  {
+    "language": "ltspice-symbol",
+    "name": "LTspice Symbol"
+  },
+  {
+    "language": "lua",
+    "name": "Lua"
+  },
+  {
+    "language": "m",
+    "name": "M"
+  },
+  {
+    "language": "m4",
+    "name": "M4"
+  },
+  {
+    "language": "m4sugar",
+    "name": "M4Sugar"
+  },
+  {
+    "language": "makefile",
+    "name": "Makefile"
+  },
+  {
+    "language": "mako",
+    "name": "Mako"
+  },
+  {
+    "language": "markdown",
+    "name": "Markdown"
+  },
+  {
+    "language": "marko",
+    "name": "Marko"
+  },
+  {
+    "language": "mask",
+    "name": "Mask"
+  },
+  {
+    "language": "mathematica",
+    "name": "Mathematica"
+  },
+  {
+    "language": "matlab",
+    "name": "MATLAB"
+  },
+  {
+    "language": "maven-pom",
+    "name": "Maven POM"
+  },
+  {
+    "language": "max",
+    "name": "Max"
+  },
+  {
+    "language": "maxscript",
+    "name": "MAXScript"
+  },
+  {
+    "language": "mcfunction,mcfunction"
+  },
+  {
+    "language": "mediawiki",
+    "name": "MediaWiki"
+  },
+  {
+    "language": "mercury",
+    "name": "Mercury"
+  },
+  {
+    "language": "meson",
+    "name": "Meson"
+  },
+  {
+    "language": "metal",
+    "name": "Metal"
+  },
+  {
+    "language": "microsoft-developer-studio-project",
+    "name": "Microsoft Developer Studio Project"
+  },
+  {
+    "language": "minid",
+    "name": "MiniD"
+  },
+  {
+    "language": "mirah",
+    "name": "Mirah"
+  },
+  {
+    "language": "mirc-script,mIRC Script"
+  },
+  {
+    "language": "mlir",
+    "name": "MLIR"
+  },
+  {
+    "language": "modelica",
+    "name": "Modelica"
+  },
+  {
+    "language": "modula-2",
+    "name": "Modula-2"
+  },
+  {
+    "language": "modula-3",
+    "name": "Modula-3"
+  },
+  {
+    "language": "module-management-system",
+    "name": "Module Management System"
+  },
+  {
+    "language": "monkey",
+    "name": "Monkey"
+  },
+  {
+    "language": "moocode",
+    "name": "Moocode"
+  },
+  {
+    "language": "moonscript",
+    "name": "MoonScript"
+  },
+  {
+    "language": "motorola-68k-assembly",
+    "name": "Motorola 68K Assembly"
+  },
+  {
+    "language": "mql4",
+    "name": "MQL4"
+  },
+  {
+    "language": "mql5",
+    "name": "MQL5"
+  },
+  {
+    "language": "mtml",
+    "name": "MTML"
+  },
+  {
+    "language": "muf",
+    "name": "MUF"
+  },
+  {
+    "language": "mupad,mupad"
+  },
+  {
+    "language": "muse",
+    "name": "Muse"
+  },
+  {
+    "language": "myghty",
+    "name": "Myghty"
+  },
+  {
+    "language": "nanorc",
+    "name": "nanorc"
+  },
+  {
+    "language": "ncl",
+    "name": "NCL"
+  },
+  {
+    "language": "nearley",
+    "name": "Nearley"
+  },
+  {
+    "language": "nemerle",
+    "name": "Nemerle"
+  },
+  {
+    "language": "nesc,nesC"
+  },
+  {
+    "language": "netlinx",
+    "name": "NetLinx"
+  },
+  {
+    "language": "netlinx+erb",
+    "name": "NetLinx+ERB"
+  },
+  {
+    "language": "netlogo",
+    "name": "NetLogo"
+  },
+  {
+    "language": "newlisp",
+    "name": "NewLisp"
+  },
+  {
+    "language": "nextflow",
+    "name": "Nextflow"
+  },
+  {
+    "language": "nginx",
+    "name": "Nginx"
+  },
+  {
+    "language": "nim",
+    "name": "Nim"
+  },
+  {
+    "language": "ninja",
+    "name": "Ninja"
+  },
+  {
+    "language": "nit",
+    "name": "Nit"
+  },
+  {
+    "language": "nix",
+    "name": "Nix"
+  },
+  {
+    "language": "nl",
+    "name": "NL"
+  },
+  {
+    "language": "npm-config",
+    "name": "NPM Config"
+  },
+  {
+    "language": "nsis",
+    "name": "NSIS"
+  },
+  {
+    "language": "nu",
+    "name": "Nu"
+  },
+  {
+    "language": "numpy",
+    "name": "NumPy"
+  },
+  {
+    "language": "objdump",
+    "name": "ObjDump"
+  },
+  {
+    "language": "object-data-instance-notation",
+    "name": "Object Data Instance Notation"
+  },
+  {
+    "language": "objective-c",
+    "name": "Objective-C"
+  },
+  {
+    "language": "objective-c++",
+    "name": "Objective-C++"
+  },
+  {
+    "language": "objective-j",
+    "name": "Objective-J"
+  },
+  {
+    "language": "objectscript",
+    "name": "ObjectScript"
+  },
+  {
+    "language": "ocaml",
+    "name": "OCaml"
+  },
+  {
+    "language": "odin",
+    "name": "Odin"
+  },
+  {
+    "language": "omgrofl",
+    "name": "Omgrofl"
+  },
+  {
+    "language": "ooc,ooc"
+  },
+  {
+    "language": "opa",
+    "name": "Opa"
+  },
+  {
+    "language": "opal",
+    "name": "Opal"
+  },
+  {
+    "language": "open-policy-agent",
+    "name": "Open Policy Agent"
+  },
+  {
+    "language": "opencl",
+    "name": "OpenCL"
+  },
+  {
+    "language": "openedge-abl",
+    "name": "OpenEdge ABL"
+  },
+  {
+    "language": "openrc-runscript",
+    "name": "OpenRC runscript"
+  },
+  {
+    "language": "openscad",
+    "name": "OpenSCAD"
+  },
+  {
+    "language": "openstep-property-list",
+    "name": "OpenStep Property List"
+  },
+  {
+    "language": "opentype-feature-file",
+    "name": "OpenType Feature File"
+  },
+  {
+    "language": "org",
+    "name": "Org"
+  },
+  {
+    "language": "ox",
+    "name": "Ox"
+  },
+  {
+    "language": "oxygene",
+    "name": "Oxygene"
+  },
+  {
+    "language": "oz",
+    "name": "Oz"
+  },
+  {
+    "language": "p4",
+    "name": "P4"
+  },
+  {
+    "language": "pan",
+    "name": "Pan"
+  },
+  {
+    "language": "papyrus",
+    "name": "Papyrus"
+  },
+  {
+    "language": "parrot",
+    "name": "Parrot"
+  },
+  {
+    "language": "parrot-assembly",
+    "name": "Parrot Assembly"
+  },
+  {
+    "language": "parrot-internal-representation",
+    "name": "Parrot Internal Representation"
+  },
+  {
+    "language": "pascal",
+    "name": "Pascal"
+  },
+  {
+    "language": "pawn",
+    "name": "Pawn"
+  },
+  {
+    "language": "pep8",
+    "name": "Pep8"
+  },
+  {
+    "language": "perl",
+    "name": "Perl"
+  },
+  {
+    "language": "pic",
+    "name": "Pic"
+  },
+  {
+    "language": "pickle",
+    "name": "Pickle"
+  },
+  {
+    "language": "picolisp",
+    "name": "PicoLisp"
+  },
+  {
+    "language": "piglatin",
+    "name": "PigLatin"
+  },
+  {
+    "language": "pike",
+    "name": "Pike"
+  },
+  {
+    "language": "plpgsql",
+    "name": "PLpgSQL"
+  },
+  {
+    "language": "plsql",
+    "name": "PLSQL"
+  },
+  {
+    "language": "pod",
+    "name": "Pod"
+  },
+  {
+    "language": "pod-6",
+    "name": "Pod 6"
+  },
+  {
+    "language": "pogoscript",
+    "name": "PogoScript"
+  },
+  {
+    "language": "pony",
+    "name": "Pony"
+  },
+  {
+    "language": "postcss",
+    "name": "PostCSS"
+  },
+  {
+    "language": "postscript",
+    "name": "PostScript"
+  },
+  {
+    "language": "pov-ray-sdl",
+    "name": "POV-Ray SDL"
+  },
+  {
+    "language": "powerbuilder",
+    "name": "PowerBuilder"
+  },
+  {
+    "language": "powershell",
+    "name": "PowerShell"
+  },
+  {
+    "language": "prisma",
+    "name": "Prisma"
+  },
+  {
+    "language": "processing",
+    "name": "Processing"
+  },
+  {
+    "language": "proguard",
+    "name": "Proguard"
+  },
+  {
+    "language": "prolog",
+    "name": "Prolog"
+  },
+  {
+    "language": "propeller-spin",
+    "name": "Propeller Spin"
+  },
+  {
+    "language": "protocol-buffer",
+    "name": "Protocol Buffer"
+  },
+  {
+    "language": "public-key",
+    "name": "Public Key"
+  },
+  {
+    "language": "pug",
+    "name": "Pug"
+  },
+  {
+    "language": "puppet",
+    "name": "Puppet"
+  },
+  {
+    "language": "pure-data",
+    "name": "Pure Data"
+  },
+  {
+    "language": "purebasic",
+    "name": "PureBasic"
+  },
+  {
+    "language": "purescript",
+    "name": "PureScript"
+  },
+  {
+    "language": "python-console",
+    "name": "Python console"
+  },
+  {
+    "language": "python-traceback",
+    "name": "Python traceback"
+  },
+  {
+    "language": "q",
+    "name": "q"
+  },
+  {
+    "language": "qmake",
+    "name": "QMake"
+  },
+  {
+    "language": "qml",
+    "name": "QML"
+  },
+  {
+    "language": "quake",
+    "name": "Quake"
+  },
+  {
+    "language": "r",
+    "name": "R"
+  },
+  {
+    "language": "racket",
+    "name": "Racket"
+  },
+  {
+    "language": "ragel",
+    "name": "Ragel"
+  },
+  {
+    "language": "raku",
+    "name": "Raku"
+  },
+  {
+    "language": "raml",
+    "name": "RAML"
+  },
+  {
+    "language": "rascal",
+    "name": "Rascal"
+  },
+  {
+    "language": "raw-token-data",
+    "name": "Raw token data"
+  },
+  {
+    "language": "rdoc",
+    "name": "RDoc"
+  },
+  {
+    "language": "readline-config",
+    "name": "Readline Config"
+  },
+  {
+    "language": "realbasic",
+    "name": "REALbasic"
+  },
+  {
+    "language": "reason",
+    "name": "Reason"
+  },
+  {
+    "language": "rebol",
+    "name": "Rebol"
+  },
+  {
+    "language": "red",
+    "name": "Red"
+  },
+  {
+    "language": "redcode",
+    "name": "Redcode"
+  },
+  {
+    "language": "regular-expression",
+    "name": "Regular Expression"
+  },
+  {
+    "language": "ren'py",
+    "name": "Ren'Py"
+  },
+  {
+    "language": "renderscript",
+    "name": "RenderScript"
+  },
+  {
+    "language": "restructuredtext,reStructuredText"
+  },
+  {
+    "language": "rexx",
+    "name": "REXX"
+  },
+  {
+    "language": "rhtml",
+    "name": "RHTML"
+  },
+  {
+    "language": "rich-text-format",
+    "name": "Rich Text Format"
+  },
+  {
+    "language": "ring",
+    "name": "Ring"
+  },
+  {
+    "language": "riot",
+    "name": "Riot"
+  },
+  {
+    "language": "rmarkdown",
+    "name": "RMarkdown"
+  },
+  {
+    "language": "robotframework",
+    "name": "RobotFramework"
+  },
+  {
+    "language": "roff",
+    "name": "Roff"
+  },
+  {
+    "language": "roff-manpage",
+    "name": "Roff Manpage"
+  },
+  {
+    "language": "rouge",
+    "name": "Rouge"
+  },
+  {
+    "language": "rpc",
+    "name": "RPC"
+  },
+  {
+    "language": "rpm-spec",
+    "name": "RPM Spec"
+  },
+  {
+    "language": "ruby",
+    "name": "Ruby"
+  },
+  {
+    "language": "runoff",
+    "name": "RUNOFF"
+  },
+  {
+    "language": "rust",
+    "name": "Rust"
+  },
+  {
+    "language": "sage",
+    "name": "Sage"
+  },
+  {
+    "language": "saltstack",
+    "name": "SaltStack"
+  },
+  {
+    "language": "sas",
+    "name": "SAS"
+  },
+  {
+    "language": "sass",
+    "name": "Sass"
+  },
+  {
+    "language": "scala",
+    "name": "Scala"
+  },
+  {
+    "language": "scaml",
+    "name": "Scaml"
+  },
+  {
+    "language": "scheme",
+    "name": "Scheme"
+  },
+  {
+    "language": "scilab",
+    "name": "Scilab"
+  },
+  {
+    "language": "scss",
+    "name": "SCSS"
+  },
+  {
+    "language": "sed,sed"
+  },
+  {
+    "language": "self",
+    "name": "Self"
+  },
+  {
+    "language": "shaderlab",
+    "name": "ShaderLab"
+  },
+  {
+    "language": "shell",
+    "name": "Shell"
+  },
+  {
+    "language": "shellsession",
+    "name": "ShellSession"
+  },
+  {
+    "language": "shen",
+    "name": "Shen"
+  },
+  {
+    "language": "slash",
+    "name": "Slash"
+  },
+  {
+    "language": "slice",
+    "name": "Slice"
+  },
+  {
+    "language": "slim",
+    "name": "Slim"
+  },
+  {
+    "language": "smali",
+    "name": "Smali"
+  },
+  {
+    "language": "smalltalk",
+    "name": "Smalltalk"
+  },
+  {
+    "language": "smarty",
+    "name": "Smarty"
+  },
+  {
+    "language": "smpl",
+    "name": "SmPL"
+  },
+  {
+    "language": "smt",
+    "name": "SMT"
+  },
+  {
+    "language": "solidity",
+    "name": "Solidity"
+  },
+  {
+    "language": "sourcepawn",
+    "name": "SourcePawn"
+  },
+  {
+    "language": "sparql",
+    "name": "SPARQL"
+  },
+  {
+    "language": "spline-font-database",
+    "name": "Spline Font Database"
+  },
+  {
+    "language": "sqf",
+    "name": "SQF"
+  },
+  {
+    "language": "sql",
+    "name": "SQL"
+  },
+  {
+    "language": "sqlpl",
+    "name": "SQLPL"
+  },
+  {
+    "language": "squirrel",
+    "name": "Squirrel"
+  },
+  {
+    "language": "srecode-template",
+    "name": "SRecode Template"
+  },
+  {
+    "language": "ssh-config",
+    "name": "SSH Config"
+  },
+  {
+    "language": "stan",
+    "name": "Stan"
+  },
+  {
+    "language": "standard-ml",
+    "name": "Standard ML"
+  },
+  {
+    "language": "starlark",
+    "name": "Starlark"
+  },
+  {
+    "language": "stata",
+    "name": "Stata"
+  },
+  {
+    "language": "ston",
+    "name": "STON"
+  },
+  {
+    "language": "stylus",
+    "name": "Stylus"
+  },
+  {
+    "language": "subrip-text",
+    "name": "SubRip Text"
+  },
+  {
+    "language": "sugarss",
+    "name": "SugarSS"
+  },
+  {
+    "language": "supercollider",
+    "name": "SuperCollider"
+  },
+  {
+    "language": "svelte",
+    "name": "Svelte"
+  },
+  {
+    "language": "svg",
+    "name": "SVG"
+  },
+  {
+    "language": "swift",
+    "name": "Swift"
+  },
+  {
+    "language": "swig",
+    "name": "SWIG"
+  },
+  {
+    "language": "systemverilog",
+    "name": "SystemVerilog"
+  },
+  {
+    "language": "tcl",
+    "name": "Tcl"
+  },
+  {
+    "language": "tcsh",
+    "name": "Tcsh"
+  },
+  {
+    "language": "tea",
+    "name": "Tea"
+  },
+  {
+    "language": "terra",
+    "name": "Terra"
+  },
+  {
+    "language": "tex",
+    "name": "TeX"
+  },
+  {
+    "language": "texinfo",
+    "name": "Texinfo"
+  },
+  {
+    "language": "text",
+    "name": "Text"
+  },
+  {
+    "language": "textile",
+    "name": "Textile"
+  },
+  {
+    "language": "thrift",
+    "name": "Thrift"
+  },
+  {
+    "language": "ti-program",
+    "name": "TI Program"
+  },
+  {
+    "language": "tla",
+    "name": "TLA"
+  },
+  {
+    "language": "toml",
+    "name": "TOML"
+  },
+  {
+    "language": "tsql",
+    "name": "TSQL"
+  },
+  {
+    "language": "tsx",
+    "name": "TSX"
+  },
+  {
+    "language": "turing",
+    "name": "Turing"
+  },
+  {
+    "language": "turtle",
+    "name": "Turtle"
+  },
+  {
+    "language": "twig",
+    "name": "Twig"
+  },
+  {
+    "language": "txl",
+    "name": "TXL"
+  },
+  {
+    "language": "type-language",
+    "name": "Type Language"
+  },
+  {
+    "language": "typescript",
+    "name": "TypeScript"
+  },
+  {
+    "language": "unified-parallel-c",
+    "name": "Unified Parallel C"
+  },
+  {
+    "language": "unity3d-asset",
+    "name": "Unity3D Asset"
+  },
+  {
+    "language": "unix-assembly",
+    "name": "Unix Assembly"
+  },
+  {
+    "language": "uno",
+    "name": "Uno"
+  },
+  {
+    "language": "unrealscript",
+    "name": "UnrealScript"
+  },
+  {
+    "language": "urweb",
+    "name": "UrWeb"
+  },
+  {
+    "language": "v",
+    "name": "V"
+  },
+  {
+    "language": "vala",
+    "name": "Vala"
+  },
+  {
+    "language": "vba",
+    "name": "VBA"
+  },
+  {
+    "language": "vbscript",
+    "name": "VBScript"
+  },
+  {
+    "language": "vcl",
+    "name": "VCL"
+  },
+  {
+    "language": "verilog",
+    "name": "Verilog"
+  },
+  {
+    "language": "vhdl",
+    "name": "VHDL"
+  },
+  {
+    "language": "vim-script",
+    "name": "Vim script"
+  },
+  {
+    "language": "vim-snippet",
+    "name": "Vim Snippet"
+  },
+  {
+    "language": "visual-basic-.net",
+    "name": "Visual Basic .NET"
+  },
+  {
+    "language": "visual-basic-.net",
+    "name": "Visual Basic .NET"
+  },
+  {
+    "language": "volt",
+    "name": "Volt"
+  },
+  {
+    "language": "vue",
+    "name": "Vue"
+  },
+  {
+    "language": "wavefront-material",
+    "name": "Wavefront Material"
+  },
+  {
+    "language": "wavefront-object",
+    "name": "Wavefront Object"
+  },
+  {
+    "language": "wdl,wdl"
+  },
+  {
+    "language": "web-ontology-language",
+    "name": "Web Ontology Language"
+  },
+  {
+    "language": "webassembly",
+    "name": "WebAssembly"
+  },
+  {
+    "language": "webidl",
+    "name": "WebIDL"
+  },
+  {
+    "language": "webvtt",
+    "name": "WebVTT"
+  },
+  {
+    "language": "wget-config",
+    "name": "Wget Config"
+  },
+  {
+    "language": "windows-registry-entries",
+    "name": "Windows Registry Entries"
+  },
+  {
+    "language": "wisp,wisp"
+  },
+  {
+    "language": "wollok",
+    "name": "Wollok"
+  },
+  {
+    "language": "world-of-warcraft-addon-data",
+    "name": "World of Warcraft Addon Data"
+  },
+  {
+    "language": "x-bitmap",
+    "name": "X BitMap"
+  },
+  {
+    "language": "x-font-directory-index",
+    "name": "X Font Directory Index"
+  },
+  {
+    "language": "x-pixmap",
+    "name": "X PixMap"
+  },
+  {
+    "language": "x10",
+    "name": "X10"
+  },
+  {
+    "language": "xbase,xBase"
+  },
+  {
+    "language": "xc",
+    "name": "XC"
+  },
+  {
+    "language": "xcompose",
+    "name": "XCompose"
+  },
+  {
+    "language": "xml",
+    "name": "XML"
+  },
+  {
+    "language": "xml-property-list",
+    "name": "XML Property List"
+  },
+  {
+    "language": "xojo",
+    "name": "Xojo"
+  },
+  {
+    "language": "xpages",
+    "name": "XPages"
+  },
+  {
+    "language": "xproc",
+    "name": "XProc"
+  },
+  {
+    "language": "xquery",
+    "name": "XQuery"
+  },
+  {
+    "language": "xs",
+    "name": "XS"
+  },
+  {
+    "language": "xslt",
+    "name": "XSLT"
+  },
+  {
+    "language": "xtend",
+    "name": "Xtend"
+  },
+  {
+    "language": "yacc",
+    "name": "Yacc"
+  },
+  {
+    "language": "yaml",
+    "name": "YAML"
+  },
+  {
+    "language": "yang",
+    "name": "YANG"
+  },
+  {
+    "language": "yara",
+    "name": "YARA"
+  },
+  {
+    "language": "yasnippet",
+    "name": "YASnippet"
+  },
+  {
+    "language": "zap",
+    "name": "ZAP"
+  },
+  {
+    "language": "zeek",
+    "name": "Zeek"
+  },
+  {
+    "language": "zenscript",
+    "name": "ZenScript"
+  },
+  {
+    "language": "zephir",
+    "name": "Zephir"
+  },
+  {
+    "language": "zig",
+    "name": "Zig"
+  },
+  {
+    "language": "zil",
+    "name": "ZIL"
+  },
+  {
+    "language": "zimpl",
+    "name": "Zimpl"
+  }
+]
