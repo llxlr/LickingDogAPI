@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
-load_dotenv(verbose=True)
 import os
+
+load_dotenv(verbose=True)
 
 PIXIV_EMAIL = os.getenv("PIXIV_EMAIL")
 PIXIV_PASSWD = os.getenv("PIXIV_PASSWD")
