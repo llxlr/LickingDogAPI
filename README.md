@@ -1,10 +1,15 @@
-# Licking Dog API
-
-![Check Python syntax](https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20syntax/badge.svg)
-
-> 敬我暗恋的人
-
-Made <span style="color:#F03D41">❤</span> by james yang & Power by [FastAPI](https://fastapi.tiangolo.com/)
+<p align="center">
+  <a href="https://api.white-album.top/">
+    <img width="200px" src="https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/static/img/logo.png" alt='LickingDogAPI'>
+  </a>
+  <br>
+  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
+    <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
+  </a>
+  <br>
+  <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#F03D41">❤</span> by james yang & Power by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
+</p>
+<blockquote><p align="center">敬我暗恋的人</p></blockquote>
 
 # 使用
 
