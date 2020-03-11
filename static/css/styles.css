@@ -11,9 +11,9 @@ body.night img {
 	filter: brightness(40%);
 }
 
-body.night ul li,.landing-buttons a,#file,button {
+body.night ul li,.landing-buttons a,#file,.upload-button button {
 	color: #aaaaaa;
-   text-align: center;
+	text-align: center;
 }
 
 body.night ul li a,.night footer a {

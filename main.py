@@ -13,7 +13,7 @@ import settings
 hometitle = "Licking Dog API"  # 主页标题
 title404 = "404 Not Found"  # 404页标题
 domain = "api.white-album.top"
-port = 8001
+port = 8000
 docv = "1.0.0"  # doc版本
 version = "/v" + docv[0]  # api版本
 description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
@@ -98,7 +98,7 @@ async def login(*,
 
 @api.get("/demo/")
 async def home(request: Request):
-    return templates.TemplateResponse("demo/index.html", {
+    return templates.TemplateResponse("demo.html", {
         "request": request,
         "title": "示例与说明",
     })
@@ -107,10 +107,26 @@ async def home(request: Request):
 @api.get(version+"/bing/")
 async def bing(request: Request):
     from utils.bing import Image
-    return templates.TemplateResponse("bing/index.html", {
+    return templates.TemplateResponse("bing.html", {
         "request": request,
         "title": "Bing每日一图",
         "img": Image.img(),
+    })
+
+
+@api.get("/mnist/")
+async def catvsdog(request: Request):
+    return templates.TemplateResponse("mnist.html", {
+        "request": request,
+        "title": "Tenserflow.js实现Mnist手写字识别",
+    })
+
+
+@api.get("/catvsdog/")
+async def catvsdog(request: Request):
+    return templates.TemplateResponse("catvsdog.html", {
+        "request": request,
+        "title": "Cat VS Dog",
     })
 
 
@@ -167,14 +183,6 @@ async def billboard(chart: str):
         return JSONResponse(status_code=HTTP_404_NOT_FOUND, content={'msg': f'{chart} is not found'})
 
 
-@api.get("/cat-vs-dog/")
-async def catvsdog(request: Request):
-    return templates.TemplateResponse("catvsdog/index.html", {
-        "request": request,
-        "title": "Cat VS Dog",
-    })
-
-
 # @api.post(version+"/files/")
 # async def catvsdog_create_file(file: bytes = File(...)):
 #     return {"file_size": len(file)}
@@ -229,3 +237,4 @@ async def hitokoto():
 
 if __name__ == '__main__':
     uvicorn.run(app=api, host="127.0.0.1", port=port, log_level="info")
+    # gunicorn -b 127.0.0.1: 8001 -k uvicorn.workers.UvicornWorker main: api

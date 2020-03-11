@@ -50,6 +50,10 @@ ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn main:api --host 127.0.0.1 --p
 WantedBy=multi-user.target
 ```
 
+或者使用`gunicorn`（注：gunicorn仅支持Linux系统）:
+将`uvicorn main:api --host 127.0.0.1 --port 8001`
+替换为`gunicorn -b 127.0.0.1:8001 -k uvicorn.workers.UvicornWorker main:api`~~
+
 有以下命令：
 
 ```bash
