@@ -13,7 +13,7 @@ import settings
 hometitle = "Licking Dog API"  # 主页标题
 title404 = "404 Not Found"  # 404页标题
 domain = "api.white-album.top"
-port = 8000
+port = 8001
 docv = "1.0.0"  # doc版本
 version = "/v" + docv[0]  # api版本
 description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
