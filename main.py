@@ -20,7 +20,6 @@ description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
 start_time = 2019  # 建站时间
 _username = "admin"
 _password = "admin"
-templates = Jinja2Templates(directory="templates")
 
 
 def openapi_config(app: FastAPI):
@@ -67,6 +66,7 @@ openapi_config(api)  # openapi schemaz
 api.mount("/static",  # 静态资源设置
           StaticFiles(directory="static", packages=[]),
           name="static")
+templates = Jinja2Templates(directory="templates")  # 页面模板
 cors(api)  # 解决跨域问题
 
 
@@ -96,9 +96,9 @@ async def login(*,
     }
 
 
-@api.get("/demo/")
+@api.get("/start/")
 async def home(request: Request):
-    return templates.TemplateResponse("demo.html", {
+    return templates.TemplateResponse("start.html", {
         "request": request,
         "title": "示例与说明",
     })
@@ -188,7 +188,7 @@ async def billboard(chart: str):
 #     return {"file_size": len(file)}
 
 
-@api.post(version+"/cat-vs-dog/upload/")
+@api.post(version+"/catvsdog/upload/")
 async def catvsdog_upload_image(file: UploadFile = File(...)):
     # return "this is not a cat or dog"
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
