@@ -6,7 +6,6 @@ from starlette.templating import Jinja2Templates  # Templates
 from starlette.responses import JSONResponse
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
-# from starlette.responses import HTMLResponse
 import uvicorn
 import settings
 

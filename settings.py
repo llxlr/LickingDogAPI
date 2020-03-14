@@ -16,14 +16,4 @@ Baidu_SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 if __name__ == "__main__":
-    # print(PIXIV_EMAIL)
-    # print(PIXIV_PASSWD)
-
-    # print(cf_zone_id)
-    # print(cf_email)
-    # print(cf_auth_key)
-
-    print(Baidu_APP_ID)
-    print(Baidu_API_KEY)
-    print(Baidu_SECRET_KEY)
     pass

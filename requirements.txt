@@ -2,7 +2,7 @@ aiofiles==0.4.0
 baidu-aip==2.2.18.0
 beautifulsoup4==4.8.2
 email-validator==1.0.5
-fastapi==0.47.1
+fastapi==0.52.0
 gevent==1.4.0
 gunicorn==20.0.4
 Jinja2==2.11.1
