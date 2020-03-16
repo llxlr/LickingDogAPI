@@ -7,6 +7,7 @@ from starlette.responses import JSONResponse
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
 import uvicorn
+import time
 import settings
 
 hometitle = "Licking Dog API"  # 主页标题
@@ -78,20 +79,20 @@ async def home(request: Request):
 
 
 @api.post("/login/")
-async def login(*,
-                username: str = Form(...),
-                password: str = Form(...)):
+async def login(*, username: str = Form(...), password: str = Form(...)):
     if username == _username and password == _password:
         return {
             "code": 200,
             "success": "true",
             "username": username, 
             "msg": "login successfully !",
+            "time": time.ctime(),
         }
     return {
         "code": 404,
         "success": "false",
         "msg": "username or password is not correct !",
+        "time": time.ctime(),
     }
 
 
@@ -197,6 +198,7 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
                 "filename": file.filename,
                 "content-type": file.content_type,
                 "msg": "this is a {}, everything is ok !".format(file.content_type.split('/')[1]),
+                "time": time.ctime(),
             }
     # text = await file.read()
     # await file.close()
@@ -225,6 +227,7 @@ async def purge_cdn_cache():
             "success": "true",
             "msg": "purge everything successfully !",
             "description": "clear cloudflare cdn caches",
+            "time": time.ctime(),
         }
 
 
