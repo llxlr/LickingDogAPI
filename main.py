@@ -106,7 +106,7 @@ async def home(request: Request):
 
 @api.get(version+"/bing/")
 async def bing(request: Request):
-    from utils.bing import Image
+    from items.bing import Image
     return templates.TemplateResponse("bing.html", {
         "request": request,
         "title": "Bing每日一图",
@@ -115,7 +115,7 @@ async def bing(request: Request):
 
 
 @api.get("/mnist/")
-async def catvsdog(request: Request):
+async def mnist(request: Request):
     return templates.TemplateResponse("mnist.html", {
         "request": request,
         "title": "Tenserflow.js实现Mnist手写字识别",
@@ -132,7 +132,7 @@ async def catvsdog(request: Request):
 
 @api.get(version+"/github/trending")
 async def trending(date: str, spoken_lang: str, lang: str):
-    from utils.github import Options, Github
+    from items.github import Options, Github
     options = Options()
     options.type, options.spoken_lang, options.lang, options.date = "trending", spoken_lang, lang, date
     return Github.trending(options)
@@ -140,7 +140,7 @@ async def trending(date: str, spoken_lang: str, lang: str):
 
 @api.get(version+"/github/trending/developers")
 async def developers_trending(lang: str, date: str):
-    from utils.github import Options, Github
+    from items.github import Options, Github
     options = Options()
     options.type, options.spoken_lang, options.lang, options.date = "developers", None, lang, date
     return Github.developers(options)
@@ -151,7 +151,7 @@ async def music(name: str, type: str, id: int):
     service = ["cloudmusic", "qq"]
     if name in service:
         if name == service[0]:
-            from utils.music import CloudMusic
+            from items.music import CloudMusic
             if type == "song":
                 return CloudMusic.song(id)
             elif type == "lyric":
@@ -161,7 +161,7 @@ async def music(name: str, type: str, id: int):
             else:
                 return JSONResponse(status_code=HTTP_404_NOT_FOUND, content=type)
         elif name == service[1]:
-            from utils.music import QQ
+            from items.music import QQ
             if type == "song":
                 return QQ.song(id)
             elif type == "lyric":
@@ -176,7 +176,7 @@ async def music(name: str, type: str, id: int):
 
 @api.get(version+"/billboard/{chart}")
 async def billboard(chart: str):
-    from utils.billboard import charts, Billboard
+    from items.billboard import charts, Billboard
     if chart in charts:
         return Billboard(chart).info()
     else:
@@ -233,7 +233,7 @@ async def purge_cdn_cache():
 
 @api.get(version+'/hitokoto/')
 async def hitokoto():
-    from utils import hitokoto
+    from items import hitokoto
     return hitokoto.hitokoto()
 
 
