@@ -14,8 +14,8 @@ from lxml import etree
 import requests
 
 url = 'https://www.billboard.com/charts/'
-charts = ['hot-100', 'billboard-200', 'artist-100', 'social-50']
-xpathRule = [
+
+xpr = [
     '//span[@class="chart-element__information__song text--truncate color--primary"]/text()',
     '//span[@class="chart-element__information__artist text--truncate color--secondary"]/text()',
     '//span[@class="chart-element__information__delta__text text--default"]/text()',
@@ -24,50 +24,34 @@ xpathRule = [
     '//span[@class="chart-element__information__delta__text text--week"]/text()',
     '//span[@class="chart-element__image flex--no-shrink"]/@style',
 ]
+type_ = ['song', 'artist', 'now', 'last', 'peak', 'week', 'avater']
+data = []
 
 
-def get_content(url_, xpaths):
-    html = requests.get(url_).content
-    selector = etree.HTML(html)
-    data, single = [], {'song': '', 'artist': '', 'now': '', 'last': '', 'peak': '', 'week': '', 'avater': ''}
-    for xp in xpaths:
-        for content in selector.xpath(xp):
-            if xpaths.index(xp) == 0:
-                single['song'] = content
-            elif xpaths.index(xp) == 1:
-                single['artist'] = content
-            elif xpaths.index(xp) == 2:
-                single['now'] = content
-            elif xpaths.index(xp) == 3:
-                single['last'] = content.split(' ')[0]
-            elif xpaths.index(xp) == 4:
-                single['peak'] = content.split(' ')[0]
-            elif xpaths.index(xp) == 5:
-                single['week'] = content.split(' ')[0]
-            elif xpaths.index(xp) == 6:
+def parse(htm):
+    htm = etree.HTML(htm)
+    single = {}
+    for xp in xpr:
+        n = xpr.index(xp)
+        for content in htm.xpath(xp):
+            if n in [0, 1, 2]:
+                single[type_[n]] = content
+            elif n in [3, 4, 5]:
+                single[type_[n]] = content.split(' ')[0]
+            elif n == 6:
                 if not content.split('"'):
-                    single['avater'] = content.split('"')[1]
-            data.append(single)
+                    single[type_[n]] = content.split('"')[1]
+    return single
+
+
+def get_content(chart):
+    html = requests.get(url+chart).content
+    selector = etree.HTML(html)
+    lis = selector.xpath('//ol[@class="chart-list__elements"]/li')
+    for li in map(lambda x: etree.tostring(x, encoding='utf-8').decode('utf-8'), lis):
+        data.append(parse(li))
     return data
 
 
-class Billboard(object):
-    def __init__(self, chart):
-        super(Billboard, self).__init__()
-        self.chart = chart
-
-    def info(self):
-        if self.chart == charts[0]:
-            return get_content(url+self.chart, xpathRule)
-        elif self.chart == charts[1]:
-            return get_content(url+self.chart, xpathRule)
-        elif self.chart == charts[2]:
-            return get_content(url+self.chart, xpathRule)
-        elif self.chart == charts[3]:
-            return get_content(url+self.chart, xpathRule)
-
-
 if __name__ == '__main__':
-    # tobject = get_content(url + 'hot-100', xpathRule)
-    tobject = Billboard('hot-100').info()
-    print(tobject)  # ↑↓→.xpath(button[0]
+    pass

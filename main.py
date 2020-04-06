@@ -6,6 +6,7 @@ from starlette.templating import Jinja2Templates  # Templates
 from starlette.responses import JSONResponse
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
+from enum import Enum
 import uvicorn
 import time
 import settings
@@ -56,16 +57,16 @@ def cors(app: FastAPI):
     )
 
 
-api = FastAPI(title=hometitle,
-              description=description,
-              version=docv,
-              openapi_url=version+"/openapi.json",
-              docs_url=version+"/docs/",
-              redoc_url=None)
+api = FastAPI(
+    title=hometitle,
+    description=description,
+    version=docv,
+    openapi_url=version+"/openapi.json",
+    docs_url=version+"/docs/",
+    redoc_url=None
+)
 openapi_config(api)  # openapi schemaz
-api.mount("/static",  # 静态资源设置
-          StaticFiles(directory="static", packages=[]),
-          name="static")
+api.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
 templates = Jinja2Templates(directory="templates")  # 页面模板
 cors(api)  # 解决跨域问题
 
@@ -97,7 +98,7 @@ async def login(*, username: str = Form(...), password: str = Form(...)):
 
 
 @api.get("/start/")
-async def home(request: Request):
+async def start(request: Request):
     return templates.TemplateResponse("start.html", {
         "request": request,
         "title": "示例与说明",
@@ -174,11 +175,21 @@ async def music(name: str, type: str, id: int):
         return JSONResponse(status_code=HTTP_404_NOT_FOUND, content=name)
 
 
+class Charts(Enum):
+    hot100: str = 'hot-100'
+    billboard200: str = 'billboard-200'
+    artist100: str = 'artist-100'
+    social50: str = 'social-50'
+
+
 @api.get(version+"/billboard/{chart}")
 async def billboard(chart: str):
-    from items.billboard import charts, Billboard
-    if chart in charts:
-        return Billboard(chart).info()
+    from items.billboard import get_content
+    if chart in [Charts.hot100,
+                 Charts.billboard200,
+                 Charts.artist100,
+                 Charts.social50]:
+        return get_content(chart)
     else:
         return JSONResponse(status_code=HTTP_404_NOT_FOUND, content={'msg': f'{chart} is not found'})
 
@@ -190,7 +201,6 @@ async def billboard(chart: str):
 
 @api.post(version+"/catvsdog/upload/")
 async def catvsdog_upload_image(file: UploadFile = File(...)):
-    # return "this is not a cat or dog"
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
     if file.filename != '':
         if file.content_type in _format_:
@@ -231,10 +241,17 @@ async def purge_cdn_cache():
         }
 
 
-@api.get(version+'/hitokoto/')
-async def hitokoto():
-    from items import hitokoto
-    return hitokoto.hitokoto()
+@api.get(version+'/hitokoto/{word}')
+async def hitokoto(word: str = None):
+    from items.hitokoto import hitokoto
+    if word:
+        return hitokoto()["hitokoto"]
+    return hitokoto()
+
+
+@api.get('/visitorInfo/')
+async def visitor_info(ip: str = None):
+    return {}
 
 
 if __name__ == '__main__':
