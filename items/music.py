@@ -1,23 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-@version: v0.0.1
-@author: James Yang
-@license: MIT License
-@email: i@white-album.top
-@blog: https://white-album.top
-@software: PyCharm
-@file: cloudmusic.py
-@time: 2020/2/7 16:39
-"""
+from settings import headers
 import requests
 # import time
-
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71'
-}
 
 
 class CloudMusic(object):

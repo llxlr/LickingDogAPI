@@ -107,11 +107,11 @@ async def start(request: Request):
 
 @api.get(version+"/bing/")
 async def bing(request: Request):
-    from items.bing import Image
+    from items.bing import img
     return templates.TemplateResponse("bing.html", {
         "request": request,
         "title": "Bing每日一图",
-        "img": Image.img(),
+        "info": img,
     })
 
 
@@ -131,11 +131,14 @@ async def catvsdog(request: Request):
     })
 
 
-@api.get(version+"/github/trending")
-async def trending(date: str, spoken_lang: str, lang: str):
+@api.get(version+"/github/")
+async def trending(type_: str = "trending",
+                   date: str = "daily",
+                   spoken_lang: str = None,
+                   language: str = None):
     from items.github import Options, Github
     options = Options()
-    options.type, options.spoken_lang, options.lang, options.date = "trending", spoken_lang, lang, date
+    options.type, options.spoken_lang, options.lang, options.date = "trending", spoken_lang, language, date
     return Github.trending(options)
 
 

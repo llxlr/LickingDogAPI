@@ -1,15 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-@version: v0.0.1
-@author: James Yang
-@license: MIT License
-@email: i@white-album.top
-@blog: https://white-album.top
-@software: PyCharm
-@file: billboard.py
-@time: 2020/2/20 7:13
-"""
+from settings import headers
 from lxml import etree
 import requests
 
@@ -45,7 +34,7 @@ def parse(htm):
 
 
 def get_content(chart):
-    html = requests.get(url+chart).content
+    html = requests.get(url+chart, headers=headers).content
     selector = etree.HTML(html)
     lis = selector.xpath('//ol[@class="chart-list__elements"]/li')
     for li in map(lambda x: etree.tostring(x, encoding='utf-8').decode('utf-8'), lis):

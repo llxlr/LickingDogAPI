@@ -1,11 +1,6 @@
+from settings import headers
 import requests
 import time
-
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71'
-}
 
 
 class Bilibili(object):
@@ -16,7 +11,6 @@ class Bilibili(object):
 
     def bangumi(self):
         return requests.get(self.url, headers=headers).json()
-         
 
 
 class Bangumi(object):
@@ -25,15 +19,17 @@ class Bangumi(object):
         super(Bangumi, self).__init__()
         self.id = id
 
+
 pns = 1
 ps = 15
 uid = 166791985
 ts = 1584480325628
 if not pns:
-	pns = 1
+    pns = 1
 if not uid:
-	uid = 166791985
+    uid = 166791985
 api = 'https://api.bilibili.com/x/space/bangumi/follow/list?type=1&ps=15&vmid={}'.format(id)
+
 
 '''
 {

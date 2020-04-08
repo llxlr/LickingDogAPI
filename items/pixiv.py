@@ -1,32 +1,16 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-@version: v0.0.1
-@author: James Yang
-@license: MIT License
-@email: i@white-album.top
-@blog: https://white-album.top
-@software: PyCharm
-@file: pixiv.py
-@time: 2020/2/21 19:07
-"""
+from settings import headers, PIXIV_EMAIL, PIXIV_PASSWD
 from lxml import etree
 import requests
 import http.cookiejar as cj
 import re
 import os
-from settings import PIXIV_EMAIL, PIXIV_PASSWD
 
 main_url = "https://www.pixiv.net"
 login_url = 'https://accounts.pixiv.net/login'  # 登陆的URL
 post_url = 'https://accounts.pixiv.net/api/login?lang=en'  # 提交POST请求的URL
 cache = '../cache/'
 os.makedirs(cache, exist_ok=True)
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/80.0.3987.116 Safari/537.36 Edg/80.0.361.57'
-}
+
 params = {
     'lang': 'en',
     'source': 'pc',
