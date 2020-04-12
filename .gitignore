@@ -108,6 +108,7 @@ venv.bak/
 # custom
 .idea/
 .vscode/
+cache/
 log/
 test/
 tmp/

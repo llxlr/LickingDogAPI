@@ -115,14 +115,6 @@ async def bing(request: Request):
     })
 
 
-@api.get("/mnist/")
-async def mnist(request: Request):
-    return templates.TemplateResponse("mnist.html", {
-        "request": request,
-        "title": "Tenserflow.js实现Mnist手写字识别",
-    })
-
-
 @api.get("/catvsdog/")
 async def catvsdog(request: Request):
     return templates.TemplateResponse("catvsdog.html", {
@@ -131,23 +123,42 @@ async def catvsdog(request: Request):
     })
 
 
+@api.get("/mnist/")
+async def mnist(request: Request):
+    return templates.TemplateResponse("mnist.html", {
+        "request": request,
+        "title": "Tenserflow.js实现Mnist手写字识别",
+    })
+
+
+@api.get("/ncov/")
+async def ncov(request: Request):
+    from items.ncov import get_data
+    return templates.TemplateResponse("ncov.html", {
+        "request": request,
+        "title": "2020新冠肺炎实时疫情图",
+        "data1": get_data('china')["data"],
+        "data2": get_data('world')["data"],
+        # "news1": get_data('cnews'),
+        # "news2": get_data('wnews'),
+    })
+
+
+@api.get(version+'/hitokoto/{word}')
+async def hitokoto(word: str = None):
+    from items.hitokoto import hitokoto
+    data = hitokoto()
+    if word is not None:
+        return data["hitokoto"]
+    return data
+
+
 @api.get(version+"/github/")
-async def trending(type_: str = "trending",
-                   date: str = "daily",
-                   spoken_lang: str = None,
-                   language: str = None):
-    from items.github import Options, Github
-    options = Options()
-    options.type, options.spoken_lang, options.lang, options.date = "trending", spoken_lang, language, date
-    return Github.trending(options)
-
-
-@api.get(version+"/github/trending/developers")
-async def developers_trending(lang: str, date: str):
-    from items.github import Options, Github
-    options = Options()
-    options.type, options.spoken_lang, options.lang, options.date = "developers", None, lang, date
-    return Github.developers(options)
+async def github_trending(type_: str = "trending", date: str = "daily", spoken_lang: str = None, language: str = None):
+    from items.github import Github
+    if type_ != "trending":
+        return Github("developers", language, date).developers
+    return Github(type_, spoken_lang, language, date).trending
 
 
 @api.get(version+"/music/{name}")
@@ -178,23 +189,23 @@ async def music(name: str, type: str, id: int):
         return JSONResponse(status_code=HTTP_404_NOT_FOUND, content=name)
 
 
-class Charts(Enum):
-    hot100: str = 'hot-100'
-    billboard200: str = 'billboard-200'
-    artist100: str = 'artist-100'
-    social50: str = 'social-50'
-
-
-@api.get(version+"/billboard/{chart}")
-async def billboard(chart: str):
-    from items.billboard import get_content
-    if chart in [Charts.hot100,
-                 Charts.billboard200,
-                 Charts.artist100,
-                 Charts.social50]:
-        return get_content(chart)
-    else:
-        return JSONResponse(status_code=HTTP_404_NOT_FOUND, content={'msg': f'{chart} is not found'})
+# @api.get(version+"/billboard/{chart}")
+# async def billboard(chart: str):
+#     from items.billboard import get_content
+#
+#     class Charts(Enum):
+#         hot100: str = 'hot-100'
+#         billboard200: str = 'billboard-200'
+#         artist100: str = 'artist-100'
+#         social50: str = 'social-50'
+#
+#     if chart in [Charts.hot100,
+#                  Charts.billboard200,
+#                  Charts.artist100,
+#                  Charts.social50]:
+#         return get_content(chart)
+#     else:
+#         return JSONResponse(status_code=HTTP_404_NOT_FOUND, content={'msg': f'{chart} is not found'})
 
 
 # @api.post(version+"/files/")
@@ -223,6 +234,12 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
     # }
 
 
+@api.get(version+"/ncov/")
+async def ncov_api(name: str):
+    from items.ncov import get_data
+    return get_data(name)
+
+
 @api.get('/purge-cdn-cache/')
 async def purge_cdn_cache():
     import requests
@@ -242,14 +259,6 @@ async def purge_cdn_cache():
             "description": "clear cloudflare cdn caches",
             "time": time.ctime(),
         }
-
-
-@api.get(version+'/hitokoto/{word}')
-async def hitokoto(word: str = None):
-    from items.hitokoto import hitokoto
-    if word:
-        return hitokoto()["hitokoto"]
-    return hitokoto()
 
 
 @api.get('/visitorInfo/')
