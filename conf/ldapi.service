@@ -1,0 +1,13 @@
+[Unit]
+Description=LickingDogAPI with Uvicorn
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/www/wwwroot/LickingDogAPI
+Environment="PATH=/www/wwwroot/LickingDogAPI/venv/bin"
+ExecStart=/www/wwwroot/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
+
+[Install]
+WantedBy=multi-user.target
