@@ -1,23 +1,29 @@
 from dotenv import load_dotenv
+import time
 import os
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71'
-}
+hometitle = "Licking Dog API"  # 主页标题
+title404 = "404 Not Found"  # 404页标题
+domain = "api.white-album.top"  # 域名
+port = 8001  # 端口
+docv = "1.0.0"  # doc版本
+version = "/v" + docv[0]  # api版本
+description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
+start_time = 2019  # 建站时间
+Copyright = {"author": "星旅人",
+             "url": "https://white-album.top/",
+             "time": time.ctime()}
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                         'AppleWebKit/537.36 (KHTML, like Gecko) '
+                         'Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71'}
 load_dotenv(verbose=True)
 # Pixiv
-PIXIV_EMAIL = os.getenv("PIXIV_EMAIL")
-PIXIV_PASSWD = os.getenv("PIXIV_PASSWD")
+PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])
 # CloudFlare
-cf_zone_id = os.getenv("cf_zone_id")
-cf_email = os.getenv("cf_email")
-cf_auth_key = os.getenv("cf_auth_key")
+cf_zone_id, cf_email, cf_auth_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])
 # Baidu AI API
-Baidu_APP_ID = os.getenv("APP_ID")
-Baidu_API_KEY = os.getenv("API_KEY")
-Baidu_SECRET_KEY = os.getenv("SECRET_KEY")
+Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = map(os.getenv, ["APP_ID", "API_KEY", "SECRET_KEY"])
 
 
 if __name__ == "__main__":

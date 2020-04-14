@@ -20,7 +20,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
-$ uvicorn main:api --host 127.0.0.1 --port 8001
+$ uvicorn wsgi:app --host 127.0.0.1 --port 8001
 ```
 
 
@@ -36,7 +36,7 @@ $ sudo nano /etc/systemd/system/ldapi.service
 
 ```txt
 [Unit]
-Description=Uvicorn to serve LickingDogAPI
+Description=LickingDogAPI with Uvicorn
 After=network.target
 
 [Service]
@@ -44,7 +44,7 @@ User=www
 Group=www-data
 WorkingDirectory=/www/html/LickingDogAPI
 Environment="PATH=/www/html/LickingDogAPI/venv/bin"
-ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn main:api --host 127.0.0.1 --port 8001
+ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
 
 [Install]
 WantedBy=multi-user.target

@@ -53,9 +53,15 @@ def get_data(type_):
                 cured += i["curedCount"]
                 j = list(filter(lambda x: x["cityName"] == "境外输入", i["cities"]))
                 overseas += j[0]["currentConfirmedCount"] if j else 0
-                data.append({"name": i["provinceShortName"], "value": i["currentConfirmedCount"]})
-            return {"currentConfirmed": cc, "Confirmed": c, "suspected": suspected, "cured": cured,
-                    "dead": dead, "overseas": overseas, "data": data}
+                data.append({"name": i["provinceShortName"],
+                             "value": i["currentConfirmedCount"]})
+            return {"currentConfirmed": cc,
+                    "Confirmed": c,
+                    "suspected": suspected,
+                    "cured": cured,
+                    "dead": dead,
+                    "overseas": overseas,
+                    "data": data}
         elif (type_ == 'world') and (idx == 1):
             data = []
             for i in json.loads(dt[0]):
@@ -66,12 +72,20 @@ def get_data(type_):
                 data.append({"name": i["countryFullName"],
                              "value": i["currentConfirmedCount"],
                              "provinceName": i["provinceName"]})
-            return {"currentConfirmed": cc, "Confirmed": c, "dead": dead, "data": data}
+            return {"currentConfirmed": cc,
+                    "Confirmed": c,
+                    "dead": dead,
+                    "data": data}
         elif ((type_ == 'cnews') and (idx == 2)) or ((type_ == 'wnews') and (idx == 3)):
             data = []
             for i in json.loads(dt[0]):
-                data.append({"date": date(i["pubDate"]/1000), "datestr": i["pubDateStr"], "title": i["title"],
-                             "summary": i["summary"], "source": i["infoSource"], "url": i["sourceUrl"]})
+                data.append({
+                    "date": date(i["pubDate"]/1000),
+                    "datestr": i["pubDateStr"],
+                    "title": i["title"],
+                    "summary": i["summary"],
+                    "source": i["infoSource"],
+                    "url": i["sourceUrl"]})
             return data
 
 
