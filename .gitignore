@@ -114,3 +114,5 @@ test/
 tmp/
 Dockerfile
 docker-compose.yml
+.htaccess
+.user.ini

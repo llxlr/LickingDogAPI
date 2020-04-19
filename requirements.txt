@@ -1,13 +1,14 @@
 aiofiles==0.4.0
 baidu-aip==2.2.18.0
+cffi==1.14.0
 email-validator==1.0.5
 fastapi==0.54.1
-# gevent==1.4.0
-# gunicorn==20.0.4
 Jinja2==2.11.1
 lxml==4.5.0
 numpy==1.18.2
 opencv-python==4.2.0.34
+Pillow==7.1.1
+pixivpy-async==1.2.10
 pydantic==1.4
 python-dotenv==0.12.0
 python-multipart==0.0.5
