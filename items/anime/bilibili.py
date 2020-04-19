@@ -13,13 +13,6 @@ class Bilibili(object):
         return requests.get(self.url, headers=headers).json()
 
 
-class Bangumi(object):
-    """"""
-    def __init__(self, id):
-        super(Bangumi, self).__init__()
-        self.id = id
-
-
 pns = 1
 ps = 15
 uid = 166791985

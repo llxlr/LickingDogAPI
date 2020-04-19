@@ -1,6 +1,8 @@
+from starlette.status import HTTP_404_NOT_FOUND
+from starlette.responses import JSONResponse
 from settings import headers
+from items import Music
 import requests
-# import time
 
 
 class CloudMusic(object):
@@ -49,7 +51,6 @@ class CloudMusic(object):
                 }
                 data.append(item_format)
             return data
-    pass
 
 
 class QQ(object):
@@ -66,10 +67,22 @@ class QQ(object):
         pass
 
 
-# if __name__ == "__main__":
+def music_type(classname, type: str, id):
+    if type == Music.Type.song:
+        return classname.song(id)
+    elif type == Music.Type.lyric:
+        return classname.lyric(id)
+    elif type == Music.Type.playlist:
+        return classname.playlist(id)
+    else:
+        return JSONResponse(status_code=HTTP_404_NOT_FOUND, content=type)
+
+
+if __name__ == "__main__":
     # s = time.time()
     # print(playlist(3196408340))  # 5s~6s
     # print(lyric(412327036))      # 0.1s~0.2s
     # print(CloudMusic.song(1415756555))      # 0.2s~0.4s
     # e = time.time()
     # print(e-s)
+    pass

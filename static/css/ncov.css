@@ -1,3 +1,117 @@
+body {
+    height: 800px;
+    overflow: hidden;
+}
+
+*:focus {
+    outline: none;
+}
+
+#main {
+    max-width: px;
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 0.5;
+    border-bottom: 1px solid #ebebeb;
+
+}
+
+.info > div {
+    flex-grow: 1;
+    margin: 0 4px;
+    border-radius: 3px;
+}
+
+.info > div > p:first-child {
+    font-size: 12px;
+}
+
+.title {
+    text-align: center;
+}
+
+.copyright {
+    font-size: 10px;
+    text-align: right;
+    color: #909399;
+}
+
+.copyright a {
+    text-decoration: none;
+}
+
+.copyright a:hover, a:active, a:visited, a:link, a:focus {
+    color: #909399;
+}
+
+.map {
+    position: relative;
+    height: 400px;
+}
+
+#worldmap {
+    height: 380px;
+}
+
+.copyright {
+    position: relative;
+    width: 100%;
+}
+
+.copyright, .map {
+    top: -65px;
+}
+
+.hide {
+    display: none;
+}
+
+#worldmap {
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 28px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+    color: #515a6e;
+    background-color: #fff;
+    border-color: #dcdee2;
+}
+
+.btn-active {
+    color: #fff;
+    background-color: #2d8cf0;
+    border-color: #2d8cf0;
+}
+
+.tab {
+    margin-top: 5px;
+    text-align: center;
+}
+
 .wrapper {
     padding-bottom: calc(.6rem + env(safe-area-inset-bottom));
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;

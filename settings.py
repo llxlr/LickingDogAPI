@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-import time
 import os
 
 hometitle = "Licking Dog API"  # 主页标题
@@ -10,13 +9,11 @@ docv = "1.0.0"  # doc版本
 version = "/v" + docv[0]  # api版本
 description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
 start_time = 2019  # 建站时间
-Copyright = {"author": "星旅人",
-             "url": "https://white-album.top/",
-             "time": time.ctime()}
+Copyright = {"author": "星旅人", "url": "https://white-album.top/"}
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                          'AppleWebKit/537.36 (KHTML, like Gecko) '
-                         'Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71'}
+                         'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
 load_dotenv(verbose=True)
 # Pixiv
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])

@@ -26,6 +26,7 @@ def save_cache(status=False):
     r.encoding = 'utf-8'
     cache_path, f_name, text = '../cache', 'ncov.html', ''
     if status:
+        f_name = cache_path + '/' + f_name
         with open(f_name, 'w', encoding='utf-8') as f:
             f.write(r.text)
     else:
