@@ -11,7 +11,7 @@ import time
 async def hitokoto():
     from items.hitokoto import hitokoto
     data = hitokoto()
-    log.info("请求一次一言")
+    log.info("pv,请求一次一言")
     return {
         "code": 200,
         "copyright": settings.Copyright,
@@ -26,7 +26,7 @@ async def github_trending(type: str = "trending",
                           spoken_lang: str = None,
                           language: str = None):
     from items.github import Github
-    log.info("请求一次Github Trending")
+    log.info("pv,请求一次Github Trending")
     if type != "trending":
         return {
             "code": 200,
@@ -45,7 +45,7 @@ async def github_trending(type: str = "trending",
 @app.get(settings.version+"/music/{name}")
 async def music(name: Music.Service, type: Music.Type, id: int):
     if name == Music.Service.cloudmusic:
-        log.info('请求一次网易云音乐api')
+        log.info('pv,请求一次网易云音乐api')
         from items.music import CloudMusic, music_type
         return {
             "code": 200,
@@ -54,7 +54,7 @@ async def music(name: Music.Service, type: Music.Type, id: int):
             "time": time.ctime(),
         }
     elif name == Music.Service.qq:
-        log.info('请求一次QQ音乐api')
+        log.info('pv,请求一次QQ音乐api')
         from items.music import QQ, music_type
         return {
             "code": 200,
@@ -69,7 +69,7 @@ async def music(name: Music.Service, type: Music.Type, id: int):
 @app.get(settings.version+"/billboard/{chart}")
 async def billboard(chart: Charts):
     from items.billboard import get_content
-    log.info('请求一次公告牌数据')
+    log.info('pv,请求一次公告牌数据')
     if chart in (Charts.hot100, Charts.billboard200,
                  Charts.artist100, Charts.social50):
         return {
@@ -85,13 +85,13 @@ async def billboard(chart: Charts):
 
 # @app.post(version+"/files/")
 # async def catvsdog_create_file(file: bytes = File(...)):
-#     log.info('请求一次')
+#     log.info('pv,请求一次')
 #     return {"file_size": len(file)}
 
 
 @app.post(settings.version+"/catvsdog/upload/")
 async def catvsdog_upload_image(file: UploadFile = File(...)):
-    log.info('上次一次猫狗图片')
+    log.info('pv,上次一次猫狗图片')
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
     if file.filename != '':
         if file.content_type in _format_:
@@ -111,11 +111,12 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
 @app.get(settings.version+"/ncov/")
 async def ncov_api(name: str):
     from items.ncov import get_data
-    log.info('请求一次新冠肺炎数据')
+    log.info('pv,请求一次新冠肺炎数据')
     return {
         "code": 200,
         "copyright": settings.Copyright,
         "data": get_data(name),
+        "source": "数据源于丁香园",
         "time": time.ctime(),
     }
 
@@ -131,7 +132,7 @@ async def purge_cdn_cache():
     }
     post_data = '{"purge_everything": true}'
     res = requests.post(url, post_data, headers=headers).json()
-    log.info('清除一次cloudflare cdn缓存')
+    log.info('pv,清除一次cloudflare cdn缓存')
     if res["success"]:
         return {
             "code": 200,

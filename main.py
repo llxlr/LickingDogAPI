@@ -3,7 +3,7 @@ from starlette.templating import Jinja2Templates  # Templates
 from starlette.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
 from fastapi import FastAPI
-from log import Logger
+from utils.log import Logger
 import settings
 import os
 

@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <meta name="theme-color" content="#83FF69">
   <title>{% block title %}{% endblock %}</title>
   <link rel="shortcut icon" href="{{ url_for('static', path='favicon.ico') }}">
   <link href="{{ url_for('static', path='css/styles.css') }}" rel="stylesheet">
@@ -22,6 +21,16 @@
   </script>
   {% block head %}
   {% endblock %}
+  <script>
+  (function(){
+    var oMeta=document.createElement('meta');
+    var x=document.getElementsByClassName("night");
+    console.log(x);
+    if(x){oMeta.content='#83FF69';}else{oMeta.content='#1d1f20';};
+    oMeta.name='theme-color';
+    document.getElementsByTagName('head')[0].appendChild(oMeta);
+  }());
+  </script>
 </head>
 <body>
   <!-- don't remove this part start -->

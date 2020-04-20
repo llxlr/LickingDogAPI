@@ -24,7 +24,7 @@ def date(t):
 def save_cache(status=False):
     r = requests.get(url, headers=headers)
     r.encoding = 'utf-8'
-    cache_path, f_name, text = '../cache', 'ncov.html', ''
+    cache_path, f_name, text = 'cache', 'ncov.html', ''
     if status:
         f_name = cache_path + '/' + f_name
         with open(f_name, 'w', encoding='utf-8') as f:
@@ -42,53 +42,56 @@ def get_data(type_):
     if time.localtime().tm_min in [0, 30]:
         save_cache(status=True)
     text, data = save_cache(), []
-    for idx, dt in enumerate(filter(lambda y: y != [], map(lambda x: x.findall(text), patterns))):
-        cc, c, suspected, cured, dead, overseas = 0, 0, 0, 0, 0, 0  # 现存确诊数,疑似,治愈数,死亡数,境外输入
-        if (type_ == 'china') and (idx == 0):
-            data = []
-            for i in json.loads(dt[0]):
-                cc += i["currentConfirmedCount"]
-                c += i["confirmedCount"]
-                suspected += i["suspectedCount"]
-                dead += i["deadCount"]
-                cured += i["curedCount"]
-                j = list(filter(lambda x: x["cityName"] == "境外输入", i["cities"]))
-                overseas += j[0]["currentConfirmedCount"] if j else 0
-                data.append({"name": i["provinceShortName"],
-                             "value": i["currentConfirmedCount"]})
-            return {"currentConfirmed": cc,
-                    "Confirmed": c,
-                    "suspected": suspected,
-                    "cured": cured,
-                    "dead": dead,
-                    "overseas": overseas,
-                    "data": data}
-        elif (type_ == 'world') and (idx == 1):
-            data = []
-            for i in json.loads(dt[0]):
-                cc += i["currentConfirmedCount"]
-                c += i["confirmedCount"]
-                cured += i["curedCount"]
-                dead += i["deadCount"]
-                data.append({"name": i["countryFullName"],
-                             "value": i["currentConfirmedCount"],
-                             "provinceName": i["provinceName"]})
-            return {"currentConfirmed": cc,
-                    "Confirmed": c,
-                    "dead": dead,
-                    "data": data}
-        elif ((type_ == 'cnews') and (idx == 2)) or ((type_ == 'wnews') and (idx == 3)):
-            data = []
-            for i in json.loads(dt[0]):
-                data.append({
-                    "date": date(i["pubDate"]/1000),
-                    "datestr": i["pubDateStr"],
-                    "title": i["title"],
-                    "summary": i["summary"],
-                    "source": i["infoSource"],
-                    "url": i["sourceUrl"]})
-            return data
-
-
-if __name__ == '__main__':
-    print(get_data('china'))
+    china, world, cnews, wnews = filter(lambda y: y != [], map(lambda x: x.findall(text), patterns))
+    cc, c, suspected, cured, dead, overseas = 0, 0, 0, 0, 0, 0  # 现存确诊数,疑似,治愈数,死亡数,境外输入
+    if type_ == 'china':
+        data, news = [], []
+        for i in json.loads(china[0]):
+            cc += i["currentConfirmedCount"]
+            c += i["confirmedCount"]
+            suspected += i["suspectedCount"]
+            dead += i["deadCount"]
+            cured += i["curedCount"]
+            j = list(filter(lambda x: x["cityName"] == "境外输入", i["cities"]))
+            overseas += j[0]["confirmedCount"] if j else 0
+            data.append({"name": i["provinceShortName"],
+                         "value": i["currentConfirmedCount"]})
+        for k in json.loads(cnews[0]):
+            news.append({
+                "date": date(k["pubDate"]/1000),
+                "datestr": k["pubDateStr"],
+                "title": k["title"],
+                "summary": k["summary"],
+                "source": k["infoSource"],
+                "url": k["sourceUrl"]})
+        return {"currentConfirmed": cc,
+                "Confirmed": c,
+                "suspected": suspected,
+                "cured": cured,
+                "dead": dead,
+                "overseas": overseas,
+                "details": data,
+                "news": news}
+    elif type_ == 'world':
+        data, news = [], []
+        for i in json.loads(world[0]):
+            cc += i["currentConfirmedCount"]
+            c += i["confirmedCount"]
+            cured += i["curedCount"]
+            dead += i["deadCount"]
+            data.append({"name": i["countryFullName"],
+                         "value": i["currentConfirmedCount"],
+                         "provinceName": i["provinceName"]})
+        for j in json.loads(wnews[0]):
+            news.append({
+                "date": date(j["pubDate"]/1000),
+                "datestr": j["pubDateStr"],
+                "title": j["title"],
+                "summary": j["summary"],
+                "source": j["infoSource"],
+                "url": j["sourceUrl"]})
+        return {"currentConfirmed": cc,
+                "Confirmed": c,
+                "dead": dead,
+                "details": data,
+                "news": news}

@@ -1,35 +1,80 @@
-<!DOCTYPE html>
+<!-- https://www.lovestu.com/api/project/cnmapyinqing/obj.php -->
+<!DOCTYPE HTML>
 <html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <title>{{ title }}</title>
-  <link rel="shortcut icon" href="{{ url_for('static', path='favicon.ico') }}">
-  <link href="{{ url_for('static', path='css/ncov.css') }}" rel="stylesheet">
-  <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
-  <script src="https://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script>
-  <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <script type="text/javascript" src="{{ url_for('static', path='app/echarts/echarts.min.js') }}"></script>
+    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script>
+    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/ncov.css') }}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126485680-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-126485680-6');
+    </script>
 </head>
 <body>
-  <div id="map" style="width:800px;height: 500px;"></div>
-<!--<div class="wrapper" style="min-height: 450px;">
-    <p class="mapTap"><i></i>实时播报</p>
-    <div class="tab2">
-        <div class="block">
-            <div class="tabLeft2">
-                <span class="leftTime">3 小时前<br><span style="font-size: 10px; color: rgb(153, 153, 153);">4-13 00:21</span></span>
-                <span class="leftDot"></span>
-                <span class="leftLine"></span>
-            </div>
-            <div class="tabRight">
-                <p class="topicTitle"><i>最新</i>全球新冠肺炎确诊病例突破180万 死亡病例超11万</p>
-                <p class="topicContent">根据美国约翰斯·霍普金斯大学的统计数据显示，截至美国东部时间12日11时30分（北京时间12日23时30分），全球新冠肺炎确诊病例已经突破180万，达到1800791例，死亡病例超过11万，达到110892例。</p>
-                <p class="topicFrom">信息来源：央视新闻app</p>
-            </div>
+<div>
+    <div class="title">{{ subtitle }}</div>
+    
+    <div class="tab">
+        <button onclick="showcn(this)" id="btn-cn" class="button btn-active">中国</button>
+        <button onclick="showworld(this)" id="btn-world" class="button">全球</button>
+    </div>
+    
+    <div class="info" id="cninfo" style="display: flex;">
+        <div>
+            <p>现存确诊</p>
+            <p style="color: rgb(247, 76, 49);"><span id="cn1"></span></p>
+        </div>
+        <div>
+            <p>境外输入</p>
+            <p style="color: rgb(247, 130, 7);"><span id="cn2"></span></p>
+        </div>
+        <div>
+            <p>死亡</p>
+            <p style="color: rgb(93, 112, 146);"><span id="cn3"></span></p>
+        </div>
+        <div>
+            <p>治愈</p>
+            <p style="color: rgb(40, 183, 163);"><span id="cn4"></span></p>
         </div>
     </div>
-</div>-->
-  <script src="{{ url_for('static', path='app/highecharts/ncov.config.js') }}"></script>
+    
+    <div class="info" id="worldinfo" style="display: none;">
+        <div>
+            <p>现存确诊</p>
+            <p style="color: rgb(247, 76, 49);"><span id="wd1"></span></p>
+        </div>
+        <div>
+            <p>累计确诊</p>
+            <p style="color: rgb(247, 130, 7);"><span id="wd2"></span></p>
+        </div>
+        <div>
+            <p>累计死亡</p>
+            <p style="color: rgb(93, 112, 146);"><span id="wd3"></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="cnmap" class="map"></div>
+
+<div id="worldmap" class="map"></div>
+
+<div class="copyright">
+    <a target="_blank" href="https://white-album.top/">White Album</a> (&copy;<a href="https://www.ghpym.com/user/applek/">applek</a>)
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', path='app/echarts/ncov.config.js') }}"></script>
+
 </body>
 </html>
