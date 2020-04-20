@@ -1,45 +1,56 @@
 from settings import headers
+from utils.funcation import delay
 import requests
-import time
+
+table = 'fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF'
+tr = {table[i]: i for i in range(58)}
+s = [11, 10, 3, 8, 4, 6]
+xor, add = 177451812, 8728348608
 
 
-class Bilibili(object):
-    """"""
-    def __init__(self, uid, pns, ps, url):
-        super(Bilibili, self).__init__()
-        self.uid, self.url, self.pns, self.ps = uid, url, pns, ps
+def av2bv(uid):
+    uid = (uid ^ xor) + add
+    r = list('BV1  4 1 7  ')
+    for i in range(6):
+        r[s[i]] = table[uid // 58 ** i % 58]
+    return ''.join(r)
 
-    def bangumi(self):
+
+def bv2av(uid):
+    r = 0
+    for i in range(6):
+        r += tr[uid[s[i]]] * 58 ** i
+    return (r - add) ^ xor
+
+
+class Bangumi(object):
+    def __init__(self, uid, pn, ps, ts=1584480325628):
+        self.url = 'https://api.bilibili.com/x/space/bangumi/follow/list?type=1' + \
+                   f'&pn={pn}&ps={ps}&vmid={uid}&ts={ts}'
+
+    def get(self):
         return requests.get(self.url, headers=headers).json()
 
+    def data(self):
+        raw, data = self.get(), []
+        if raw['code'] == 0:
+            raw = raw['data']['list']
+        for i in raw:
+            data.append({'season_id': i['season_id'],
+                        'season_type_name': i['season_type_name'],
+                         'title': i['title'],
+                         'cover': i['cover'],
+                         'new_ep': {'id': i['new_ep']['id'],
+                                    'index_show': i['new_ep']['index_show'],
+                                    'cover': i['new_ep']['cover'],
+                                    'long_title': i['new_ep']['long_title'] if 'long_title' in i['new_ep'] else '',
+                                    'pub_time': i['new_ep']['pub_time']},
+                         'evaluate': i['evaluate'],
+                         'areas': i['areas']})
+            return data
 
-pns = 1
-ps = 15
-uid = 166791985
-ts = 1584480325628
-if not pns:
-    pns = 1
-if not uid:
+
+if __name__ == '__main__':
+    pn = 1
+    ps = 15
     uid = 166791985
-api = 'https://api.bilibili.com/x/space/bangumi/follow/list?type=1&ps=15&vmid={}'.format(id)
-
-
-'''
-{
-'season_id': 28320, 
-'season_type_name': '番剧', 
-'title': '命运-冠位指定 绝对魔兽战线 巴比伦尼亚', 
-'cover': 'http://i0.hdslb.com/bfs/bangumi/12cae87721deeee6cda923e49b6a7c1e9e81cfb8.png', 
-'new_ep': {
-    'id': 285893, 
-    'index_show': '更新至第6节', 
-    'cover': 'http://i0.hdslb.com/bfs/archive/2d04c171bd204e6ea33b3dd4563bc03c4f988a36.jpg', 
-    'title': '第6节', 
-    'long_title': '天命泥板', 
-    'pub_time': '2019-11-10 00:00:03'
-    }, 
-'evaluate': '人理续存保障机构·迦勒底，对于仅凭魔术无法看见的世界，仅凭科学无法计算的世界进行观测，为了让已被证明会灭亡于2017年的人类史存续下去，日夜持续着活动。\n人类灭亡的原因，是在历史上数个地点突然出现的“...', 
-'areas': [{'id': 2, 'name': '日本'}]
-}
-
-'''

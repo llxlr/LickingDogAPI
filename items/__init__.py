@@ -17,3 +17,7 @@ class Music(object):
         song: str = "song"
         lyric: str = "lyric"
         playlist: str = "playlist"
+
+class NcovName(str, Enum):
+	china = 'china'
+	world = 'world'

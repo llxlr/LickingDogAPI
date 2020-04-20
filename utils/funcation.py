@@ -30,9 +30,9 @@ def delay(func):
 
 
 # 测试延迟调用函数
-@delay
-def a(x):
-    print(f'调用函数{a.__name__} {x}')
+# @delay
+# def a(x):
+#     print(f'调用函数{a.__name__} {x}')
 
 
 def coroutine(func):
@@ -65,9 +65,9 @@ def total(func):
 
 
 # 这里是用作统计的函数
-@total
-def b(x):
-    pass
+# @total
+# def b(x):
+#     pass
 
 
 if __name__ == '__main__':

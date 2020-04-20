@@ -1,4 +1,5 @@
 from settings import headers
+from items import NcovName
 import requests
 import time
 import json
@@ -44,7 +45,7 @@ def get_data(type_):
     text, data = save_cache(), []
     china, world, cnews, wnews = filter(lambda y: y != [], map(lambda x: x.findall(text), patterns))
     cc, c, suspected, cured, dead, overseas = 0, 0, 0, 0, 0, 0  # 现存确诊数,疑似,治愈数,死亡数,境外输入
-    if type_ == 'china':
+    if type_ == NcovName.china:
         data, news = [], []
         for i in json.loads(china[0]):
             cc += i["currentConfirmedCount"]
@@ -72,7 +73,7 @@ def get_data(type_):
                 "overseas": overseas,
                 "details": data,
                 "news": news}
-    elif type_ == 'world':
+    elif type_ == NcovName.world:
         data, news = [], []
         for i in json.loads(world[0]):
             cc += i["currentConfirmedCount"]

@@ -1,4 +1,4 @@
-from items import Charts, Music
+from items import Charts, Music, NcovName
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
 from fastapi import File, UploadFile
@@ -109,7 +109,7 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
 
 
 @app.get(settings.version+"/ncov/")
-async def ncov_api(name: str):
+async def ncov_api(name: NcovName):
     from items.ncov import get_data
     log.info('pv,请求一次新冠肺炎数据')
     return {
