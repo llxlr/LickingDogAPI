@@ -7,23 +7,22 @@ from fastapi import Form
 @app.get("/")
 async def home(request: Request):
     from settings import hometitle
-    from utils import read_log
     log.info('ts,访问一次主页')
     return templates.TemplateResponse("index.html", {
         "request": request,
         "title": hometitle,
-        # "log": read_log('cache/info.log'),
     })
 
 
 @app.get("/bing/")
 async def bing(request: Request):
     from items.bing import img
+    img = img()
     log.info('pv,访问一次必应图片')
     return templates.TemplateResponse("bing.html", {
         "request": request,
         "title": "Bing每日一图",
-        "info": img,
+        "img": img['img'],
     })
 
 

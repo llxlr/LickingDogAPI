@@ -7,6 +7,12 @@ import settings
 import time
 
 
+@app.get('/log/')
+async def log():
+    from utils.log import read_log
+    return read_log('cache/info.log')
+
+
 @app.get(settings.version+'/hitokoto/')
 async def hitokoto():
     from items.hitokoto import hitokoto
@@ -91,7 +97,7 @@ async def billboard(chart: Charts):
 
 @app.post(settings.version+"/catvsdog/upload/")
 async def catvsdog_upload_image(file: UploadFile = File(...)):
-    log.info('pv,上次一次猫狗图片')
+    log.info('pv,上传一次猫狗图片')
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
     if file.filename != '':
         if file.content_type in _format_:

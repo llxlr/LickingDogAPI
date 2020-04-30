@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <title>{% block title %}{% endblock %}</title>
   <link rel="shortcut icon" href="{{ url_for('static', path='favicon.ico') }}">
-  <link href="{{ url_for('static', path='css/styles.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute@3.4.12/dist/docute.css">
-  <script src="{{ url_for('static', path='js/main.js') }}"></script>
+  <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script type="text/javascript"  src="{{ url_for('static', path='js/main.js') }}"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126485680-6"></script>
   <script>
@@ -35,8 +37,8 @@
 <body>
   <!-- don't remove this part start -->
   <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/npm/docute-evanyou/dist/evanyou.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docute@3.4.12/dist/docute.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docute-evanyou/dist/evanyou.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docute@3.4.12/dist/docute.js"></script>
   {% block body %}
   {% block content%}
   {% endblock %}
