@@ -2,11 +2,11 @@ from settings import PIXIV_EMAIL, PIXIV_PASSWD
 from pixivpy_async import *
 
 main_url = "https://www.pixiv.net"
-async with PixivClient() as client:
-    papi = PixivAPI(client=client)
-    aapi = AppPixivAPI(client=client)
-await papi.login(PIXIV_EMAIL, PIXIV_PASSWD)
-await aapi.login(PIXIV_EMAIL, PIXIV_PASSWD)
+# client = PixivClient()
+# aapi = AppPixivAPI(client=client.start())
+# papi = PixivAPI(client=client)
+# aapi.login(PIXIV_EMAIL, PIXIV_PASSWD)
+# papi.login(PIXIV_EMAIL, PIXIV_PASSWD)
 
 
 def connent():
@@ -21,15 +21,15 @@ def connent():
         return False
 
 
-class Pixiv:
-    def __init__(self, id=None, text=None):
-        self.id, self.text = id, text
-
-    def works(self):
-        return papi.works(self.id)
-
-    def search(self):
-        return papi.search_works(self.text, page=1, mode='text')
+# class Pixiv:
+#     def __init__(self, id=None, text=None):
+#         self.id, self.text = id, text
+#
+#     def works(self):
+#         return papi.works(self.id)
+#
+#     def search(self):
+#         return papi.search_works(self.text, page=1, mode='text')
 
 
 if __name__ == "__main__":

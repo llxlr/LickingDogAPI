@@ -1,6 +1,7 @@
 from settings import headers
 from utils.funcation import delay
 import requests
+import os
 
 table = 'fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF'
 tr = {table[i]: i for i in range(58)}
@@ -28,11 +29,11 @@ class Bangumi(object):
         self.url = 'https://api.bilibili.com/x/space/bangumi/follow/list?type=1' + \
                    f'&pn={pn}&ps={ps}&vmid={uid}&ts={ts}'
 
-    def get(self):
+    def __get(self):
         return requests.get(self.url, headers=headers).json()
 
     def data(self):
-        raw, data = self.get(), []
+        raw, data = self.__get(), []
         if raw['code'] == 0:
             raw = raw['data']['list']
         for i in raw:
@@ -47,10 +48,12 @@ class Bangumi(object):
                                     'pub_time': i['new_ep']['pub_time']},
                          'evaluate': i['evaluate'],
                          'areas': i['areas']})
-            return data
+        return data
 
 
 if __name__ == '__main__':
     pn = 1
     ps = 15
     uid = 166791985
+    bgm = Bangumi(uid, pn, ps)
+    print(bgm.data())

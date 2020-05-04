@@ -26,6 +26,19 @@ async def hitokoto():
     }
 
 
+@app.get(settings.version+'/calendar/{type}')
+def calendar(type: str, year: str, month: str, day: str):
+    from items.calendar import lunar2solar, solar2lunar
+    if type in ['s2l', 'l2s']:
+        return {
+            "code": 200,
+            "Copyright": settings.Copyright,
+            "data": solar2lunar(year, month, day) if type == 's2l' else lunar2solar(year, month, day),
+            "source": "数据源于中科院紫金山天文台",
+            "time": time.ctime(),
+        }
+
+
 @app.get(settings.version+"/github/")
 async def github_trending(type: str = "trending",
                           date: str = "daily",
@@ -33,19 +46,14 @@ async def github_trending(type: str = "trending",
                           language: str = None):
     from items.github import Github
     log.info("pv,请求一次Github Trending")
-    if type != "trending":
+    if type in ['trending', 'developers']:
         return {
             "code": 200,
             "Copyright": settings.Copyright,
-            "data": Github(type, date, None, language).developers,
+            "data": Github(type, date, None, language).trending if type == 'trending'
+            else Github(type, date, spoken_lang, language).developers,
             "time": time.ctime(),
         }
-    return {
-        "code": 200,
-        "Copyright": settings.Copyright,
-        "data": Github(type, date, spoken_lang, language).trending,
-        "time": time.ctime(),
-    }
 
 
 @app.get(settings.version+"/music/{name}")
