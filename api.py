@@ -13,6 +13,12 @@ async def log():
     return read_log('cache/info.log')
 
 
+@app.get(settings.version+'/ip/')
+async def ip():
+    from items.ip import ip
+    return ip
+
+
 @app.get(settings.version+'/hitokoto/')
 async def hitokoto():
     from items.hitokoto import hitokoto

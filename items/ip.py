@@ -7,3 +7,5 @@ ipv6是128位地址，每个数目等于4位（0-F）16位进制，4个一组，
 import requests
 
 
+def ip():
+    return requests.get('https://api.ip.sb/ip').text
