@@ -1,4 +1,6 @@
-# https://www.mscto.com/ai/271799.html
+"""
+@url https://www.mscto.com/ai/271799.html
+"""
 from torchvision import transforms, utils, datasets
 from torch.utils.data import Dataset, DataLoader
 from torch.autograd import Variable
