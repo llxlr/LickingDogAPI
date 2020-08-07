@@ -109,8 +109,5 @@ venv.bak/
 .idea/
 .vscode/
 cache/
-log/
-test/
-tmp/
 Dockerfile
 docker-compose.yml

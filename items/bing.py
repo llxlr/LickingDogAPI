@@ -1,17 +1,14 @@
 from settings import headers
-from lxml import etree
 import requests
 
 
 def img():
     url = 'https://cn.bing.com'
-    res = requests.get(url, headers=headers)
+    res = requests.get(url+'/HPImageArchive.aspx?format=js&idx=0&n=1', headers=headers)
     res.encoding = 'utf-8'
-    html = etree.HTML(res.text)
-    link = html.xpath('//link[@id="bgLink"]/@href')
-    title = html.xpath('//a[@id="sh_cp"]/@title')
-    if link:
+    data = res.json()
+    if data:
         return {
-            'img': url+link[0].replace('&rf=LaDigue_1920x1080.jpg&pid=hp', ''),
-            'title': title[0]
+            'img': data["images"][0]["url"],
+            'copyright': data["images"][0]["copyright"]
         }
