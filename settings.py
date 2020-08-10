@@ -11,8 +11,7 @@ description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
 start_time = 2019  # 建站时间
 Copyright = {"author": "星旅人", "url": "https://white-album.top/"}
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                         'AppleWebKit/537.36 (KHTML, like Gecko) '
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                          'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
 load_dotenv(verbose=True)
 Username, Password = map(os.getenv, ["Username", "Password"])
