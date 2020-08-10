@@ -11,7 +11,7 @@ opencv-python==4.2.0.34
 Pillow==7.1.2
 pixivpy-async==1.2.10
 pydantic==1.5.1
-PyJWT==1.7.1
+# PyJWT==1.7.1
 python-dotenv==0.13.0
 python-multipart==0.0.5
 requests==2.24.0
