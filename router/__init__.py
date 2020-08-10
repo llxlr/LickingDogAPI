@@ -15,11 +15,15 @@ app = FastAPI(
     docs_url=settings.version+"/docs/",
     redoc_url=None
 )
+domain = settings.domain.split('.')
 origins = [
-    f"http://{settings.domain}",
-    f"https://{settings.domain}",
+    f"http://{domain[0]}.{domain[1]}",
+    f"https://{domain[0]}.{domain[1]}",
+    
     "http://localhost",
-    f"http://localhost:{settings.port}"
+    f"http://localhost:{settings.port}",
+    "https://localhost",
+    f"https://localhost:{settings.port}",
 ]
 
 
@@ -41,12 +45,17 @@ app.openapi = _openapi_schema_custom
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=[
+        r"http://.*\.{}\.{}".format(domain[0], domain[1]),
+        r"https://.*\.{}\.{}".format(domain[0], domain[1]),
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    max_age=60,
 )
-app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
-templates = Jinja2Templates(directory="templates")  # 页面模板
+app.mount("static", StaticFiles(directory="../static", packages=[]), name="static")  # 静态资源设置
+templates = Jinja2Templates(directory="../templates")  # 页面模板
 
-os.makedirs('cache', exist_ok=True)
-log = Logger('cache/info.log')  # 设置一个日志记录器
+os.makedirs('../cache', exist_ok=True)
+log = Logger('../cache/info.log')  # 设置一个日志记录器

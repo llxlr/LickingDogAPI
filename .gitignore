@@ -111,3 +111,5 @@ venv.bak/
 cache/
 Dockerfile
 docker-compose.yml
+test.py
+conf/rsa/

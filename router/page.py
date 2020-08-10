@@ -1,7 +1,5 @@
 from starlette.requests import Request
-from main import app, templates, log
-from settings import Username, Password
-from fastapi import Form
+from . import app, templates, log
 
 
 @app.get("/")
@@ -24,22 +22,6 @@ async def bing(request: Request):
         "title": "Bing每日一图",
         "img": img['img'],
     })
-
-
-@app.post("/login/")
-async def login(*, username: str = Form(...), password: str = Form(...)):
-    if username == Username and password == Password:
-        log.info('ts,登录成功')
-        return {
-            "success": "true",
-            "username": username,
-            "msg": "login successfully !",
-        }
-    log.info('登录失败')
-    return {
-        "success": "false",
-        "msg": "username or password is not correct !",
-    }
 
 
 @app.get("/start/")

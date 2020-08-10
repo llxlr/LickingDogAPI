@@ -19,7 +19,8 @@ Username, Password = map(os.getenv, ["Username", "Password"])
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])  # Pixiv
 cf_zone_id, cf_email, cf_auth_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])  # CloudFlare
 Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = map(os.getenv, ["APP_ID", "API_KEY", "SECRET_KEY"])  # Baidu AI API
-
+public_key, private_key = map(os.getenv, ["public_key", "private_key"])
+github_token = map(os.getenv, "TOKEN")
 
 if __name__ == "__main__":
-    pass
+    print(private_key)

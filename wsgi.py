@@ -1,5 +1,5 @@
 from settings import port
-from api import app
+from router.api import app
 import uvicorn
 
 

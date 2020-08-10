@@ -2,7 +2,7 @@ from items import Charts, Music, NcovName
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
 from fastapi import File, UploadFile
-from page import app, log
+from .page import app, log
 import settings
 import time
 
