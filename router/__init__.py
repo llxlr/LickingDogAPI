@@ -44,18 +44,16 @@ def _openapi_schema_custom():
 app.openapi = _openapi_schema_custom
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_origin_regex=[
-        r"http://.*\.{}\.{}".format(domain[0], domain[1]),
-        r"https://.*\.{}\.{}".format(domain[0], domain[1]),
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-    max_age=60,
+    allow_origins=origins,  # 允许跨域请求的域名列表
+    allow_origin_regex=r'https?://.*\.{}\.{}'.format(domain[0], domain[1]),  # 允许跨域请求的域名正则表达式
+    allow_credentials=True,  # 在跨域请求时是否支持cookie
+    allow_methods=["*"],  # 允许跨域请求的HTTP方法列表
+    allow_headers=["*"],  # 跨域请求支持的HTTP头信息列表
+    expose_headers=[],  # 对浏览器可见的返回结果头信息，默认为[]
+    max_age=60,  # 浏览器缓存CORS返回结果的最大时长，默认为600(单位秒)
 )
-app.mount("static", StaticFiles(directory="../static", packages=[]), name="static")  # 静态资源设置
-templates = Jinja2Templates(directory="../templates")  # 页面模板
+app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
+templates = Jinja2Templates(directory="templates")  # 页面模板
 
-os.makedirs('../cache', exist_ok=True)
-log = Logger('../cache/info.log')  # 设置一个日志记录器
+os.makedirs('/cache', exist_ok=True)
+log = Logger('/cache/info.log')  # 设置一个日志记录器
