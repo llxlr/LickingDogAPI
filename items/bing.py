@@ -9,6 +9,6 @@ def img():
     data = res.json()
     if data:
         return {
-            'img': data["images"][0]["url"],
+            'img': url+data["images"][0]["url"],
             'copyright': data["images"][0]["copyright"]
         }
