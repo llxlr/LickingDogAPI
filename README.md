@@ -20,7 +20,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
-$ uvicorn wsgi:app --host 127.0.0.1 --port 8001
+$ uvicorn wsgi:app --host localhost --port 8001
 ```
 
 
@@ -45,6 +45,9 @@ Group=www-data
 WorkingDirectory=/www/html/LickingDogAPI
 Environment="PATH=/www/html/LickingDogAPI/venv/bin"
 ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
+Restart=always
+RestartSec=5
+StartLimitInterval=0
 
 [Install]
 WantedBy=multi-user.target
@@ -84,7 +87,7 @@ POST:   发送数据
 GET:    请求数据
 PUT:    更新数据
 DELETE: 删除数据
-``` 
+```
 
 # 参考链接
 

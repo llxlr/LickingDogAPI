@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+from utils.log import Logger
 import os
 
 hometitle = "Licking Dog API"  # 主页标题
@@ -17,11 +18,15 @@ load_dotenv(verbose=True)
 Username, Password = map(os.getenv, ["Username", "Password"])  # Admin
 Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = map(os.getenv, ["APP_ID", "API_KEY", "SECRET_KEY"])  # Baidu AI API
 sessdata, bili_jct = map(os.getenv, ["sessdata", "bili_jct"])  # Bilibili
-cf_zone_id, cf_email, cf_auth_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])  # CloudFlare
+cf_zone_id, cf_email, cf_global_api_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])  # CloudFlare
 github_token = list(map(os.getenv, ["TOKEN"]))  # Github
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])  # Pixiv
 public_key, private_key = map(lambda x: os.getenv(x).strip(), ["public_key", "private_key"])  # RSA
 
+os.makedirs('./cache', exist_ok=True)
+log = Logger('./cache/info.log')  # 设置一个日志记录器
+
 
 if __name__ == "__main__":
-    print(sessdata, '\t', bili_jct)
+    # print(sessdata, '\t', bili_jct)
+    pass

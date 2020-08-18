@@ -1,6 +1,7 @@
 from settings import Username, Password
 from fastapi import Form
-from .api import app, log
+from settings import log
+from .api import app
 
 
 @app.post("/login/")

@@ -3,9 +3,7 @@ from starlette.templating import Jinja2Templates  # Templates
 from starlette.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
 from fastapi import FastAPI
-from utils.log import Logger
 import settings
-import os
 
 app = FastAPI(
     title=settings.hometitle,
@@ -54,6 +52,3 @@ app.add_middleware(
 )
 app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
 templates = Jinja2Templates(directory="templates")  # 页面模板
-
-os.makedirs('/cache', exist_ok=True)
-log = Logger('/cache/info.log')  # 设置一个日志记录器

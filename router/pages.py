@@ -1,14 +1,23 @@
 from starlette.requests import Request
-from . import app, templates, log
+from . import app, templates
+from settings import hometitle, log
 
 
 @app.get("/")
 async def home(request: Request):
-    from settings import hometitle
     log.info('ts,访问一次主页')
     return templates.TemplateResponse("index.html", {
         "request": request,
         "title": hometitle,
+    })
+
+
+@app.get("/admin/")
+async def admin(request: Request):
+    log.info('ts,访问一次主页')
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "title": '后台管理 - '+hometitle,
     })
 
 
@@ -21,15 +30,6 @@ async def bing(request: Request):
         "request": request,
         "title": "Bing每日一图",
         "img": img['img'],
-    })
-
-
-@app.get("/start/")
-async def start(request: Request):
-    log.info('ts,访问一次示例与说明')
-    return templates.TemplateResponse("start.html", {
-        "request": request,
-        "title": "示例与说明",
     })
 
 

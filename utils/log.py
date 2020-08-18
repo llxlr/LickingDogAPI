@@ -34,10 +34,10 @@ class Logger:
         self.logger.critical(message)
 
 
-def read_log(path):
+def read_log():
     """读取日志信息,pv:调用数,uv:用户数,ts:浏览量"""
     pv, uv, ts = 0, 0, 0
-    with open(path, 'r', encoding='gbk') as f:
+    with open('../cache/info.log', 'r', encoding='gbk') as f:
         for i in f.readlines():
             if 'pv' in i:
                 pv += 1
@@ -49,11 +49,12 @@ def read_log(path):
 
 
 if __name__ == '__main__':
-    # logyyx = Logger('cache/info.log')
+    # logyyx = Logger('../cache/info.log')
     # logyyx.debug('一个debug信息')
     # logyyx.info('一个info信息')
     # logyyx.warn('一个warning信息')
     # logyyx.error('一个error信息')
     # logyyx.criti('一个致命critical信息')
+    print(read_log())
     pass
 
