@@ -148,7 +148,7 @@ async def ncov_api(name: NcovName):
 @app.get('/pcc/')
 async def purge_cdn_cache(zone_id: str = None, email: str = None, global_api_key: str = None):
     import requests
-    if (zone_id is None) and (email is None) and (global_api_key is None):
+    if zone_id is None and email is None and global_api_key is None:
         zone_id, email, global_api_key = cf_zone_id, cf_email, cf_global_api_key
     url = f"https://api.cloudflare.com/client/v4/zones/{zone_id}/purge_cache"
     headers = {
