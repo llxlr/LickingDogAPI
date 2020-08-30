@@ -6,6 +6,9 @@
   <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
     <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
   </a>
+  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
+    <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
+  </a>
   <br>
   <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#F03D41">❤</span> by james yang & Power by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
 </p>
