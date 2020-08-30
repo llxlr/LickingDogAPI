@@ -2,7 +2,6 @@ from settings import headers
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from lxml import etree
-import re
 
 
 def driver(url: str):

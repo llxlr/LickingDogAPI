@@ -12,8 +12,8 @@ from settings import (
 
 @app.get('/log/')
 async def read_log():
-    from utils.log import read_log
-    return read_log()
+    log.info("查看日志")
+    return {'code': 200, 'data': log.read_log()}
 
 
 @app.get(version+'/ip/')

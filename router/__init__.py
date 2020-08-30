@@ -34,7 +34,7 @@ def _openapi_schema_custom():
         description=settings.description,
         routes=app.routes
     )
-    openapi_schema["info"]["x-logo"] = {"url": "https://img.white-album.top/i/2020/02/08/f7dpek.jpg"}
+    openapi_schema["info"]["x-logo"] = {"url": "https://cdn.jsdelivr.net/gh/jamesyangget/cdn@img/2020/02/08/f7dpek.jpg"}
     app.openapi_schema = openapi_schema
     return app.openapi_schema
 

@@ -4,7 +4,8 @@ import logging
 
 class Logger:
     def __init__(self, path, clevel=logging.DEBUG, flevel=logging.DEBUG):
-        self.logger = logging.getLogger(path)
+        self.path = path
+        self.logger = logging.getLogger(self.path)
         self.logger.setLevel(logging.DEBUG)
         fmt = logging.Formatter('%(asctime)s,%(levelname)s,%(message)s', '%Y-%m-%d %H:%M:%S')
         # 设置CMD日志
@@ -12,7 +13,7 @@ class Logger:
         sh.setFormatter(fmt)
         sh.setLevel(clevel)
         # 设置文件日志
-        fh = logging.FileHandler(path)
+        fh = logging.FileHandler(self.path)
         fh.setFormatter(fmt)
         fh.setLevel(flevel)
         self.logger.addHandler(sh)
@@ -33,19 +34,18 @@ class Logger:
     def criti(self, message):
         self.logger.critical(message)
 
-
-def read_log():
-    """读取日志信息,pv:调用数,uv:用户数,ts:浏览量"""
-    pv, uv, ts = 0, 0, 0
-    with open('../cache/info.log', 'r', encoding='gbk') as f:
-        for i in f.readlines():
-            if 'pv' in i:
-                pv += 1
-            elif 'uv' in i:
-                uv += 1
-            elif 'ts' in i:
-                ts += 1
-        return {'pv': pv, 'uv': uv, 'ts': ts}
+    def read_log(self):
+        """读取日志信息,pv:调用数,uv:用户数,ts:浏览量"""
+        pv, uv, ts = 0, 0, 0
+        with open(self.path, 'r', encoding='gbk') as f:
+            for i in f.readlines():
+                if 'pv' in i:
+                    pv += 1
+                elif 'uv' in i:
+                    uv += 1
+                elif 'ts' in i:
+                    ts += 1
+            return {'pv': pv, 'uv': uv, 'ts': ts}
 
 
 if __name__ == '__main__':
@@ -55,6 +55,4 @@ if __name__ == '__main__':
     # logyyx.warn('一个warning信息')
     # logyyx.error('一个error信息')
     # logyyx.criti('一个致命critical信息')
-    print(read_log())
     pass
-
