@@ -1,4 +1,4 @@
-from settings import headers
+from config import headers
 import requests
 import time
 

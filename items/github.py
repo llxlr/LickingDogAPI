@@ -1,8 +1,7 @@
-from settings import headers
+from config import headers, cdn
 from lxml import etree
 import requests
 
-cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
 languages = requests.get(cdn+'language.json', headers=headers).json()
 spoken_langs = requests.get(cdn+'spoken_language.json', headers=headers).json()
 xp = [

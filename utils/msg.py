@@ -1,4 +1,4 @@
-from settings import log
+from config import log
 import requests
 import yagmail
 
@@ -16,5 +16,5 @@ class Server(object):
         self.SCKEY, self.title, self.contents = sckey, title, contents
 
     def send(self):
-        r = requests.get(f'https://sc.ftqq.com/{self.SCKEY}.send?text={self.title}&={self.contents}')
+        r = requests.get(f'https://sc.ftqq.com/{self.SCKEY}.send?text={self.title}&desp={self.contents}')
         log.info("server酱发送消息成功！") if r.status_code == 200 else log.error("server酱发送消息失败！")

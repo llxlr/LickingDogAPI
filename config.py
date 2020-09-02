@@ -11,22 +11,27 @@ version = "/v" + docv[0]  # api版本
 description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
 start_time = 2019  # 建站时间
 Copyright = {"author": "星旅人", "url": "https://white-album.top/"}
+analysis = {'google': 'UA-126485680-6', 'baidu': ''}
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                          'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
+cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
+
+path = f'{os.path.dirname(__file__)}/cache'
+os.makedirs(path, exist_ok=True)
+log = Logger(f'{path}/info.log')  # 设置一个日志记录器
+
 load_dotenv(verbose=True)
 Username, Password = map(os.getenv, ["Username", "Password"])  # Admin
 Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = map(os.getenv, ["APP_ID", "API_KEY", "SECRET_KEY"])  # Baidu AI API
 sessdata, bili_jct = map(os.getenv, ["sessdata", "bili_jct"])  # Bilibili
 cf_zone_id, cf_email, cf_global_api_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])  # CloudFlare
+email, password = map(os.getenv, ["username", "password"])   # Email
 github_token = list(map(os.getenv, ["TOKEN"]))  # Github
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])  # Pixiv
 public_key, private_key = map(lambda x: os.getenv(x).strip(), ["public_key", "private_key"])  # RSA
-
-os.makedirs('./cache', exist_ok=True)
-log = Logger('./cache/info.log')  # 设置一个日志记录器
+sckey = list(map(os.getenv, ["SCKEY"]))  # Server
 
 
 if __name__ == "__main__":
-    # print(sessdata, '\t', bili_jct)
     pass

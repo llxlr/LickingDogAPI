@@ -1,6 +1,8 @@
 from starlette.requests import Request
 from . import app, templates
-from settings import hometitle, log
+from config import (
+    hometitle, description, Copyright, analysis, headers, log
+)
 
 
 @app.get("/")
@@ -9,27 +11,45 @@ async def home(request: Request):
     return templates.TemplateResponse("index.html", {
         "request": request,
         "title": hometitle,
+        "keywords": "API,舔狗,舔狗API,Licking Dog API,接口,FastAPI,Awesome",
+        "description": description,
+        "author": Copyright["author"],
+        "analysis": analysis,
     })
 
 
 @app.get("/admin/")
 async def admin(request: Request):
     log.info('ts,访问一次主页')
-    return templates.TemplateResponse("index.html", {
+    return templates.TemplateResponse("admin/index.html", {
         "request": request,
         "title": '后台管理 - '+hometitle,
     })
 
 
+@app.get("/404/")
+async def admin(request: Request):
+    log.info('页面404')
+    return templates.TemplateResponse("404.html", {
+        "request": request,
+        "title": '404 NOT FOUND',
+        "keywords": "404 NOT FOUND",
+        "description": "404 NOT FOUND",
+        "author": Copyright["author"],
+        "analysis": analysis,
+    })
+
+
 @app.get("/bing/")
-async def bing(request: Request):
-    from items.bing import img
-    img = img()
+async def bing(request: Request, type: str = None):
+    import requests
+    data = requests.get('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1', headers=headers).json()
+    img = {'img': 'https://cn.bing.com'+data["images"][0]["url"], 'copyright': data["images"][0]["copyright"]}
     log.info('pv,访问一次必应图片')
     return templates.TemplateResponse("img/bing.html", {
         "request": request,
         "title": "Bing每日一图",
-        "img": img['img'],
+        "img": img['img'] if data and type == 'img' else img,
     })
 
 

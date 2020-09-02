@@ -1,5 +1,6 @@
-from settings import PIXIV_EMAIL, PIXIV_PASSWD
+from config import headers, PIXIV_EMAIL, PIXIV_PASSWD
 from pixivpy_async import *
+import requests
 
 main_url = "https://www.pixiv.net"
 # client = PixivClient()
@@ -11,8 +12,6 @@ main_url = "https://www.pixiv.net"
 
 def connent():
     try:
-        from settings import headers
-        import requests
         r = requests.get(main_url, headers=headers)
         if r.status_code == 200:
             return True

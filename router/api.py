@@ -4,7 +4,7 @@ from starlette.responses import JSONResponse
 from fastapi import File, UploadFile
 from .pages import app
 import time
-from settings import (
+from config import (
     log, version, Copyright,
     cf_zone_id, cf_email, cf_global_api_key
 )
@@ -35,15 +35,20 @@ async def hitokoto():
     }
 
 
-@app.get(version+'/calendars/{type}')
-def calendar(type: str, year: str, month: str, day: str):
-    from items.calendars import lunar2solar, solar2lunar
+@app.get(version+'/time/countdown/')
+async def count_down(type):
+    return ''
+
+
+@app.get(version+'/time/calendar/{type}')
+async def calendar(type: str, year: str, month: str, day: str):
+    from items.time import Calendar
     log.info("pv,请求一次公农历转换")
     if type in ['s2l', 'l2s']:
         return {
             "code": 200,
             "Copyright": Copyright,
-            "data": solar2lunar(year, month, day) if type == 's2l' else lunar2solar(year, month, day),
+            "data": Calendar.solar2lunar(year, month, day) if type == 's2l' else Calendar.lunar2solar(year, month, day),
             "source": "数据源于中科院紫金山天文台",
             "time": time.ctime(),
         }

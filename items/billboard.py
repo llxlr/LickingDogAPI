@@ -1,9 +1,8 @@
-from settings import headers
+from config import headers
 from lxml import etree
 import requests
 
 url = 'https://www.billboard.com/charts/'
-
 xpr = [
     '//span[@class="chart-element__information__song text--truncate color--primary"]/text()',
     '//span[@class="chart-element__information__artist text--truncate color--secondary"]/text()',

@@ -1,6 +1,5 @@
-from settings import Username, Password
+from config import log, Username, Password
 from fastapi import Form
-from settings import log
 from .api import app
 
 

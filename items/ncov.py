@@ -1,4 +1,4 @@
-from settings import headers
+from config import headers
 from items import NcovName
 import requests
 import time

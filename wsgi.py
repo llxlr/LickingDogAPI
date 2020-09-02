@@ -1,4 +1,4 @@
-from settings import port
+from config import port
 from router.user import app
 import uvicorn
 
