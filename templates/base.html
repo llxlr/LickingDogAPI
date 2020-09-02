@@ -18,21 +18,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script type="text/javascript"  src="{{ url_for('static', path='js/main.js') }}?v=1.0.0"></script>
     <!--[if lt IE 8]><div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div><![endif]-->
+
     {% if analysis.google %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create', '{{ analysis.google }}', 'auto');ga('send', 'pageview');</script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
     {% elif analysis.baidu %}
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?{{ analysis.baidu }}";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+    <script>let _hmt=_hmt||[];(function(){let hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?{{ analysis.baidu }}";let s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
     {% else %}
     {% endif %}
 
@@ -43,6 +34,9 @@
 {% block body %}
 {% block content%}
 {% endblock %}
+<!-- evanyou canvas -->
+<canvas id="evanyou"></canvas>
+<script src="{{ url_for('static', path='js/evanyou.js') }}"></script>
 <!-- https://tholman.com/github-corners/ -->
 <a href="https://github.com/jamesyangget/LickingDogAPI" class="github-corner" aria-label="View source on GitHub">
     <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">

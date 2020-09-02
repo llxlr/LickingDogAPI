@@ -59,6 +59,10 @@ async def catvsdog(request: Request):
     return templates.TemplateResponse("ml/catvsdog.html", {
         "request": request,
         "title": "Cat VS Dog",
+        "keywords": "猫狗大战,迁移学习,分类,图像,深度学习,机器学习",
+        "description": "迁移学习实现猫狗识别",
+        "author": Copyright["author"],
+        "analysis": analysis,
     })
 
 
@@ -68,6 +72,10 @@ async def mnist(request: Request):
     return templates.TemplateResponse("ml/mnist.html", {
         "request": request,
         "title": "Tenserflow.js实现Mnist手写字识别",
+        "keywords": "手写字识别,深度学习,分类,图像,机器学习",
+        "description": "迁移学习实现猫狗识别",
+        "author": Copyright["author"],
+        "analysis": analysis,
     })
 
 

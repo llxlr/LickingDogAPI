@@ -9,18 +9,12 @@
     <script type="text/javascript" src="{{ url_for('static', path='libs/echarts.min.js') }}"></script>
     <script src="https://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script>
     <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/ncov.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='app/echarts/ncov/ncov.css') }}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126485680-6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-126485680-6');
-    </script>
+    <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l+=new Date;ga('create', 'UA-126485680-6', 'auto');ga('send', 'pageview');</script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
 </head>
 <body>
 <div>
@@ -74,7 +68,7 @@
     <a target="_blank" href="https://white-album.top/">White Album</a> (&copy;<a href="https://www.ghpym.com/user/applek/">applek</a>)
 </div>
 
-<script type="text/javascript" src="{{ url_for('static', path='app/echarts/ncov.config.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', path='app/echarts/ncov/config.js') }}"></script>
 
 </body>
 </html>

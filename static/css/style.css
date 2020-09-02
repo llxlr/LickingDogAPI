@@ -1,82 +1,148 @@
-body {display: block;margin: 8px;}
-* {box-sizing: border-box;}
-body {text-rendering: auto;}
-#app, body, html {height: 100%;}
+body {
+    display: block;
+    margin: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-rendering: auto;
+}
+
+#app, body, html {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font: 14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     text-rendering: geometricPrecision;
 }
-body.night {background-color: #202124;color: #aaa;}
-body.night img {filter: brightness(40%);}
-body.night ul li,.buttons a,#file,.upload-button button {color: #aaaaaa;text-align: center;}
-body.night ul li a,.night footer a {color: #00bbfc;}
 
-h1 {color: inherit;font-size: 2.5rem;font-weight: 300;position: relative;text-align: center;}
-h1 small {font-size: 1rem;}
-h3 {margin-top: 20px;color: #999;font-weight: normal;letter-spacing: 1px;}
-
-.main {
-	padding: 10px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	height: 100%;
-	-webkit-user-select: none;
-	user-select: none;
+body.night {
+    background-color: #202124;
+    color: #aaa;
 }
 
-.features {margin-top: 20px;margin-bottom: 10px;font-size: 16px;line-height: 1.7;}
+body.night img {
+    filter: brightness(40%);
+}
 
-.buttons {font-size: 1.0rem;position: relative;text-align: center;}
+body.night ul li, .buttons a, #file, .upload-button button {
+    color: #aaaaaa;
+    text-align: center;
+}
+
+body.night ul li a, .night footer a {
+    color: #00bbfc;
+}
+
+h1 {
+    color: inherit;
+    font-size: 2.5rem;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+}
+
+h1 small {
+    font-size: 1rem;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #999;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.main {
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.features {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.buttons {
+    font-size: 1.0rem;
+    position: relative;
+    text-align: center;
+}
 
 .button {
-	border: 1px solid #ccc;
-	border-radius: 33px;
-	padding: 10px 30px;
-	background-color: rgba(0, 0, 0, 0);
-	display: inline-block;
-	margin-right: 20px;
-	color: #333;
+    border: 1px solid #ccc;
+    border-radius: 33px;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    margin-right: 20px;
+    color: #333;
 }
 
 .button:hover {
-	border-color: #42b983;
-	color: #42b983;
-	text-decoration: none;
+    border-color: #42b983;
+    color: #42b983;
+    text-decoration: none;
 }
 
 .upload-button {
-	border: 1px solid #ccc;
-	border-radius: 33px;
-	padding: 10px 30px;
-	background-color: rgba(0, 0, 0, 0);
-	display: inline-block;
-	margin-right: 10px;
-	color: #333;
+    border: 1px solid #ccc;
+    border-radius: 33px;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
 }
 
 .upload-button:hover {
-	border-color: #42b983;
-	color: #42b983;
-	text-decoration: none;
+    border-color: #42b983;
+    color: #42b983;
+    text-decoration: none;
 }
 
-ul li {text-align: center;}
+/*文字遮罩*/
+.text-heimu {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none;
+    transition: color .3s;
+}
+
+/*文字遮罩显示*/
+.text-heimu:active, .text-heimu:hover {
+    color: #fff
+}
+
+ul li {
+    text-align: center;
+}
 
 a {
-  color: #34495e;
-  text-decoration: none;
+    color: #34495e;
+    text-decoration: none;
 }
 
 [aria-label] {
@@ -84,28 +150,83 @@ a {
 }
 
 footer {
-	color: inherit;
+    color: inherit;
     font-weight: 300;
     margin: .625rem 0 2.5rem;
     text-align: center;
 }
 
-.github-corner svg {fill:#64CEAA;color:#fff;position: absolute; top: 0; border: 0; right: 0;}
-body.night .github-corner svg {fill: #64ceaa91;color: #333;position: absolute;top: 0;border: 0;right: 0;}
+footer .icon {
+    display: inline-block;
+    margin: 0 1px;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    animation: iconAnimate 1.33s ease-in-out infinite;
+}
+
+@keyframes iconAnimate {
+    0%, 100% {
+        transform: scale(1)
+    }
+    10%, 30% {
+        transform: scale(.9)
+    }
+    20%, 40%, 50%, 60%, 70%, 80% {
+        transform: scale(1.1)
+    }
+}
+
+.github-corner svg {
+    fill: #64CEAA;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    border: 0;
+    right: 0;
+}
+
+body.night .github-corner svg {
+    fill: #64ceaa91;
+    color: #333;
+    position: absolute;
+    top: 0;
+    border: 0;
+    right: 0;
+}
+
 .github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
+    animation: octocat-wave 560ms ease-in-out;
 }
+
 @keyframes octocat-wave {
-  0% {transform: rotate(0deg);}
-  20% {transform: rotate(-25deg);}
-  40% {transform: rotate(10deg);}
-  60% {transform: rotate(-25deg);}
-  80% {transform: rotate(10deg);}
-  100% {transform: rotate(0deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-25deg);
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-25deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
+
 @media (max-width: 500px) {
-    .github-corner:hover .octo-arm {animation: none;}
-    .github-corner .octo-arm {animation: octocat-wave 560ms ease-in-out;}
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
 }
 
 #evanyou {

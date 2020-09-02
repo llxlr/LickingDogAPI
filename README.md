@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://api.white-album.top/">
-    <img width="200px" src="https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/static/img/logo.png" alt='LickingDogAPI'>
+    <img width="200px" src="https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/static/img/mur_cat.png" alt='LickingDogAPI'>
   </a>
   <br>
   <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
