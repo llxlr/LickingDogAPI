@@ -1,5 +1,5 @@
 from starlette.requests import Request
-from . import app, templates
+from .config import app, templates
 from config import (
     hometitle, description, Copyright, analysis, headers, log
 )
@@ -18,12 +18,42 @@ async def home(request: Request):
     })
 
 
+@app.get('/start.html')
+async def start(request: Request):
+    log.info('ts,访问一次项目列表')
+    return templates.TemplateResponse("start.html", {
+        "request": request,
+        "title": "项目列表",
+        "keywords": "项目列表",
+        "description": "项目列表",
+        "author": Copyright["author"],
+        "analysis": analysis,
+    })
+
+
 @app.get("/admin/")
 async def admin(request: Request):
-    log.info('ts,访问一次主页')
+    log.info('ts,访问一次后台管理')
     return templates.TemplateResponse("admin/index.html", {
         "request": request,
-        "title": '后台管理 - '+hometitle,
+        "title": "后台管理 - "+hometitle,
+        "keywords": "后台管理",
+        "description": "后台管理",
+        "author": Copyright["author"],
+        "analysis": analysis,
+    })
+
+
+@app.get("/login/")
+async def admin(request: Request):
+    log.info('ts,访问一次用户登录')
+    return templates.TemplateResponse("admin/login.html", {
+        "request": request,
+        "title": "用户登录 - "+hometitle,
+        "keywords": "用户登录",
+        "description": "用户登录",
+        "author": Copyright["author"],
+        "analysis": analysis,
     })
 
 
@@ -32,7 +62,7 @@ async def admin(request: Request):
     log.info('页面404')
     return templates.TemplateResponse("404.html", {
         "request": request,
-        "title": '404 NOT FOUND',
+        "title": "404 NOT FOUND",
         "keywords": "404 NOT FOUND",
         "description": "404 NOT FOUND",
         "author": Copyright["author"],
@@ -40,7 +70,20 @@ async def admin(request: Request):
     })
 
 
-@app.get("/bing/")
+@app.get('/policy.html')
+async def policy(request: Request):
+    log.info('ts,访问一次隐私政策页')
+    return templates.TemplateResponse("policy.html", {
+        "request": request,
+        "title": "隐私政策",
+        "keywords": "隐私政策,隐私保护,宣言,声明",
+        "description": "用户隐私政策页面",
+        "author": Copyright["author"],
+        "analysis": analysis,
+    })
+
+
+@app.get("/bing.html")
 async def bing(request: Request, type: str = None):
     import requests
     data = requests.get('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1', headers=headers).json()
@@ -53,7 +96,7 @@ async def bing(request: Request, type: str = None):
     })
 
 
-@app.get("/catvsdog/")
+@app.get("/catvsdog.html")
 async def catvsdog(request: Request):
     log.info('ts,访问一次Cat VS Dog')
     return templates.TemplateResponse("ml/catvsdog.html", {
@@ -66,7 +109,7 @@ async def catvsdog(request: Request):
     })
 
 
-@app.get("/mnist/")
+@app.get("/mnist.html")
 async def mnist(request: Request):
     log.info('ts,访问一次Tenserflow.js实现Mnist手写字识别')
     return templates.TemplateResponse("ml/mnist.html", {
@@ -79,7 +122,7 @@ async def mnist(request: Request):
     })
 
 
-@app.get("/ncov/")
+@app.get("/ncov.html")
 async def ncov(request: Request):
     log.info('ts,访问一次2020新冠肺炎实时疫情图')
     return templates.TemplateResponse("ncov.html", {

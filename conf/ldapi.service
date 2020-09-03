@@ -3,11 +3,17 @@ Description=LickingDogAPI with Uvicorn
 After=network.target
 
 [Service]
-User=root
-Group=root
-WorkingDirectory=/www/wwwroot/LickingDogAPI
-Environment="PATH=/www/wwwroot/LickingDogAPI/venv/bin"
-ExecStart=/www/wwwroot/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
+User=www
+Group=www-data
+WorkingDirectory=/www/html/LickingDogAPI
+Environment="PATH=/www/html/LickingDogAPI/venv/bin"
+ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=always
+RestartSec=5
+StartLimitInterval=0
 
 [Install]
 WantedBy=multi-user.target
