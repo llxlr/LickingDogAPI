@@ -78,9 +78,17 @@ $ sudo systemctl status ldapi  # 查看服务状态
 还没搞明白
 
 ```bash
-$ docker build -t "jamesyang/licking-dog-api" .
-$ docker run --rm -p 8001:8001 -t "jamesyang/licking-dog-api" #临时调试
-$ docker run -d -p 8001:8001 -t "jamesyang/licking-dog-api"   #或直接部署
+$ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
+
+$ sudo mkdir /etc/api/ && sudo cp .env /etc/api/.env
+$ sudo docker build . -t jamesyang/licking-dog-api:v0.0.1
+$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t jamesyang/licking-dog-api:v0.0.1 #临时调试
+$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t jamesyang/licking-dog-api:v0.0.1   #或直接部署
+
+$ sudo docker save -o ./licking-dog-api-v0.0.1.tar jamesyang/licking-dog-api-v0.0.1:v0.0.1 #导出镜像
+$ sudo docker load --input ./licking-dog-api-v0.0.1.tar #导入镜像
+$ sudo docker export licking-dog-api-v0.0.1 > ./licking-dog-api-v0.0.1.tar #导出容器
+$ sudo docker import ./licking-dog-api-v0.0.1.tar licking-dog-api-v0.0.1 #导入容器
 ```
 
 # 文档
@@ -97,5 +105,7 @@ DELETE: 删除数据
 # 参考链接
 
 [FastAPI](https://fastapi.tiangolo.com/)
+
 [Starlette](https://www.starlette.io/)
+
 [Uvicorn](https://www.uvicorn.org/)

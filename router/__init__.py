@@ -2,30 +2,21 @@ from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sh
 from starlette.templating import Jinja2Templates  # Templates
 from starlette.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
+from .api import github, music, user, utils
 import config
-
+api_router = APIRouter()
 app = FastAPI(
     title=config.hometitle,
     description=config.description,
     version=config.docv,
-    openapi_url=config.version+"/openapi.json",
-    docs_url=config.version+"/docs/",
+    openapi_url=f'{config.version}/openapi.json',
+    docs_url=f'{config.version}/docs/',
     redoc_url=None
 )
-domain = config.domain.split('.')
-origins = [
-    f"http://{domain[0]}.{domain[1]}",
-    f"https://{domain[0]}.{domain[1]}",
-    
-    "http://localhost",
-    f"http://localhost:{config.port}",
-    "https://localhost",
-    f"https://localhost:{config.port}",
-]
 
 
-def _openapi_schema_custom():
+def custom_schema():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
@@ -41,11 +32,11 @@ def _openapi_schema_custom():
     return app.openapi_schema
 
 
-app.openapi = _openapi_schema_custom
+app.openapi = custom_schema
 app.add_middleware(
     CORSMiddleware,  # 添加跨域中间件
-    allow_origins=origins,  # 允许跨域请求的域名列表
-    allow_origin_regex=r'https?://.*\.{}\.{}'.format(domain[0], domain[1]),  # 允许跨域请求的域名正则表达式
+    allow_origins=config.origins,  # 允许跨域请求的域名列表
+    allow_origin_regex=r'https?://.*\.{}\.{}'.format(config.domain[0], config.domain[1]),  # 允许跨域请求的域名正则表达式
     allow_credentials=True,  # 在跨域请求时是否支持cookie
     allow_methods=["*"],  # 允许跨域请求的HTTP方法列表
     allow_headers=["*"],  # 跨域请求支持的HTTP头信息列表
@@ -53,4 +44,9 @@ app.add_middleware(
     max_age=60,  # 浏览器缓存CORS返回结果的最大时长，默认为600(单位秒)
 )
 app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
+app.include_router(api_router, prefix=config.version)
+api_router.include_router(user.router, tags=["users"])
+api_router.include_router(music.router, prefix='/music', tags=["music"])
+api_router.include_router(github.router, prefix='/github', tags=["github"])
+api_router.include_router(utils.router, tags=["utils"])
 templates = Jinja2Templates(directory="templates")  # 页面模板

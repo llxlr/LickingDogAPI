@@ -1,28 +1,28 @@
-from items import Charts, Music, NcovName
+from items import NcovName
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
-from fastapi import File, UploadFile
-from .pages import app
+from fastapi import APIRouter, File, UploadFile
 import time
 from config import (
-    log, version, Copyright,
+    log, Copyright,
     cf_zone_id, cf_email, cf_global_api_key
 )
+router = APIRouter()
 
 
-@app.get('/log/')
+@router.get('/log/')
 async def read_log():
     log.info("查看日志")
     return {'code': 200, 'data': log.read_log()}
 
 
-@app.get(version+'/ip/')
+@router.get('/ip/')
 async def ip():
     from items.ip import ip
     return ip
 
 
-@app.get(version+'/hitokoto/')
+@router.get('/hitokoto/')
 async def hitokoto():
     from items.hitokoto import hitokoto
     data = hitokoto()
@@ -35,12 +35,12 @@ async def hitokoto():
     }
 
 
-@app.get(version+'/time/countdown/')
+@router.get('/time/countdown/')
 async def count_down(type):
     return ''
 
 
-@app.get(version+'/time/calendar/{type}')
+@router.get('/time/calendar/{type}')
 async def calendar(type: str, year: str, month: str, day: str):
     from items.time import Calendar
     log.info("pv,请求一次公农历转换")
@@ -54,71 +54,13 @@ async def calendar(type: str, year: str, month: str, day: str):
         }
 
 
-@app.get(version+"/github/")
-async def github_trending(type: str = "trending",
-                          date: str = "daily",
-                          spoken_lang: str = None,
-                          language: str = None):
-    from items.github import Github
-    log.info("pv,请求一次Github Trending")
-    if type in ['trending', 'developers']:
-        return {
-            "code": 200,
-            "Copyright": Copyright,
-            "data": Github(type, date, None, language).trending if type == 'trending'
-            else Github(type, date, spoken_lang, language).developers,
-            "time": time.ctime(),
-        }
-
-
-@app.get(version+"/music/{name}")
-async def music(name: Music.Service, type: Music.Type, id: int):
-    if name == Music.Service.cloudmusic:
-        log.info('pv,请求一次网易云音乐api')
-        from items.music import CloudMusic, music_type
-        return {
-            "code": 200,
-            "copyright": Copyright,
-            "data": music_type(CloudMusic, type, id),
-            "time": time.ctime(),
-        }
-    elif name == Music.Service.qq:
-        log.info('pv,请求一次QQ音乐api')
-        from items.music import QQ, music_type
-        return {
-            "code": 200,
-            "copyright": Copyright,
-            "data": music_type(QQ, type, id),
-            "time": time.ctime(),
-        }
-    else:
-        return JSONResponse(status_code=HTTP_404_NOT_FOUND, content=name)
-
-
-@app.get(version+"/billboard/{chart}")
-async def billboard(chart: Charts):
-    from items.billboard import get_content
-    log.info('pv,请求一次公告牌数据')
-    if chart in (Charts.hot100, Charts.billboard200,
-                 Charts.artist100, Charts.social50):
-        return {
-            "code": 200,
-            "copyright": Copyright,
-            "data": get_content(chart),
-            "time": time.ctime(),
-        }
-    else:
-        return JSONResponse(status_code=HTTP_404_NOT_FOUND,
-                            content={'msg': f'{chart} is not found'})
-
-
-# @app.post(version+"/files/")
+# @router.post("/files/")
 # async def catvsdog_create_file(file: bytes = File(...)):
 #     log.info('pv,请求一次')
 #     return {"file_size": len(file)}
 
 
-@app.post(version+"/catvsdog/upload/")
+@router.post("/catvsdog/upload/")
 async def catvsdog_upload_image(file: UploadFile = File(...)):
     log.info('pv,上传一次猫狗图片')
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
@@ -137,7 +79,7 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
                             content={'msg': f'{file.filename} is not found'})
 
 
-@app.get(version+"/ncov/")
+@router.get('/ncov/')
 async def ncov_api(name: NcovName):
     from items.ncov import get_data
     log.info('pv,请求一次新冠肺炎数据')
@@ -150,7 +92,7 @@ async def ncov_api(name: NcovName):
     }
 
 
-@app.get('/pcc/')
+@router.get('/pcc/')
 async def purge_cdn_cache(zone_id: str = None, email: str = None, global_api_key: str = None):
     import requests
     if zone_id is None and email is None and global_api_key is None:
@@ -173,9 +115,3 @@ async def purge_cdn_cache(zone_id: str = None, email: str = None, global_api_key
             "description": "clear cloudflare cdn caches",
             "time": time.ctime(),
         }
-
-
-# @app.get('/visitorInfo/')
-# async def visitor_info(ip: str = None):
-#     log.info('请求一次')
-#     return {}

@@ -10,11 +10,6 @@ class Charts(str, Enum):
 
 
 class Music(object):
-    class Service(str, Enum):
-        """音乐服务商"""
-        cloudmusic: str = "cloudmusic"
-        qq: str = "qq"
-
     class Type(str, Enum):
         """分类"""
         song: str = "song"

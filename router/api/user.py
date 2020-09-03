@@ -1,9 +1,9 @@
 from config import log, Username, Password
-from fastapi import Form
-from .api import app
+from fastapi import APIRouter, Form
+router = APIRouter()
 
 
-@app.post("/login/")
+@router.post("/login/")
 async def login(*, username: str = Form(...), password: str = Form(...)):
     if username == Username and password == Password:
         log.info('ts,登录成功')
