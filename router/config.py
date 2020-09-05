@@ -19,12 +19,10 @@ app = FastAPI(
 def custom_schema():
     if app.openapi_schema:
         return app.openapi_schema
-    openapi_schema = get_openapi(
-        title=config.hometitle,
-        version=config.docv,
-        description=config.description,
-        routes=app.routes
-    )
+    openapi_schema = get_openapi(title=config.hometitle,
+                                 version=config.docv,
+                                 description=config.description,
+                                 routes=app.routes)
     openapi_schema["info"]["x-logo"] = {
         "url": "https://cdn.jsdelivr.net/gh/jamesyangget/cdn/img/2020/02/08/f7dpek.jpg"
     }
@@ -35,8 +33,8 @@ def custom_schema():
 app.openapi = custom_schema
 app.add_middleware(
     CORSMiddleware,  # 添加跨域中间件
-    allow_origins=config.origins,  # 允许跨域请求的域名列表
-    allow_origin_regex=r'https?://.*\.{}\.{}'.format(config.domain[0], config.domain[1]),  # 允许跨域请求的域名正则表达式
+    # allow_origins=config.origins,  # 允许跨域请求的域名列表
+    allow_origin_regex=config.origin_regex,  # 允许跨域请求的域名正则表达式
     allow_credentials=True,  # 在跨域请求时是否支持cookie
     allow_methods=["*"],  # 允许跨域请求的HTTP方法列表
     allow_headers=["*"],  # 跨域请求支持的HTTP头信息列表

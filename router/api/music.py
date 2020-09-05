@@ -12,7 +12,7 @@ router = APIRouter()
 async def cloud_music(type: Music.Type, id: int):
     log.info('pv,请求一次网易云音乐api')
     return {
-        "code": 200,
+        "status": 200,
         "copyright": Copyright,
         "data": music_type(CloudMusic, type, id),
         "time": time.ctime(),
@@ -24,7 +24,7 @@ async def qq_music(type: Music.Type, id: int):
     log.info('pv,请求一次QQ音乐api')
 
     return {
-        "code": 200,
+        "status": 200,
         "copyright": Copyright,
         "data": music_type(QQ, type, id),
         "time": time.ctime(),
@@ -38,7 +38,7 @@ async def billboard(chart: Charts):
     if chart in (Charts.hot100, Charts.billboard200,
                  Charts.artist100, Charts.social50):
         return {
-            "code": 200,
+            "status": 200,
             "copyright": Copyright,
             "data": get_content(chart),
             "time": time.ctime(),

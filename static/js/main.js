@@ -1,20 +1,17 @@
 function click() {
     $.ajax({
-        url: "/log/",
+        url: window.document.URL+"v1/log/",
         type: "get",
         dataType: "json",
         success: function(data) {
-            console.log(data.data);
-            // if(data.code==200){
-            //     // data = data.data;
-            //     swal.fire([{
-            //         icon: 'info',
-            //         title: '访问统计',
-            //         text: '接口总请求数'+data.pv+'总用户访问数'+data.uv+'总页面访问量'+data.ts,
-            //         showConfirmButton: false,
-            //         timer: 2000
-            //     }])
-            // }
+            data = data.data;
+            swal.fire([{
+                icon: 'info',
+                title: '访问统计',
+                text: '接口总请求数'+data.pv+'总用户访问数'+data.uv+'总页面访问量'+data.ts,
+                showConfirmButton: false,
+                timer: 2000
+            }])
         }
     });
 }

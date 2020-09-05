@@ -70,6 +70,13 @@ async def admin(request: Request):
     })
 
 
+@app.get('/limit.html')
+async def limit(request: Request):
+    return templates.TemplateResponse("limit.html", {
+        "request": request,
+    })
+
+
 @app.get('/policy.html')
 async def policy(request: Request):
     log.info('ts,访问一次隐私政策页')

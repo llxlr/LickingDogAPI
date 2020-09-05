@@ -16,14 +16,11 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
                          'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
 domain = domain.split('.')
 origins = [
-    f"http://{domain[0]}.{domain[1]}",
-    f"https://{domain[0]}.{domain[1]}",
-
-    "http://localhost",
-    f"http://localhost:{port}",
-    "https://localhost",
-    f"https://localhost:{port}",
+    f"http://{domain[0]}.{domain[1]}", f"https://{domain[0]}.{domain[1]}",
+    "http://127.0.0.1", f"http://127.0.0.1:{port}", "https://127.0.0.1", f"https://127.0.0.1:{port}",
+    "http://localhost", f"http://localhost:{port}", "https://localhost", f"https://localhost:{port}",
 ]
+origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(domain[0], domain[1])
 cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
 
 path = f'{os.path.dirname(__file__)}/cache'
@@ -34,7 +31,8 @@ load_dotenv(verbose=True)
 Username, Password = map(os.getenv, ["Username", "Password"])  # Admin
 Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = map(os.getenv, ["APP_ID", "API_KEY", "SECRET_KEY"])  # Baidu AI API
 sessdata, bili_jct = map(os.getenv, ["sessdata", "bili_jct"])  # Bilibili
-cf_zone_id, cf_email, cf_global_api_key = map(os.getenv, ["cf_zone_id", "cf_email", "cf_auth_key"])  # CloudFlare
+cf_zone_id, cf_user_id, cf_token, cf_email, cf_global_api_key = map(os.getenv, [
+    "cf_zone_id", "cf_user_id", "cf_token", "cf_email", "cf_auth_key"])  # CloudFlare
 email, password = map(os.getenv, ["username", "password"])   # Email
 github_token = list(map(os.getenv, ["TOKEN"]))  # Github
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])  # Pixiv
