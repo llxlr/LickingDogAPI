@@ -1,3 +1,3 @@
-*.html linguist-language=auto
-*.css linguist-language=auto
-*.js linguist-language=auto
+#*.html linguist-language=auto
+#*.css linguist-language=auto
+#*.js linguist-language=auto
