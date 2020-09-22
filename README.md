@@ -7,6 +7,9 @@
     <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
   </a>
   <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/CodeQL/badge.svg" alt="CodeQL">
+  </a>
+  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
     <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
