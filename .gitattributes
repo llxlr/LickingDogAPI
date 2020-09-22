@@ -1,4 +1,4 @@
 *.html linguist-language=auto
 *.css linguist-language=auto
 *.js linguist-language=auto
-*.sh linguist-language=Other
+*.sh linguist-language=auto
