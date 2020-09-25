@@ -109,3 +109,4 @@ venv.bak/
 cache/
 Dockerfile
 docker-compose.yml
+utils/sql/sql.db

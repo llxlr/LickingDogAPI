@@ -10,11 +10,13 @@ Jinja2==2.11.2
 lxml==4.5.2
 numpy==1.19.1
 opencv-python==4.4.0.42
+passlib[bcrypt]==1.7.2
 pandas==1.1.1
 Pillow==7.2.0
 pixivpy-async==1.2.10
 pydantic==1.6.1
 python-dotenv==0.14.0
+python-jose[cryptography]==3.2.0
 python-multipart==0.0.5
 requests==2.24.0
 selenium==3.141.0
