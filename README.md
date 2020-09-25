@@ -7,6 +7,9 @@
     <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
   </a>
   <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/CodeQL/badge.svg" alt="CodeQL">
+  </a>
+  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
     <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
@@ -25,7 +28,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
-$ uvicorn wsgi:app --host localhost --port 8001
+$ uvicorn wsgi:app --host 127.0.0.1 --port 8001
 ```
 
 
@@ -45,8 +48,8 @@ Description=LickingDogAPI with Uvicorn
 After=network.target
 
 [Service]
-User=www
-Group=www-data
+User=root
+Group=root
 WorkingDirectory=/www/html/LickingDogAPI
 Environment="PATH=/www/html/LickingDogAPI/venv/bin"
 ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
