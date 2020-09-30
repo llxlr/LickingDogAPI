@@ -9,7 +9,7 @@ on:
       - LICENSE
       - .env.example
       - .gitignore
-      - .gitattribute
+      - .gitattributes
 
 jobs:
   deploy:
