@@ -1,16 +1,19 @@
 <p align="center">
   <a href="https://api.white-album.top/">
-    <img width="200px" src="https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/static/img/mur_cat.png" alt='LickingDogAPI'>
+    <img width="200px" src="https://cdn.jsdelivr.net/gh/llxlr/LickingDogAPI/static/img/mur_cat.png" alt='LickingDogAPI'>
   </a>
   <br>
-  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
-    <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
   </a>
-  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions">
     <img src="https://github.com/llxlr/LickingDogAPI/workflows/CodeQL/badge.svg" alt="CodeQL">
   </a>
-  <a href="https://github.com/jamesyangget/LickingDogAPI/actions">
-    <img src="https://github.com/jamesyangget/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Auto%20Deploy/badge.svg" alt="Auto Deploy">
+  </a>
+  <a href="https://github.com/llxlr/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
   <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#F03D41">❤</span> by james yang & Power by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
@@ -22,7 +25,7 @@
 # 使用
 
 ```bash
-$ git clone https://github.com/jamesyangget/LickingDogAPI.git
+$ git clone https://github.com/llxlr/LickingDogAPI.git
 $ cd LickingDogAPI
 $ python -m venv venv
 $ source venv/bin/activate
@@ -87,11 +90,11 @@ $ sudo systemctl status ldapi  # 查看服务状态
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
 
 $ sudo mkdir /etc/api/ && sudo cp .env /etc/api/.env
-$ sudo docker build . -t jamesyang/licking-dog-api:v0.0.1
-$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t jamesyang/licking-dog-api:v0.0.1 #临时调试
-$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t jamesyang/licking-dog-api:v0.0.1   #或直接部署
+$ sudo docker build . -t llxlr/licking-dog-api:v0.0.1
+$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/licking-dog-api:v0.0.1 #临时调试
+$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/licking-dog-api:v0.0.1   #或直接部署
 
-$ sudo docker save -o ./licking-dog-api-v0.0.1.tar jamesyang/licking-dog-api:v0.0.1 #导出镜像
+$ sudo docker save -o ./licking-dog-api-v0.0.1.tar llxlr/licking-dog-api:v0.0.1 #导出镜像
 $ sudo docker load --input ./licking-dog-api-v0.0.1.tar #导入镜像
 $ sudo docker export licking-dog-api-v0.0.1 > ./licking-dog-api-v0.0.1.tar #导出容器
 $ sudo docker import ./licking-dog-api-v0.0.1.tar licking-dog-api-v0.0.1 #导入容器
