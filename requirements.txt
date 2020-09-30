@@ -10,7 +10,7 @@ Jinja2==2.11.2
 lxml==4.5.2
 numpy==1.19.1
 opencv-python==4.4.0.42
-pandas==1.1.1
+pandas==1.1.2
 Pillow==7.2.0
 pixivpy-async==1.2.10
 pydantic==1.6.1
