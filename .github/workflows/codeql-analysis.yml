@@ -8,15 +8,6 @@ on:
     branches: [master]
   schedule:
     - cron: '0 3 * * 5'
-  paths-ignore:
-    - README.md
-    - LICENSE
-    - .env.example
-    - .gitignore
-    - .gitattributes
-    - .github/*
-    - conf/*
-    - data/*
 
 jobs:
   analyze:
@@ -28,7 +19,7 @@ jobs:
       matrix:
         # Override automatic language detection by changing the below list
         # Supported options are ['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
-        language: ['python']
+        language: ['python', 'javascript']
         # Learn more...
         # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection
 
