@@ -41,34 +41,9 @@ $ uvicorn wsgi:app --host 127.0.0.1 --port 8001
 
 ## 用作 Systemd 服务
 
-编辑`/etc/systemd/system/ldapi.service`：
-
 ```bash
-$ sudo nano /etc/systemd/system/ldapi.service
-```
-
-加入以下内容：
-
-```txt
-[Unit]
-Description=LickingDogAPI with Uvicorn
-After=network.target
-
-[Service]
-User=root
-Group=root
-WorkingDirectory=/www/html/LickingDogAPI
-Environment="PATH=/www/html/LickingDogAPI/venv/bin"
-ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn wsgi:app --host 127.0.0.1 --port 8001
-KillMode=mixed
-TimeoutStopSec=5
-PrivateTmp=true
-Restart=always
-RestartSec=5
-StartLimitInterval=0
-
-[Install]
-WantedBy=multi-user.target
+$ sudo cp conf/ldapi.service /etc/systemd/system/ldapi.service
+$ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 ```
 
 或者使用`gunicorn`（注：gunicorn仅支持Linux系统）:
