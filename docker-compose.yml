@@ -1,0 +1,19 @@
+#version: "3.0"
+#services:
+    # licking-dog-api:
+    #     build: ./Dockerfile
+    #     image: jamesyang/licking-dog-api:v0.0.1
+    #     ports:
+    #         - "8001:8001"
+    #     volumes:
+    #         - "/etc/api/.env:/.env"
+    #     command: ["tail","-f", "/dev/null"]
+    #     depends_on:
+    #         - selenium-chrome
+    # selenium-chrome:
+    #    image: selenium/standalone-chrome:latest
+    #    ports:
+    #        - "4444:4444"
+    #    environment:
+    #        - TZ=Asia/Shanghai
+    #    shm_size: 2g

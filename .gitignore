@@ -107,6 +107,3 @@ venv.bak/
 .idea/
 .vscode/
 cache/
-Dockerfile
-docker-compose.yml
-utils/sql/sql.db
