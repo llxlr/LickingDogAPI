@@ -31,6 +31,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
+$ cp .env.example .env
 $ uvicorn wsgi:app --host 127.0.0.1 --port 8001
 ```
 
@@ -89,7 +90,7 @@ $ sudo systemctl status ldapi  # 查看服务状态
 ```bash
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
 
-$ sudo mkdir /etc/api/ && sudo cp .env /etc/api/.env
+$ sudo mkdir /etc/api/ && sudo cp .env.example /etc/api/.env
 $ sudo docker build . -t llxlr/licking-dog-api:v0.0.1
 $ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/licking-dog-api:v0.0.1 #临时调试
 $ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/licking-dog-api:v0.0.1   #或直接部署
