@@ -17,8 +17,10 @@ echo `exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --no-sandbox` > /opt/goog
 version=$(google-chrome-stable --version)
 echo "google chrome version: ${version}"
 
+# if [!$(google-chrome-stable --version)]; then echo "true"; else echo "fasle"; fi
+
 echo "Start download chromedriver"
-wget https://npm.taobao.org/mirrors/chromedriver/${version: 14: -1}/chromedriver_linux64.zip
+wget "https://white-album.top/usr/demo/php/webdriver.php?version=${version: 14: -1}&os=linux"
 unzip chromedriver_linux64.zip
 sudo chmod +x chromedriver
 sudo mv -f chromedriver /usr/local/share/chromedriver
