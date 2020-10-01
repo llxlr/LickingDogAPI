@@ -37,6 +37,6 @@ jobs:
         # 重启的脚本，根据自身情况做相应改动，一般要做的是migrate数据库以及重启服务器
         script: |
           echo "hello world!"
-          #cd /root/api/LickingDogAPI/
+          # cd /root/api/LickingDogAPI/
           # bash deploy.sh
           # systemctl restart ldapi
