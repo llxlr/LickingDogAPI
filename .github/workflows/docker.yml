@@ -3,7 +3,7 @@ name: Dockerize SCM
 on:
   push
 env:
-  IMAGE_NAME: llxlr/licking-dog-api
+  IMAGE_NAME: llxlr/ldapi
 
 jobs:
   push:
