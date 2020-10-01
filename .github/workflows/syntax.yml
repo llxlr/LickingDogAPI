@@ -1,5 +1,14 @@
 name: Check Python Syntax
 on: [push, pull_request]
+  paths-ignore:
+    - README.md
+    - LICENSE
+    - .env.example
+    - .gitignore
+    - .gitattributes
+    - .github/*
+    - conf/*
+    - data/*
 jobs:
   build:
     runs-on: ubuntu-latest
