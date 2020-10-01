@@ -13,6 +13,9 @@
     <img src="https://github.com/llxlr/LickingDogAPI/workflows/Auto%20Deploy/badge.svg" alt="Auto Deploy">
   </a>
   <a href="https://github.com/llxlr/LickingDogAPI/actions">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Dockerize%20SCM/badge.svg" alt="Dockerize SCM">
+  </a>
+  <a href="https://github.com/llxlr/LickingDogAPI/actions">
     <img src="https://github.com/llxlr/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
