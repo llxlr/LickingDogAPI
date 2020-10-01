@@ -83,9 +83,9 @@ $ sudo systemctl restart ldapi  # 重启服务
 $ sudo systemctl status ldapi  # 查看服务状态
 ```
 
-## ~~Docker 部署~~
+## Docker 部署
 
-还没搞明白
+还没搞明白~~雾~~
 
 ```bash
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
@@ -100,6 +100,14 @@ $ sudo docker load --input ./licking-dog-api-v0.0.1.tar #导入镜像
 $ sudo docker export licking-dog-api-v0.0.1 > ./licking-dog-api-v0.0.1.tar #导出容器
 $ sudo docker import ./licking-dog-api-v0.0.1.tar licking-dog-api-v0.0.1 #导入容器
 ```
+
+### Github Actions自动打包镜像
+
+对酒当鸽
+
+## Github Actions自动部署
+
+配置文件是`.github/workflows/deploy.yml`，部署脚本是`deploy.sh`，在项目设置里添加`DEPLOY_KEY`，`SSH_HOST`和`SSH_USERNAME`，分别代表与上传到服务器里的公钥对应的私钥，主机IP和主机用户名。部署需要自行修改`.env`配置文件，改成自己的信息。
 
 # 文档
 
