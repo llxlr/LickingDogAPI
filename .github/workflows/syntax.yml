@@ -7,6 +7,8 @@ on: [push, pull_request]
     - .gitignore
     - .gitattributes
     - .github/*
+    - conf/*
+    - data/*
 jobs:
   build:
     runs-on: ubuntu-latest
