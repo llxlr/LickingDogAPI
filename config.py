@@ -23,9 +23,9 @@ origins = [
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(domain[0], domain[1])
 cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
 
-path = f'{os.path.dirname(__file__)}/cache'
+path = f'{os.path.dirname(__file__)}/cache/'
 os.makedirs(path, exist_ok=True)
-log = Logger(f'{path}/info.log')  # 设置一个日志记录器
+log = Logger(os.path.join(path, 'info.log'))  # 设置一个日志记录器
 
 load_dotenv(verbose=True)
 Username, Password = map(os.getenv, ["Username", "Password"])  # Admin
