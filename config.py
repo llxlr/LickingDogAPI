@@ -34,10 +34,10 @@ sessdata, bili_jct = map(os.getenv, ["sessdata", "bili_jct"])  # Bilibili
 cf_zone_id, cf_user_id, cf_token, cf_email, cf_global_api_key = map(os.getenv, [
     "cf_zone_id", "cf_user_id", "cf_token", "cf_email", "cf_auth_key"])  # CloudFlare
 email, password = map(os.getenv, ["username", "password"])   # Email
-github_token = list(map(os.getenv, ["TOKEN"]))  # Github
+github_token = os.getenv("TOKEN")  # Github
 PIXIV_EMAIL, PIXIV_PASSWD = map(os.getenv, ["PIXIV_EMAIL", "PIXIV_PASSWD"])  # Pixiv
-public_key, private_key = map(lambda x: os.getenv(x), ["public_key", "private_key"])  # RSA
-sckey = list(map(os.getenv, ["SCKEY"]))  # Server
+public_key, private_key = map(os.getenv, ["public_key", "private_key"])  # RSA
+sckey = os.getenv("SCKEY")  # Server
 
 
 if __name__ == "__main__":
