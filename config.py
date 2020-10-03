@@ -21,7 +21,7 @@ origins = [
     "http://localhost", f"http://localhost:{port}", "https://localhost", f"https://localhost:{port}",
 ]
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(domain[1], domain[2])
-cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
+cdn = 'https://cdn.jsdelivr.net/gh/llxlr/LickingDogAPI/data/'
 
 path = f'{os.path.dirname(__file__)}/cache/'
 os.makedirs(path, exist_ok=True)
