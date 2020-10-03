@@ -16,11 +16,11 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
                          'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
 domain = domain.split('.')
 origins = [
-    f"http://{domain[0]}.{domain[1]}", f"https://{domain[0]}.{domain[1]}",
+    f"http://{domain[1]}.{domain[2]}", f"https://{domain[1]}.{domain[2]}",
     "http://127.0.0.1", f"http://127.0.0.1:{port}", "https://127.0.0.1", f"https://127.0.0.1:{port}",
     "http://localhost", f"http://localhost:{port}", "https://localhost", f"https://localhost:{port}",
 ]
-origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(domain[0], domain[1])
+origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(domain[1], domain[2])
 cdn = 'https://cdn.jsdelivr.net/gh/jamesyangget/LickingDogAPI/data/'
 
 path = f'{os.path.dirname(__file__)}/cache/'
