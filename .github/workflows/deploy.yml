@@ -10,8 +10,7 @@ jobs:
   deploy_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Deploy file to dev server
         if: github.ref == 'refs/heads/dev'
