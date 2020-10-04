@@ -3,8 +3,8 @@ name: Auto Deploy
 on:
   push:
     branches:
-      - master #推送master分支,部署到生产服务器
-      - dev #推送dev分支,部署到开发服务器
+      - master
+      - dev
 
 jobs:
   deploy_job:
@@ -13,22 +13,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: deploy file to dev server
-        if: github.ref == 'refs/heads/dev' #对分支进行检测
+      - name: Deploy file to dev server
+        if: github.ref == 'refs/heads/dev'
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: '${{ secrets. }}'
-          server: '${{ secrets.IP }}' #服务器地址
+          username: '${{ secrets.SSH_USERNAME }}'
+          server: '${{ secrets.SSH_HOST }}'
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
-          remote_path: '${{ secrets.DEPLOY_DEV_PATH }}' #测试服务器部署路径
+          remote_path: '${{ secrets.DEPLOY_DEV_PATH }}'
 
-      - name: deploy file to prod server
-        if: github.ref == 'refs/heads/master' #对分支进行检测
+      - name: Deploy file to prod server
+        if: github.ref == 'refs/heads/master'
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: '${{ secrets. }}'
-          server: '${{ secrets.IP }}' #服务器地址
+          username: '${{ secrets.SSH_USERNAME }}'
+          server: '${{ secrets.SSH_HOST }}'
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
-          remote_path: '${{ secrets.DEPLOY_PROD_PATH }}' #服务器部署路径
+          remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
