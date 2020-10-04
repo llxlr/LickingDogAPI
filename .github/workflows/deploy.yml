@@ -21,6 +21,12 @@ jobs:
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_DEV_PATH }}'
+          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+          script: |
+            echo "hello world!"
+            #cd ${{ secrets.DEPLOY_DEV_PATH }}
+            #bash deploy.sh
+            #systemctl restart ldapi
 
       - name: Deploy file to prod server
         if: github.ref == 'refs/heads/master'
@@ -31,3 +37,9 @@ jobs:
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
+          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+          script: |
+            echo "hello world!"
+            #cd ${{ secrets.DEPLOY_PROD_PATH }}
+            #bash deploy.sh
+            #systemctl restart ldapi
