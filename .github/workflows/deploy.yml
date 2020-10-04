@@ -23,6 +23,21 @@ jobs:
           remote_path: '${{ secrets.DEPLOY_DEV_PATH }}'
           args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
 
+      - name: Restart dev server
+        if: github.ref == 'refs/heads/dev'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_DEV_PATH }}
+            echo "hello world!"
+            #bash deploy.sh
+            #echo "run script"
+            systemctl restart ldapi
+            echo "restart api service successfully!"
+
       - name: Deploy file to prod server
         if: github.ref == 'refs/heads/master'
         uses: wlixcc/SFTP-Deploy-Action@v1.0
@@ -33,3 +48,18 @@ jobs:
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+
+      - name: Restart prod server
+        if: github.ref == 'refs/heads/master'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_PROD_PATH }}
+            echo "hello world!"
+            #bash deploy.sh
+            #echo "run script"
+            systemctl restart ldapi
+            echo "restart api service successfully!"
