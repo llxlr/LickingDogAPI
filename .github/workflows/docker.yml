@@ -3,7 +3,7 @@ name: Dockerize SCM
 on:
   push
 env:
-  IMAGE_NAME: llxlr/ldapi
+  IMAGE_NAME: ldapi
 
 jobs:
   push:
