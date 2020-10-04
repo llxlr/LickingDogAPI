@@ -53,12 +53,12 @@ $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 有以下命令：
 
 ```bash
-$ sudo systemctl daemon-reload  # 重载所有修改过的配置文件
-$ sudo systemctl enable ldapi  # 设置自动启动
-$ sudo systemctl start ldapi  # 启动服务
-$ sudo systemctl stop ldapi  # 停止服务
-$ sudo systemctl restart ldapi  # 重启服务
-$ sudo systemctl status ldapi  # 查看服务状态
+$ sudo systemctl daemon-reload #重载所有修改过的配置文件
+$ sudo systemctl enable ldapi #设置自动启动
+$ sudo systemctl start ldapi #启动服务
+$ sudo systemctl stop ldapi #停止服务
+$ sudo systemctl restart ldapi #重启服务
+$ sudo systemctl status ldapi #查看服务状态
 ```
 
 ## Docker 部署
