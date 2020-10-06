@@ -53,12 +53,12 @@ $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 有以下命令：
 
 ```bash
-$ sudo systemctl daemon-reload  # 重载所有修改过的配置文件
-$ sudo systemctl enable ldapi  # 设置自动启动
-$ sudo systemctl start ldapi  # 启动服务
-$ sudo systemctl stop ldapi  # 停止服务
-$ sudo systemctl restart ldapi  # 重启服务
-$ sudo systemctl status ldapi  # 查看服务状态
+$ sudo systemctl daemon-reload #重载所有修改过的配置文件
+$ sudo systemctl enable ldapi #设置自动启动
+$ sudo systemctl start ldapi #启动服务
+$ sudo systemctl stop ldapi #停止服务
+$ sudo systemctl restart ldapi #重启服务
+$ sudo systemctl status ldapi #查看服务状态
 ```
 
 ## Docker 部署
@@ -69,11 +69,11 @@ $ sudo systemctl status ldapi  # 查看服务状态
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
 
 $ sudo mkdir /etc/api/ && sudo cp .env.example /etc/api/.env
-$ sudo docker build . -t llxlr/ldapi:v0.0.1
-$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/ldapi:v0.0.1 #临时调试
-$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t llxlr/ldapi:v0.0.1   #或直接部署
+$ sudo docker build . -t ldapi:v0.0.1
+$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t ldapi:v0.0.1 #临时调试
+$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t ldapi:v0.0.1   #或直接部署
 
-$ sudo docker save -o ./ldapi-v0.0.1.tar llxlr/ldapi:v0.0.1 #导出镜像
+$ sudo docker save -o ./ldapi-v0.0.1.tar ldapi:v0.0.1 #导出镜像
 $ sudo docker load --input ./ldapi-v0.0.1.tar #导入镜像
 $ sudo docker export ldapi-v0.0.1 > ./ldapi-v0.0.1.tar #导出容器
 $ sudo docker import ./ldapi-v0.0.1.tar ldapi-v0.0.1 #导入容器
