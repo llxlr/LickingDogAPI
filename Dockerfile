@@ -14,10 +14,10 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
     rm -rf ./{items/__pycache__,items/anime/__pycache__,items/ml/__pycache__,items/ml/yolo/__pycache__,items/ml/catvsdog/__pycache__} && \
     rm -rf ./{utils/__pycache__,utils/auth/__pycache__,utils/lib/__pycache__,utils/sql/__pycache__} && \
     apt-get update -y && apt-get upgrade -y && \
-    apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev -y && \
+    apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     pip3 install --upgrade pip --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install -r requirements.txt --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev -y && \
+    apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     apt-get clean && rm -rf requirements.txt && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo 'Asia/Shanghai' > /etc/timezone
