@@ -24,7 +24,7 @@ def custom_schema():
                                  description=config.description,
                                  routes=app.routes)
     openapi_schema["info"]["x-logo"] = {
-        "url": "https://cdn.jsdelivr.net/gh/jamesyangget/cdn/img/2020/02/08/f7dpek.jpg"
+        "url": "https://cdn.jsdelivr.net/gh/llxlr/cdn/img/2020/02/08/f7dpek.jpg"
     }
     app.openapi_schema = openapi_schema
     return app.openapi_schema

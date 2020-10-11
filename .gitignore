@@ -107,3 +107,4 @@ venv.bak/
 .idea/
 .vscode/
 cache/
+restful.http
