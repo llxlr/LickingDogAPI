@@ -18,6 +18,7 @@ jobs:
         with:
           username: '${{ secrets.SSH_USERNAME }}'
           server: '${{ secrets.SSH_HOST }}'
+          port: ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_DEV_PATH }}'
@@ -29,6 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd ${{ secrets.DEPLOY_DEV_PATH }}
@@ -44,6 +46,7 @@ jobs:
         with:
           username: '${{ secrets.SSH_USERNAME }}'
           server: '${{ secrets.SSH_HOST }}'
+          port: ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
@@ -55,6 +58,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd ${{ secrets.DEPLOY_PROD_PATH }}
