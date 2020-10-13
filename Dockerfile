@@ -24,3 +24,4 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
 
 #CMD ["python", "wsgi.py"]
 CMD ["uvicorn", "wsgi:app", "--host", "127.0.0.1", "--port", "8001"]
+#CMD ["gunicorn", "wsgi:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker"]
