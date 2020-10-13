@@ -20,8 +20,7 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo 'Asia/Shanghai' > /etc/timezone
 
-EXPOSE 8001
+#EXPOSE 8001
 
-#CMD [""]
-
+#CMD ["python", "wsgi.py"]
 CMD ["uvicorn", "wsgi:app", "--host", "127.0.0.1", "--port", "8001"]
