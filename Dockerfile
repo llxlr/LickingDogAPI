@@ -9,10 +9,8 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compose.yml,Dockerfile,LICENSE,README.md} && \
-    rm -rf ./{.git,.github,.idea,.vscode,cache,conf,data,venv,__pycache__} && \
-    rm -rf ./{router/__pycache__,router/api/__pycache__,} && \
-    rm -rf ./{items/__pycache__,items/anime/__pycache__,items/ml/__pycache__,items/ml/yolo/__pycache__,items/ml/catvsdog/__pycache__} && \
-    rm -rf ./{utils/__pycache__,utils/auth/__pycache__,utils/lib/__pycache__,utils/sql/__pycache__} && \
+    rm -rf ./{.git,.github,.idea,.vscode,cache,conf,data,venv} && \
+    find . -path ./venv -prune -o -type d -name "__pycache__" | grep "__pycache__" | xargs rm -rf && \
     apt-get update -y && apt-get upgrade -y && \
     apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     pip3 install --upgrade pip --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
