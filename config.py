@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from dotenv import load_dotenv
 from utils.log import Logger
 import argparse
