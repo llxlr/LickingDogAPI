@@ -23,9 +23,9 @@
 </p>
 <blockquote><p align="center">敬我暗恋的人</p></blockquote>
 
-# 项目还在发育~~间歇性瞎写~~，处于不断迭代状态
+## 项目还在发育~~间歇性瞎写~~，处于不断迭代状态
 
-# 使用
+## 使用
 
 ```bash
 $ git clone https://github.com/llxlr/LickingDogAPI.git
@@ -107,7 +107,7 @@ PUT:    更新数据
 DELETE: 删除数据
 ```
 
-# 参考链接
+## 参考链接
 
 [FastAPI](https://fastapi.tiangolo.com/)
 
@@ -116,3 +116,10 @@ DELETE: 删除数据
 [Uvicorn](https://www.uvicorn.org/)
 
 []()
+
+## 鸣谢
+
+> [PyCharm](https://zh.wikipedia.org/zh-hans/PyCharm) 是一个在各个方面都最大程度地提高开发人员的生产力的 IDE，适合专业 Python 全栈开发。
+
+特别感谢 [JetBrains](https://www.jetbrains.com/?from=LickingDogAPI) 为开源项目提供免费的 [PyCharm](https://www.jetbrains.com/pycharm/?from=LickingDogAPI) 等 IDE 的授权  
+[<img src=".github/jetbrains.png" width="200"/>](https://www.jetbrains.com/?from=LickingDogAPI)
