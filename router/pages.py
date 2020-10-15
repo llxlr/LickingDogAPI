@@ -98,7 +98,7 @@ async def bing(request: Request, type: str = None):
     data = requests.get('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1', headers=headers).json()
     img = {'img': 'https://cn.bing.com'+data["images"][0]["url"], 'copyright': data["images"][0]["copyright"]}
     log.info('pv,访问一次必应图片')
-    return templates.TemplateResponse("img/bing.html", {
+    return templates.TemplateResponse("items/img/bing.html", {
         "request": request,
         "title": "Bing每日一图",
         "img": img['img'] if data and type == 'img' else img,
@@ -108,7 +108,7 @@ async def bing(request: Request, type: str = None):
 @app.get("/catvsdog.html")
 async def catvsdog(request: Request):
     log.info('ts,访问一次Cat VS Dog')
-    return templates.TemplateResponse("ml/catvsdog.html", {
+    return templates.TemplateResponse("items/ml/catvsdog.html", {
         "request": request,
         "title": "Cat VS Dog",
         "keywords": "猫狗大战,迁移学习,分类,图像,深度学习,机器学习",
@@ -121,7 +121,7 @@ async def catvsdog(request: Request):
 @app.get("/mnist.html")
 async def mnist(request: Request):
     log.info('ts,访问一次Tenserflow.js实现Mnist手写字识别')
-    return templates.TemplateResponse("ml/mnist.html", {
+    return templates.TemplateResponse("items/ml/mnist.html", {
         "request": request,
         "title": "Tenserflow.js实现Mnist手写字识别",
         "keywords": "手写字识别,深度学习,分类,图像,机器学习",
@@ -134,7 +134,7 @@ async def mnist(request: Request):
 @app.get("/ncov.html")
 async def ncov(request: Request):
     log.info('ts,访问一次2020新冠肺炎实时疫情图')
-    return templates.TemplateResponse("ncov.html", {
+    return templates.TemplateResponse("items/ncov.html", {
         "request": request,
         "title": "2020新冠肺炎实时疫情图",
         "subtitle": "2020新冠肺炎实时疫情图",
