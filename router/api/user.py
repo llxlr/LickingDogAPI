@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, Form, HTTPException, Request, Response
@@ -9,7 +11,7 @@ models.Base.metadata.create_all(bind=engine)
 router = APIRouter()
 
 
-# @router.middleware("http")
+# @app.middleware("http")
 # async def db_session_middleware(request: Request, call_next):
 #     response = Response("Internal server error", status_code=500)
 #     try:

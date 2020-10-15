@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from items.github import Github
 from fastapi import APIRouter
 from config import log, Copyright

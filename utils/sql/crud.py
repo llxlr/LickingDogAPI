@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from sqlalchemy.orm import Session
 
 from . import models, schemas
