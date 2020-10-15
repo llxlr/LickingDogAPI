@@ -4,12 +4,12 @@
 <div class="main">
     <h1 class="h1">{{ title }}</h1>
     <ul>
-        {% for href, caption in [('1.', 'ncov.html', '2020新冠肺炎实时疫情图'),
-                                 ('2.', 'tiangou.html', '舔狗日记'),
-                                 ('3.', 'catvsdog.html', '猫狗大战'),
-                                 ('4.', 'iris.html', '鸢尾花数据分类'),
-                                 ('5.', 'face.html', '人脸识别'),
-                                 ('6.', 'speach.html', '语音识别')] %}
+        {% for index, href, caption in [('1.', 'ncov.html', '2020新冠肺炎实时疫情图'),
+                                        ('2.', 'tiangou.html', '舔狗日记'),
+                                        ('3.', 'catvsdog.html', '猫狗大战'),
+                                        ('4.', 'iris.html', '鸢尾花数据分类'),
+                                        ('5.', 'face.html', '人脸识别'),
+                                        ('6.', 'speach.html', '语音识别')] %}
             <li>
                 <span>{{ index }}</span>
                 <a href="{{ href }}">{{ caption }}</a>
