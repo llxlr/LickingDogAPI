@@ -35,9 +35,8 @@ jobs:
           script: |
             cd ${{ secrets.DEPLOY_DEV_PATH }}
             echo "hello world!"
-            #bash deploy.sh
             #echo "run script"
-            systemctl restart ldapi
+            #bash deploy.sh
             echo "restart api service successfully!"
 
       - name: Deploy file to prod server
@@ -63,7 +62,6 @@ jobs:
           script: |
             cd ${{ secrets.DEPLOY_PROD_PATH }}
             echo "hello world!"
-            #bash deploy.sh
             #echo "run script"
             systemctl restart ldapi
             echo "restart api service successfully!"
