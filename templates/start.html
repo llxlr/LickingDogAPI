@@ -2,32 +2,19 @@
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
 <div class="main">
-	<h1 class="h1">{{ title }}</h1>
+    <h1 class="h1">{{ title }}</h1>
     <ul>
-        <li>
-            <span>1.</span>
-            <a href="./ncov.html">2020新冠肺炎实时疫情图</a>
-        </li>
-        <li>
-            <span>2.</span>
-            <a href="./tiangou.html">舔狗日记</a>
-        </li>
-        <li>
-            <span>3.</span>
-            <a href="./catvsdog.html">猫狗大战</a>
-        </li>
-        <li>
-            <span>4.</span>
-            <a href="./iris.html">鸢尾花数据分类</a>
-        </li>
-        <li>
-            <span>5.</span>
-            <a href="./face.html">人脸识别</a>
-        </li>
-        <li>
-            <span>6.</span>
-            <a href="./speach.html">语音识别</a>
-        </li>
+        {% for index, href, caption in [('1.', 'ncov.html', '2020新冠肺炎实时疫情图'),
+                                        ('2.', 'tiangou.html', '舔狗日记'),
+                                        ('3.', 'catvsdog.html', '猫狗大战'),
+                                        ('4.', 'iris.html', '鸢尾花数据分类'),
+                                        ('5.', 'face.html', '人脸识别'),
+                                        ('6.', 'speach.html', '语音识别')] %}
+            <li>
+                <span>{{ index }}</span>
+                <a href="{{ href }}">{{ caption }}</a>
+            </li>
+        {% endfor %}
     </ul>
     <footer>
         <small>
