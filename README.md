@@ -69,14 +69,14 @@ $ sudo systemctl status ldapi #查看服务状态
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
 
 $ sudo mkdir /etc/api/ && sudo cp .env.example /etc/api/.env
-$ sudo docker build . -t ldapi:v0.0.1
-$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:v0.0.1 #临时调试
-$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:v0.0.1   #或直接部署
+$ sudo docker build . -t ldapi:latest
+$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:latest #临时调试
+$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:latest   #或直接部署
 
-$ sudo docker save -o ./ldapi-v0.0.1.tar ldapi:v0.0.1 #导出镜像
-$ sudo docker load --input ./ldapi-v0.0.1.tar #导入镜像
-$ sudo docker export ldapi-v0.0.1 > ./ldapi-v0.0.1.tar #导出容器
-$ sudo docker import ./ldapi-v0.0.1.tar ldapi-v0.0.1 #导入容器
+$ sudo docker save -o ./ldapi-v0.0.1.tar ldapi:latest #导出镜像
+$ sudo docker load --input ./ldapi-latest.tar #导入镜像
+$ sudo docker export ldapi-latest > ./ldapi-latest.tar #导出容器
+$ sudo docker import ./ldapi-latest.tar ldapi-latest #导入容器
 ```
 
 ```bash
