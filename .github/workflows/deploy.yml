@@ -63,5 +63,5 @@ jobs:
             cd ${{ secrets.DEPLOY_PROD_PATH }}
             echo "hello world!"
             #echo "run script"
-            systemctl restart ldapi
+            #bash deploy.sh
             echo "restart api service successfully!"
