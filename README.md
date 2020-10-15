@@ -83,6 +83,11 @@ $ sudo docker import ./ldapi-v0.0.1.tar ldapi-v0.0.1 #导入容器
 
 配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`和`dev`分支，在项目设置`Secrets`里添加`GH_TOKEN`
 
+```bash
+$ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:latest
+$ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:dev
+```
+
 ## Github Actions自动部署
 
 配置文件是`.github/workflows/deploy.yml`，部署脚本是`deploy.sh`，在项目设置`Secrets`里添加`DEPLOY_KEY`，`SSH_PORT`，`SSH_HOST`和`SSH_USERNAME`，分别代表与部署服务器公钥对应的私钥，SSH登录端口(默认22)，主机IP和主机用户名。部署需要自行修改`.env`配置文件，改成自己的信息。
