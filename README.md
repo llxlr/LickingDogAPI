@@ -96,7 +96,7 @@ $ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:dev
 
 配置文件是`.github/workflows/deploy.yml`，部署脚本是`deploy.sh`，在项目设置`Secrets`里添加`DEPLOY_KEY`，`SSH_PORT`，`SSH_HOST`和`SSH_USERNAME`，分别代表与部署服务器公钥对应的私钥，SSH登录端口(默认22)，主机IP和主机用户名。部署需要自行修改`.env`配置文件，改成自己的信息。
 
-# 文档
+## 文档
 
 交互文档: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
 
