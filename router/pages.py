@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from starlette.requests import Request
 from .config import app, templates
 from config import (

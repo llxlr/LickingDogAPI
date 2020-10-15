@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
 from config import headers

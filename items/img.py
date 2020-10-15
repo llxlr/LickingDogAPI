@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from fastapi import File, UploadFile
 from PIL import Image

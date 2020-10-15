@@ -1,4 +1,8 @@
-# 关于函数的一些常用方法
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+关于函数的一些常用方法
+"""
 from functools import wraps
 import time
 

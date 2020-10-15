@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from config import headers, cdn
 from lxml import etree
 import requests

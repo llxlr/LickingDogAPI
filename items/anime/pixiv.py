@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from config import headers, PIXIV_EMAIL, PIXIV_PASSWD
 from pixivpy_async import *
 import requests

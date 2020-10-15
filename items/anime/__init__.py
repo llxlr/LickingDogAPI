@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from .bilibili import Bilibili
 from .bangumi import Bangumi
 from enum import Enum

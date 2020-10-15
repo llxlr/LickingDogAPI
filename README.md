@@ -48,7 +48,7 @@ $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 
 或者使用`gunicorn`（注：gunicorn仅支持Linux系统）:
 将`uvicorn wsgi:app --host 127.0.0.1 --port 8001`
-替换为`gunicorn -b 127.0.0.1:8001 -k uvicorn.workers.UvicornWorker wsgi:app`
+替换为`gunicorn wsgi:app -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker`
 
 有以下命令：
 
@@ -70,8 +70,8 @@ $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/st
 
 $ sudo mkdir /etc/api/ && sudo cp .env.example /etc/api/.env
 $ sudo docker build . -t ldapi:v0.0.1
-$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -t ldapi:v0.0.1 #临时调试
-$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -t ldapi:v0.0.1   #或直接部署
+$ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:v0.0.1 #临时调试
+$ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t ldapi:v0.0.1   #或直接部署
 
 $ sudo docker save -o ./ldapi-v0.0.1.tar ldapi:v0.0.1 #导出镜像
 $ sudo docker load --input ./ldapi-v0.0.1.tar #导入镜像
@@ -81,11 +81,11 @@ $ sudo docker import ./ldapi-v0.0.1.tar ldapi-v0.0.1 #导入容器
 
 ### Github Actions自动打包镜像
 
-对酒当鸽
+配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`和`dev`分支，在项目设置`Secrets`里添加`GH_TOKEN`
 
 ## Github Actions自动部署
 
-配置文件是`.github/workflows/deploy.yml`，部署脚本是`deploy.sh`，在项目设置里添加`DEPLOY_KEY`，`SSH_HOST`和`SSH_USERNAME`，分别代表与上传到服务器里的公钥对应的私钥，主机IP和主机用户名。部署需要自行修改`.env`配置文件，改成自己的信息。
+配置文件是`.github/workflows/deploy.yml`，部署脚本是`deploy.sh`，在项目设置`Secrets`里添加`DEPLOY_KEY`，`SSH_PORT`，`SSH_HOST`和`SSH_USERNAME`，分别代表与部署服务器公钥对应的私钥，SSH登录端口(默认22)，主机IP和主机用户名。部署需要自行修改`.env`配置文件，改成自己的信息。
 
 # 文档
 
@@ -105,3 +105,5 @@ DELETE: 删除数据
 [Starlette](https://www.starlette.io/)
 
 [Uvicorn](https://www.uvicorn.org/)
+
+[]()

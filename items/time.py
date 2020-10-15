@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 参数名	是否必须	默认值	说明
 date	是	无	倒计时目标日期/正计时起始日期，为一个 10 位 Unix 时间戳

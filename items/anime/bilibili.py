@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import bilibili_api
 from bilibili_api import aid2bvid, Verify, video, user
 from config import sessdata, bili_jct
