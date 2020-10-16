@@ -5,16 +5,16 @@ from utils.log import Logger
 import argparse
 import os
 
-hometitle = "Licking Dog API"  # 主页标题
-title404 = "404 Not Found"  # 404页标题
-domain = "api.white-album.top"  # 域名
+hometitle = 'Licking Dog API'  # 主页标题
+title404 = '404 Not Found'  # 404页标题
+domain = 'api.white-album.top'  # 域名
 port = 8001  # 端口
-docv = "1.0.0"  # doc版本
-version = "/v1"  # api版本
-description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
+docv = '1.0.0'  # doc版本
+version = '/v1'  # api版本
+description = '简单功能的个人实现 | 舔狗API 🍭'  # api 描述
 start_time = 2019  # 建站时间
 night = 'on'
-Copyright = {"author": "星旅人", "url": "https://white-album.top/"}
+Copyright = {"author": '星旅人', 'url': 'https://white-album.top/'}
 analysis = {'google': 'UA-126485680-6', 'baidu': ''}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                          'Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
