@@ -13,6 +13,7 @@ docv = "1.0.0"  # doc版本
 version = "/v1"  # api版本
 description = "简单功能的个人实现 | 舔狗API 🍭"  # api 描述
 start_time = 2019  # 建站时间
+night = 'on'
 Copyright = {"author": "星旅人", "url": "https://white-album.top/"}
 analysis = {'google': 'UA-126485680-6', 'baidu': ''}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
