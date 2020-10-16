@@ -2,25 +2,16 @@
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
 <div class="main">
-	<h1 class="h1">
-		<span>{{ title }} <small>1.0.0</small></span>
-	</h1>
-	<h3 class="h3">简单功能的个人实现 | 舔狗API 🍭</h3>
-	<img src="{{ url_for('static', path='img/to_be_continued.png') }}" align="center"><br>
-	<div class="buttons">
-		<a class="button" target="_blank" href="./start.html">开始</a>
-		<a class="button" target="_blank" href="https://github.com/jamesyangget/LickingDogAPI">Github</a>
-	</div>
-	<br><br>
-    <footer>
-        <small>
-            © 2020 <a href="https://white-album.top/">White Album</a> Made <span class="icon" style="color:red">❤</span>
-            By <a href="https://github.com/jamesyangget/">James Yang</a>
-            <a href="./v1/docs">API</a>
-            <a href="javascript:void(0);" onclick="click()">统计</a>
-            <a href="javascript:void(0);" onclick="dark()">夜间模式</a>
-			<a href="./policy.html">隐私政策</a>
-        </small>
-    </footer>
+    <h1 class="h1">
+        <span>{{ title }} <small>1.0.0</small></span>
+    </h1>
+    <h3 class="h3">简单功能的个人实现 | 舔狗API 🍭</h3>
+    <img src="{{ url_for('static', path='img/to_be_continued.png') }}" align="center"><br>
+    <div class="buttons">
+        <a class="button" target="_blank" href="./start.html">开始</a>
+        <a class="button" target="_blank" href="https://github.com/jamesyangget/LickingDogAPI">Github</a>
+    </div>
+    <br><br>
+    {% include "tmpl/footer.html" ignore missing with context %}
 </div>
 {% endblock %}
