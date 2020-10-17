@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -eu
 #=================================================
 #	System Required: Ubuntu
 #	Description: Deploying Script
