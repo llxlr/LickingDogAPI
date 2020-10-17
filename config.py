@@ -7,7 +7,7 @@ import os
 
 path = os.path.dirname(__file__)
 os.makedirs(f'{path}/cache/', exist_ok=True)
-log = Logger(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
+log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-E", "--env", help="Custom PATH of dotenv file", action="store_true")
