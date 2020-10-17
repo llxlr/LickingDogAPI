@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -eu
+
+echo "
 #=================================================
 #	System Required: Ubuntu
 #	Description: Deploying Script
@@ -7,7 +9,8 @@ set -eu
 #	Author: James Yang
 #	Blog: https://white-album.top/
 #=================================================
-echo "Hello!"
+"
+
 sudo apt-get install python3 python3-pip python3-venv -y
 sudo python3 -m venv venv
 source venv/bin/activate
@@ -28,7 +31,6 @@ sudo dpkg -i google-chrome*.deb
 sudo apt --fix-broken install -y
 sudo dpkg -i google-chrome*.deb
 sed 's/exec -a "$0" "$HERE\/chrome" "$@"/exec -a "$0" "$HERE\/chrome" "$@" --user-data-dir --no-sandbox/g' /opt/google/chrome/google-chrome >> /opt/google/chrome/google-chrome
-
 version=$(google-chrome-stable --version)
 echo "google chrome version: ${version}"
 
