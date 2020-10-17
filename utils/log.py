@@ -3,7 +3,7 @@
 import logging
 
 
-class Logger:
+class LoggerV1:
     def __init__(self, path, clevel=logging.DEBUG, flevel=logging.DEBUG):
         self.path = path
         self.logger = logging.getLogger(self.path)
@@ -49,11 +49,16 @@ class Logger:
             return {'pv': pv, 'uv': uv, 'ts': ts}
 
 
+class LoggerV2:
+    def __init__(self):
+        pass
+
+
 if __name__ == '__main__':
-    # logyyx = Logger('../cache/info.log')
-    # logyyx.debug('一个debug信息')
-    # logyyx.info('一个info信息')
-    # logyyx.warn('一个warning信息')
-    # logyyx.error('一个error信息')
-    # logyyx.criti('一个致命critical信息')
+    # log1 = LoggerV1('../cache/info.log')
+    # log1.debug('一个debug信息')
+    # log1.info('一个info信息')
+    # log1.warn('一个warning信息')
+    # log1.error('一个error信息')
+    # log1.criti('一个致命critical信息')
     pass
