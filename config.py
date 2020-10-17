@@ -66,4 +66,4 @@ sckey = os.getenv("SCKEY")
 
 
 if __name__ == "__main__":
-    print(private_key)
+    pass
