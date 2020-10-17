@@ -20,16 +20,6 @@
     </div>
     <br>
     <small>https://www.kaggle.com/c/dogs-vs-cats/</small>
-    <footer>
-        <small>
-            &copy; 2020 <a href="https://white-album.top/">White Album</a> Made <span class="icon" style="color:red">❤</span>
-            By <a href="https://github.com/jamesyangget/">James Yang</a>
-            <small>
-                <a href="..">返回首页</a>
-                <a href="javascript:void(0);" onclick="dark()">夜间模式</a>
-                <a href="./policy.html">隐私政策</a>
-            </small>
-        </small>
-    </footer>
+    {% include "tmpl/footer.html" ignore missing with context %}
 </div>
 {% endblock %}
