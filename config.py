@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dotenv import load_dotenv
-from utils.log import Logger
+from utils.log import LoggerV1
 import argparse
 import os
 
