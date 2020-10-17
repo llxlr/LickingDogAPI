@@ -16,14 +16,6 @@
             </li>
         {% endfor %}
     </ul>
-    <footer>
-        <small>
-            © 2020 <a href="https://white-album.top/">White Album</a> Made <span class="icon" style="color:red">❤</span>
-            By <a href="https://github.com/jamesyangget/">James Yang</a>
-            <a href="/v1/docs">API</a>
-            <a href="javascript:void(0);" onclick="click()">统计</a>
-            <a href="javascript:void(0);" onclick="dark()">夜间模式</a>
-        </small>
-    </footer>
+    {% include "tmpl/footer.html" ignore missing with context %}
 </div>
 {% endblock %}
