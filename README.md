@@ -98,7 +98,7 @@ $ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:dev
 
 ## 文档
 
-交互文档: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
+交互文档: [http://127.0.0.1:8001/v1/docs](http://127.0.0.1:8001/v1/docs)
 
 ``` 
 POST:   发送数据
