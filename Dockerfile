@@ -1,11 +1,9 @@
 FROM python:3.7-slim-buster
 LABEL maintainer="James Yang <i@white-album.top>"
 
-RUN mkdir /usr/src/app
+COPY . /usr/src/app
 
 WORKDIR /usr/src/app
-
-COPY . .
 
 RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compose.yml,Dockerfile,LICENSE,README.md} && \
     rm -rf ./{.git,.github,.idea,.vscode,cache,conf,data,venv} && \
@@ -21,6 +19,6 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
 
 #EXPOSE 8001
 
-CMD ["python", "wsgi.py"]
-#CMD ["uvicorn", "wsgi:app", "--host", "127.0.0.1", "--port", "8001"]
-#CMD ["gunicorn", "wsgi:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker"]
+CMD ["python", "manage.py"]
+#CMD ["uvicorn", "manage:app", "--host", "127.0.0.1", "--port", "8001"]
+#CMD ["gunicorn", "manage:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker"]
