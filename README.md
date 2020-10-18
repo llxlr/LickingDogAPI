@@ -35,7 +35,7 @@ $ source venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
 $ cp .env.example .env
-$ uvicorn wsgi:app --host 127.0.0.1 --port 8001
+$ uvicorn manage:app --host 127.0.0.1 --port 8001
 ```
 
 
@@ -47,8 +47,14 @@ $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 ```
 
 或者使用`gunicorn`（注：gunicorn仅支持Linux系统）:
-将`uvicorn wsgi:app --host 127.0.0.1 --port 8001`
-替换为`gunicorn wsgi:app -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker`
+将
+```
+uvicorn manage:app --host 127.0.0.1 --port 8001
+```
+替换为
+```
+gunicorn manage:app -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker
+```
 
 有以下命令：
 
