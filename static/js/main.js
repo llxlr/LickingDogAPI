@@ -1,11 +1,13 @@
 //log
 function readlog() {
     $.ajax({
-        url: window.document.URL+"v1/log/",
+        url: window.location.host+"v1/log/",
         type: "get",
         dataType: "json",
         success: function(data) {
+        	console.log(data);
             data = data.data;
+            console.log(data);
             swal.fire([{
                 icon: 'info',
                 title: '访问统计',
