@@ -4,10 +4,8 @@ function readlog() {
         url: "/v1/log/",
         type: "get",
         dataType: "json",
-        success: function(data) {
-        	console.log(data);
+        success: function(data, status) {
             data = data.data;
-            console.log(data);
             swal.fire([{
                 icon: 'info',
                 title: '访问统计',
