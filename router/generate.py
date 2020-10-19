@@ -21,10 +21,12 @@ app = FastAPI(
 def custom_schema():
     if app.openapi_schema:
         return app.openapi_schema
-    openapi_schema = get_openapi(title=hometitle,
-                                 version=docv,
-                                 description=description,
-                                 routes=app.routes)
+    openapi_schema = get_openapi(
+        title=hometitle,
+        version=docv,
+        description=description,
+        routes=app.routes
+    )
     openapi_schema["info"]["x-logo"] = {
         "url": "https://cdn.jsdelivr.net/gh/llxlr/cdn/img/2020/02/08/f7dpek.jpg"
     }
