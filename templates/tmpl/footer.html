@@ -9,10 +9,12 @@
     </div>
     &nbsp;&nbsp;
     <div>
-        <span id="info"></span>
+        <small>
+            <span id="info"></span>
+        </small>
         <script type="text/javascript">
             $(function(){
-                document.getElementById("info").innerHTML = "响应耗时"+AS_ResTime().res+"ms"+"渲染耗时"+AS_ResTime().tcp+"ms"+"内存占用"+AS_ResTime().ram;
+                document.getElementById("info").innerHTML = "响应耗时"+AS_ResTime().res+"渲染耗时"+AS_ResTime().tcp+"内存占用"+AS_ResTime().ram;
             });
         </script>
     </div>
