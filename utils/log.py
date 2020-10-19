@@ -38,7 +38,7 @@ class LoggerV1:
     def read_log(self):
         """读取日志信息,pv:调用数,uv:用户数,ts:浏览量"""
         pv, uv, ts = 0, 0, 0
-        with open(self.path, 'r', encoding='gbk') as f:
+        with open(self.path, 'r', encoding='utf-8') as f:
             for i in f.readlines():
                 if 'pv' in i:
                     pv += 1
