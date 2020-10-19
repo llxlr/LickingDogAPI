@@ -9,7 +9,7 @@ eliot==1.12.0
 eliot-tree==19.0.1
 fastapi==0.61.1
 Jinja2==2.11.2
-lxml==4.5.2
+lxml==4.6.1
 MyQR==2.3.1
 numpy==1.19.2
 opencv-python==4.4.0.42
