@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from starlette.requests import Request
-from .config import app, templates
-from config import (
-    hometitle, description, Copyright, analysis, headers, log
-)
+from .generate import app, templates
+from config import *
 
 
 @app.get("/")

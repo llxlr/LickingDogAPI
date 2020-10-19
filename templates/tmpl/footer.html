@@ -2,12 +2,21 @@
     <div>
         <small>
             <a href="./v1/docs" target="_blank">API</a>/
-            <a href="javascript:void(0);" onclick="click()">统计</a>/
+            <a href="javascript:void(0);" onclick="readlog()">统计</a>/
             <a href="javascript:void(0);" onclick="dark()">夜间模式</a>/
             <a href="./policy.html">隐私政策</a>
         </small>
     </div>
-    <br>
+    &nbsp;&nbsp;
+    <div>
+        <span id="info"></span>
+        <script type="text/javascript">
+            $(function(){
+                document.getElementById("info").innerHTML = "响应耗时"+AS_ResTime().res+"ms"+"渲染耗时"+AS_ResTime().tcp+"ms"+"内存占用"+AS_ResTime().ram;
+            });
+        </script>
+    </div>
+    &nbsp;&nbsp;
     <div>
         © 2020 <a href="https://white-album.top/" target="_blank">White Album</a> Made <span class="icon" style="color:red">❤</span> By <a href="https://github.com/llxlr/" target="_blank">James Yang</a>
     </div>

@@ -55,10 +55,12 @@ class LoggerV2:
 
 
 if __name__ == '__main__':
-    # log1 = LoggerV1('../cache/info.log')
+    import os
+    log1 = LoggerV1(f'{os.path.dirname(__file__)}/../cache/info.log')
     # log1.debug('一个debug信息')
     # log1.info('一个info信息')
     # log1.warn('一个warning信息')
     # log1.error('一个error信息')
     # log1.criti('一个致命critical信息')
+    print(log1.read_log())
     pass

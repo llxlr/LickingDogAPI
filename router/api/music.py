@@ -5,7 +5,7 @@ from starlette.responses import JSONResponse
 from items.music import CloudMusic, QQ, music_type
 from items import Charts, Music
 from fastapi import APIRouter
-from config import log, Copyright
+from config import *
 import time
 router = APIRouter()
 

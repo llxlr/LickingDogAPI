@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from items.github import Github
 from fastapi import APIRouter
-from config import log, Copyright
+from config import *
 import time
 router = APIRouter()
 

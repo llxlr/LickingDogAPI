@@ -4,18 +4,16 @@ from items import NcovName
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
 from fastapi import APIRouter, File, UploadFile
+from config import *
 import time
-from config import (
-    log, Copyright,
-    cf_zone_id, cf_email, cf_global_api_key
-)
+
 router = APIRouter()
 
 
 @router.get('/log/')
 async def read_log():
     log.info("查看日志")
-    return {'status': 200, 'data': log.read_log()}
+    return {'status': 200, 'data': loginfo}
 
 
 @router.get('/ip/')
@@ -112,4 +110,3 @@ async def purge_cdn_cache(zone_id: str = None,
     else:
         if cf_purge(cf_zone_id, cf_email, cf_global_api_key)["success"]:
             return data
-

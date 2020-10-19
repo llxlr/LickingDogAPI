@@ -3,7 +3,7 @@
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, Form, HTTPException, Request, Response
-from config import log, Username, Password
+from config import *
 from utils.sql import get_db, crud, models, schemas
 from utils.sql.db import SessionLocal, engine
 
