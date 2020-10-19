@@ -1,7 +1,7 @@
 //log
 function readlog() {
     $.ajax({
-        url: window.location.host+"/v1/log/",
+        url: "/v1/log/",
         type: "get",
         dataType: "json",
         success: function(data) {
