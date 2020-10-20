@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
+from starlette.middleware.trustedhost import TrustedHostMiddleware  # Trusted Host
 from starlette.templating import Jinja2Templates  # Templates
 from starlette.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
@@ -36,9 +37,17 @@ def custom_schema():
 
 app.openapi = custom_schema
 app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=[
+        "127.0.0.1",
+        f"{master}.{suffix}",
+        f"*.{master}.{suffix}",
+    ]
+)
+app.add_middleware(
     CORSMiddleware,  # 添加跨域中间件
-    # allow_origins=config.origins,  # 允许跨域请求的域名列表
-    allow_origin_regex=origin_regex,  # 允许跨域请求的域名正则表达式
+    allow_origins=["*"],  # 允许跨域请求的域名列表
+    # allow_origin_regex=origin_regex,  # 允许跨域请求的域名正则表达式
     allow_credentials=True,  # 在跨域请求时是否支持cookie
     allow_methods=["*"],  # 允许跨域请求的HTTP方法列表
     allow_headers=["*"],  # 跨域请求支持的HTTP头信息列表

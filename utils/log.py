@@ -14,7 +14,7 @@ class LoggerV1:
         sh.setFormatter(fmt)
         sh.setLevel(clevel)
         # 设置文件日志
-        fh = logging.FileHandler(self.path)
+        fh = logging.FileHandler(self.path, encoding='utf-8')
         fh.setFormatter(fmt)
         fh.setLevel(flevel)
         self.logger.addHandler(sh)
@@ -50,17 +50,20 @@ class LoggerV1:
 
 
 class LoggerV2:
-    def __init__(self):
+    def __init__(self, path):
+        self.path = path
         pass
 
 
 if __name__ == '__main__':
     import os
-    log1 = LoggerV1(f'{os.path.dirname(__file__)}/../cache/info.log')
+    path = f'{os.path.dirname(__file__)}/../cache/info.log'
+    # log1 = LoggerV1(path)
     # log1.debug('一个debug信息')
     # log1.info('一个info信息')
     # log1.warn('一个warning信息')
     # log1.error('一个error信息')
     # log1.criti('一个致命critical信息')
-    print(log1.read_log())
+    # print(log1.read_log())
+    log2 = LoggerV2(path)
     pass

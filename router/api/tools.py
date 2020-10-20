@@ -10,7 +10,7 @@ import time
 router = APIRouter()
 
 
-@router.get('/log/')
+@router.get('/log/', include_in_schema=False)
 async def read_log():
     log.info("查看日志")
     return {'status': 200, 'data': loginfo}
@@ -60,7 +60,7 @@ async def calendar(type: str, year: str, month: str, day: str):
 #     return {"file_size": len(file)}
 
 
-@router.post("/catvsdog/upload/")
+@router.post("/catvsdog/upload/", include_in_schema=False)
 async def catvsdog_upload_image(file: UploadFile = File(...)):
     log.info('pv,上传一次猫狗图片')
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']

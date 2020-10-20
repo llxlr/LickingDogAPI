@@ -6,13 +6,14 @@ function readlog() {
         dataType: "json",
         success: function(data, status) {
             data = data.data;
-            swal.fire([{
-                icon: 'info',
-                title: '访问统计',
-                text: '接口总请求数'+data.pv+'总用户访问数'+data.uv+'总页面访问量'+data.ts,
-                showConfirmButton: false,
-                timer: 2000
-            }])
+            alert('接口总请求数'+data.pv+'总用户访问数'+data.uv+'总页面访问量'+data.ts);
+            // swal.fire([{
+            //     icon: 'info',
+            //     title: '访问统计',
+            //     text: '接口总请求数'+data.pv+'总用户访问数'+data.uv+'总页面访问量'+data.ts,
+            //     showConfirmButton: false,
+            //     timer: 2000
+            // }])
         }
     });
 }
@@ -28,7 +29,7 @@ function dark() {
 }
 
 // 响应耗时
-function AS_ResTime(){
+function ResTime(){
     let ResTime = window.performance;
     function RAM(size) { return Math.floor(size / 1024 / 1024, 4) + 'MB'; }
     function consume(time) { return time + 'ms'; }

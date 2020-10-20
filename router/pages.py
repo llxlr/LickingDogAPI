@@ -5,7 +5,7 @@ from .generate import app, templates
 from config import *
 
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 async def home(request: Request):
     log.info('ts,访问一次主页')
     return templates.TemplateResponse("index.html", {
@@ -18,7 +18,7 @@ async def home(request: Request):
     })
 
 
-@app.get('/start.html')
+@app.get('/start.html', include_in_schema=False)
 async def start(request: Request):
     log.info('ts,访问一次项目列表')
     return templates.TemplateResponse("start.html", {
@@ -31,7 +31,7 @@ async def start(request: Request):
     })
 
 
-@app.get("/admin/")
+@app.get("/admin/", include_in_schema=False)
 async def admin(request: Request):
     log.info('ts,访问一次后台管理')
     return templates.TemplateResponse("admin/index.html", {
@@ -44,7 +44,7 @@ async def admin(request: Request):
     })
 
 
-@app.get("/login/")
+@app.get("/login/", include_in_schema=False)
 async def admin(request: Request):
     log.info('ts,访问一次用户登录')
     return templates.TemplateResponse("admin/login.html", {
@@ -57,7 +57,7 @@ async def admin(request: Request):
     })
 
 
-@app.get("/404/")
+@app.get("/404/", include_in_schema=False)
 async def admin(request: Request):
     log.info('页面404')
     return templates.TemplateResponse("404.html", {
@@ -70,14 +70,14 @@ async def admin(request: Request):
     })
 
 
-@app.get('/limit.html')
+@app.get('/limit.html', include_in_schema=False)
 async def limit(request: Request):
     return templates.TemplateResponse("limit.html", {
         "request": request,
     })
 
 
-@app.get('/policy.html')
+@app.get('/policy.html', include_in_schema=False)
 async def policy(request: Request):
     log.info('ts,访问一次隐私政策页')
     return templates.TemplateResponse("policy.html", {
@@ -90,7 +90,7 @@ async def policy(request: Request):
     })
 
 
-@app.get("/bing.html")
+@app.get("/bing/", tags=["images"])
 async def bing(request: Request, type: str = None):
     import requests
     data = requests.get('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1', headers=headers).json()
@@ -103,7 +103,7 @@ async def bing(request: Request, type: str = None):
     })
 
 
-@app.get("/catvsdog.html")
+@app.get("/catvsdog.html", include_in_schema=False)
 async def catvsdog(request: Request):
     log.info('ts,访问一次Cat VS Dog')
     return templates.TemplateResponse("items/ml/catvsdog.html", {
@@ -116,7 +116,7 @@ async def catvsdog(request: Request):
     })
 
 
-@app.get("/mnist.html")
+@app.get("/mnist.html", include_in_schema=False)
 async def mnist(request: Request):
     log.info('ts,访问一次Tenserflow.js实现Mnist手写字识别')
     return templates.TemplateResponse("items/ml/mnist.html", {
@@ -129,7 +129,7 @@ async def mnist(request: Request):
     })
 
 
-@app.get("/ncov.html")
+@app.get("/ncov.html", include_in_schema=False)
 async def ncov(request: Request):
     log.info('ts,访问一次2020新冠肺炎实时疫情图')
     return templates.TemplateResponse("items/ncov.html", {
