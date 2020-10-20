@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
+import eliot
 
 
 class LoggerV1:
@@ -52,18 +53,21 @@ class LoggerV1:
 class LoggerV2:
     def __init__(self, path):
         self.path = path
+        eliot.to_file(open(self.path, "w", encoding='utf-8'))
+
+    def read_log(self):
         pass
 
 
 if __name__ == '__main__':
     import os
-    path = f'{os.path.dirname(__file__)}/../cache/info.log'
-    # log1 = LoggerV1(path)
+    path = f'{os.path.dirname(__file__)}/../cache/'
+    # log1 = LoggerV1(path+'info.log')
     # log1.debug('一个debug信息')
     # log1.info('一个info信息')
     # log1.warn('一个warning信息')
     # log1.error('一个error信息')
     # log1.criti('一个致命critical信息')
     # print(log1.read_log())
-    log2 = LoggerV2(path)
+    log2 = LoggerV2(path+'infov2.log')
     pass
