@@ -19,21 +19,21 @@ if os.path.exists(f'{path}/.env') and not args.env:
 else:
     load_dotenv(dotenv_path=args.env, verbose=True)
 
-hometitle = 'Licking Dog API'  # 主页标题
-title404 = '404 Not Found'  # 404页标题
-docv = '1.0.0'  # doc版本
-version = '/v1'  # api版本
-description = '简单功能的个人实现 | 舔狗API 🍭'  # api描述
-night = 'on'  # 夜间模式
-port = 8001  # 端口
-start_time = 2019  # 建站时间
-domain = 'api.white-album.top'  # 域名
+hometitle = os.getenv("HOMETITLE")  # 主页标题
+title404 = os.getenv("TITLE404")  # 404页标题
+docv = os.getenv("DOCV")  # doc版本
+version = os.getenv("VERSION")  # api版本
+description = "简单功能的个人实现 | 舔狗API 🍭"  # api描述
+night = os.getenv("NIGHT")  # 夜间模式
+port = os.getenv("PORT")  # 端口
+start_time = os.getenv("START_TIME")  # 建站时间
+domain = os.getenv("DOMAIN")  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
-cdn = 'https://cdn.jsdelivr.net/gh/llxlr/LickingDogAPI/data/'
-Copyright = {"author": '星旅人', 'url': 'https://white-album.top/'}
-analysis = {'google': 'UA-126485680-6', 'baidu': ''}
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53'}
+cdn = os.getenv("CDN")
+Copyright = {"author": "星旅人", "url": f"https://{master}.{suffix}/"}
+analysis = os.getenv("ANALYSIS")
+headers = os.getenv("HEADER")
 
 # Admin
 Username = os.getenv("Username")
@@ -67,4 +67,5 @@ sckey = os.getenv("SCKEY")
 
 
 if __name__ == "__main__":
+    print(domain)
     pass
