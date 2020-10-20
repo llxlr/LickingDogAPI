@@ -3,6 +3,7 @@
 from dotenv import load_dotenv
 from utils.log import LoggerV1
 import argparse
+import json
 import os
 
 path = os.path.dirname(__file__)
@@ -32,8 +33,8 @@ sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
 cdn = os.getenv("CDN")
 Copyright = {"author": "星旅人", "url": f"https://{master}.{suffix}/"}
-analysis = os.getenv("ANALYSIS")
-headers = os.getenv("HEADER")
+analysis = json.loads(os.getenv("ANALYSIS"))
+headers = json.loads(os.getenv("HEADER"))
 
 # Admin
 Username = os.getenv("Username")
