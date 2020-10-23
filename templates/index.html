@@ -3,12 +3,6 @@
 {% block content %}
 <!--<div class="main" style="background: url({{ url_for('static', path='img/bg.jpg') }}) center center / cover;">-->
 <div class="main">
-<div class="leftTop">
-    <a href="javascript:void(0);" onclick="dark()">
-        <i data-feather="sun"></i>
-    </a>
-</div>
-<div>
     <h1 class="h1">
         <span>{{ title }} <small>1.0.0</small></span>
     </h1>
@@ -20,6 +14,5 @@
     </div>
     <br><br>
     {% include "tmpl/footer.html" ignore missing with context %}
-</div>
 </div>
 {% endblock %}
