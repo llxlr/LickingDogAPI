@@ -2,9 +2,16 @@
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
 <div class="main">
-	<h1 class="h1">{{ title }}</h1>
-	<img src="{{ url_for('static', path='') }}" align="center"><br>
+<div class="leftTop">
+    <a href="javascript:void(0);" onclick="dark()">
+        <i data-feather="sun"></i>
+    </a>
+</div>
+<div>
+    <h1 class="h1">{{ title }}</h1>
+    <img src="{{ url_for('static', path='') }}" align="center"><br>
     <p align="center">本站<strong>绝对不会</strong>收集用户数据，尊重并保护用户隐私</p>
     {% include "tmpl/footer.html" ignore missing with context %}
+</div>
 </div>
 {% endblock %}
