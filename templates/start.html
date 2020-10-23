@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
-<div class="main">
+<div id="wrapper">
 <div class="leftTop">
     <a href="javascript:void(0);" onclick="dark()">
         <i data-feather="sun"></i>
     </a>
 </div>
-<div>
+<div class="main">
     <h1 class="h1">{{ title }}</h1>
     <ul>
         {% for index, href, caption in [('1.', 'ncov.html', '2020新冠肺炎实时疫情图'),
