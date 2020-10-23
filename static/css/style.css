@@ -21,21 +21,21 @@ body {
     text-rendering: geometricPrecision;
 }
 
-body.night {
+.night {
     background-color: #202124;
     color: #aaa;
 }
 
-body.night img {
+.night img {
     filter: brightness(40%);
 }
 
-body.night ul li, .buttons a, #file, .upload-button button {
+.night ul li, .buttons a, #file, .upload-button button {
     color: #aaaaaa;
     text-align: center;
 }
 
-body.night ul li a, .night footer a {
+.night ul li a, .night footer a {
     color: #00bbfc;
 }
 
@@ -185,7 +185,7 @@ footer .icon {
     right: 0;
 }
 
-body.night .github-corner svg {
+.night .github-corner svg {
     fill: #64ceaa91;
     color: #333;
     position: absolute;
@@ -237,3 +237,24 @@ body.night .github-corner svg {
     left: 0;
     z-index: -1;
 }
+
+.leftTop {
+  width: 45px;
+  height: 45px;
+  /*border: 1px solid #ccc;*/ /*显示div边框*/
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  padding: 4px;
+}
+
+.feather {
+  width: 45px;
+  height: 45px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
