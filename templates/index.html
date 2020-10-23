@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
-<!--<div class="main" style="background: url(/assets/img/bg.jpg) center center / cover;">-->
+<div class="leftTop">
+    <a href="javascript:void(0);" onclick="dark()">
+        <i data-feather="sun"></i>
+    </a>
+</div>
+<!--<div class="main" style="background: url({{ url_for('static', path='img/bg.jpg') }}) center center / cover;">-->
 <div class="main">
     <h1 class="h1">
         <span>{{ title }} <small>1.0.0</small></span>
@@ -9,7 +14,7 @@
     <h3 class="h3">简单功能的个人实现 | 舔狗API 🍭</h3>
     <img src="{{ url_for('static', path='img/to_be_continued.png') }}" align="center"><br>
     <div class="buttons">
-        <a class="button" href="./start.html">开始</a>
+        <a class="button" href="{{ url_for('static', path='../start.html') }}">开始</a>
         <a class="button" href="https://github.com/llxlr/LickingDogAPI" target="_blank">Github</a>
     </div>
     <br><br>
