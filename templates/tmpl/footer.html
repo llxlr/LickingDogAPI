@@ -1,10 +1,9 @@
 <footer>
     <div>
         <small>
-            <a href="./v1/docs" target="_blank">API</a>/
+            <a href="{{ url_for('static', path='../v1/docs') }}" target="_blank">API</a>/
             <a href="javascript:void(0);" onclick="readlog()">统计</a>/
-            <a href="javascript:void(0);" onclick="dark()">夜间模式</a>/
-            <a href="./policy.html">隐私政策</a>
+            <a href="{{ url_for('static', path='../policy.html') }}">隐私政策</a>
         </small>
     </div>
     &nbsp;
