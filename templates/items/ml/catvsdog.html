@@ -2,6 +2,12 @@
 {% block title%}{{ title }}{% endblock %}
 {% block content %}
 <div class="main">
+<div class="leftTop">
+    <a href="javascript:void(0);" onclick="dark()">
+        <i data-feather="sun"></i>
+    </a>
+</div>
+<div>
     <h1 class="h1">
         <span>Cat VS Dog <small>1.0.0</small></span>
     </h1>
@@ -21,5 +27,6 @@
     <br>
     <small>https://www.kaggle.com/c/dogs-vs-cats/</small>
     {% include "tmpl/footer.html" ignore missing with context %}
+</div>
 </div>
 {% endblock %}
