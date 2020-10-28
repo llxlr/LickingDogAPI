@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from typing import List
-from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, Form, HTTPException, Request, Response
-from config import *
+
+from sqlalchemy.orm import Session
 from utils.sql import get_db, crud, models, schemas
 from utils.sql.db import SessionLocal, engine
+
+from typing import List
+from config import *
 
 models.Base.metadata.create_all(bind=engine)
 router = APIRouter()
