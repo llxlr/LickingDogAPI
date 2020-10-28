@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from fastapi.status import HTTP_404_NOT_FOUND
+from starlette.status import HTTP_404_NOT_FOUND
 from fastapi.responses import JSONResponse
 from fastapi import APIRouter, File, UploadFile
 from items import NcovName
