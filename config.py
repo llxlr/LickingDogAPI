@@ -15,30 +15,37 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-E", "--env", help="Custom PATH of dotenv file", action="store_true")
 args = parser.parse_args()
 
+with open(f"{path}/config.json", "r", encoding="utf-8") as f:
+	SETUP = json.loads(f.read())
+
 if os.path.exists(f'{path}/.env') and not args.env:
     load_dotenv(verbose=True)
 else:
     load_dotenv(dotenv_path=args.env, verbose=True)
 
-hometitle = os.getenv("HOMETITLE")  # 主页标题
-title404 = os.getenv("TITLE404")  # 404页标题
-docv = os.getenv("DOCV")  # doc版本
-version = os.getenv("VERSION")  # api版本
-description = "简单功能的个人实现 | 舔狗API 🍭"  # api描述
-night = os.getenv("NIGHT")  # 夜间模式
-port = os.getenv("PORT")  # 端口
-start_time = os.getenv("START_TIME")  # 建站时间
-domain = os.getenv("DOMAIN")  # 二级域名
+hometitle = SETUP["HOMETITLE"]  # 主页标题
+title404 = SETUP["TITLE404"]  # 404页标题
+docv = SETUP["DOCV"]  # doc版本
+version = SETUP["VERSION"]  # api版本
+description = SETUP["DESCRIPTION"]  # api描述
+night = SETUP["NIGHT"]  # 夜间模式
+port = SETUP["PORT"]  # 端口
+start_time = SETUP["START_TIME"]  # 建站时间
+cdn = SETUP["CDN"]
+Copyright = SETUP["COPYRIGHT"]
+headers = SETUP["HEADER"]
+domain = SETUP["DOMAIN"]  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
-cdn = os.getenv("CDN")
-Copyright = {"author": "星旅人", "url": f"https://{master}.{suffix}/"}
-analysis = json.loads(os.getenv("ANALYSIS"))
-headers = json.loads(os.getenv("HEADER"))
 
 # Admin
 Username = os.getenv("Username")
 Password = os.getenv("Password")
+# ANALYSIS
+analysis = {
+    "google": os.getenv("GOOGLE_ANALYSIS"),
+    "baidu": os.getenv("BAIDU_FENXI"),
+}
 # Baidu AI API
 Baidu_APP_ID = os.getenv("APP_ID")
 Baidu_API_KEY = os.getenv("API_KEY")
