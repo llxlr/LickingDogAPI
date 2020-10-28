@@ -1,4 +1,4 @@
-aiofiles==0.5.0
+aiofiles==0.6.0
 baidu-aip==2.2.18.0
 beautifulsoup4==4.9.3
 bilibili_api==3.0.0
