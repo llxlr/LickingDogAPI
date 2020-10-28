@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from starlette.status import HTTP_404_NOT_FOUND
-from starlette.responses import JSONResponse
+from fastapi.status import HTTP_404_NOT_FOUND
+from fastapi.responses import JSONResponse
+from fastapi import APIRouter
 from items.music import CloudMusic, QQ, music_type
 from items import Charts, Music
-from fastapi import APIRouter
 from config import *
 import time
 router = APIRouter()
