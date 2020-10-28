@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from fastapi.responses import HTMLResponse
 from fastapi.requests import Request
 from .generate import app, templates
 from config import *
