@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from items.github import Github
 from fastapi import APIRouter
+from items.github import Github
 from config import *
 import time
 router = APIRouter()
