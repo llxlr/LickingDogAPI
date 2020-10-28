@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from starlette.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
-from starlette.middleware.trustedhost import TrustedHostMiddleware  # Trusted Host
-from starlette.templating import Jinja2Templates  # Templates
-from starlette.staticfiles import StaticFiles  # Static
+from fastapi.middleware.cors import CORSMiddleware  # Cross-Origin Resource Sharing
+from fastapi.middleware.trustedhost import TrustedHostMiddleware  # Trusted Host
+from fastapi.templating import Jinja2Templates  # Templates
+from fastapi.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
 from fastapi import FastAPI, APIRouter
 from .api import github, music, user, tools
@@ -54,7 +54,7 @@ app.add_middleware(
     expose_headers=[],  # 对浏览器可见的返回结果头信息，默认为[]
     max_age=60,  # 浏览器缓存CORS返回结果的最大时长，默认为600(单位秒)
 )
-app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
+app.mount("/static", StaticFiles(directory="static", packages=["bootstrap4"]), name="static")  # 静态资源设置
 api_router.include_router(user.router, tags=["users"])
 api_router.include_router(music.router, prefix='/music', tags=["music"])
 api_router.include_router(github.router, prefix='/github', tags=["github"])
