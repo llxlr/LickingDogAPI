@@ -11,7 +11,9 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
     apt-get update -y && apt-get upgrade -y && \
     apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     pip3 install --upgrade pip --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip3 install -r requirements.txt --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip3 install -r requirements.txt \
+    #-i https://pypi.tuna.tsinghua.edu.cn/simple \
+    --no-cache-dir && \
     apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     apt-get clean && rm -rf requirements.txt && rm -rf /tmp/* && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
