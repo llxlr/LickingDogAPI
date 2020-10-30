@@ -1,6 +1,15 @@
 if (document.getElementById('evanyou')) {
-    let c = document.getElementById('evanyou'), x = c.getContext('2d'), pr = window.devicePixelRatio || 1,
-        w = window.innerWidth, h = window.innerHeight, f = 90, q, m = Math, r = 0, u = m.PI * 2, v = m.cos,
+    let c = document.getElementById('evanyou'),
+        x = c.getContext('2d'),
+        pr = window.devicePixelRatio || 1,
+        w = window.innerWidth,
+        h = window.innerHeight,
+        f = 90,
+        q,
+        m = Math,
+        r = 0,
+        u = m.PI * 2,
+        v = m.cos,
         z = m.random;
     c.width = w * pr;
     c.height = h * pr;
