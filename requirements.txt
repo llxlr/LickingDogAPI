@@ -1,7 +1,7 @@
 aiofiles==0.6.0
 baidu-aip==2.2.18.0
 beautifulsoup4==4.9.3
-bilibili_api==2.1.4
+bilibili_api==3.1.2
 # bootstrap4==0.1.0
 cffi==1.14.3
 cssutils==1.0.2
