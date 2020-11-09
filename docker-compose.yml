@@ -2,7 +2,7 @@ version: "3.0"
 services:
     ldapi:
         build: ./Dockerfile
-        image: jamesyang/ldapi:latest
+        image: ldapi:latest
         ports:
             - "8001:8001"
         volumes:
