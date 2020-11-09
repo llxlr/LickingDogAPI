@@ -14,12 +14,15 @@ jobs:
 
       - name: Deploy file to prod server
         if: github.ref == 'refs/heads/master'
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: llxlr/Fuck-Deploy@v0.1.0
         with:
+          #type: 'password'
+          type: 'private_key'
           username: '${{ secrets.SSH_USERNAME }}'
           server: '${{ secrets.SSH_HOST }}'
           port: ${{ secrets.SSH_PORT }}
-          ssh_private_key: ${{ secrets.DEPLOY_KEY }}
+          #password: ${{ secrets.SSH_PASSWORD }}
+          private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
