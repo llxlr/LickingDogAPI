@@ -12,33 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Deploy file to dev server
-        if: github.ref == 'refs/heads/dev'
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
-        with:
-          username: '${{ secrets.SSH_USERNAME }}'
-          server: '${{ secrets.SSH_HOST }}'
-          port: ${{ secrets.SSH_PORT }}
-          ssh_private_key: ${{ secrets.DEPLOY_KEY }}
-          local_path: './*'
-          remote_path: '${{ secrets.DEPLOY_DEV_PATH }}'
-          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
-
-      - name: Restart dev server
-        if: github.ref == 'refs/heads/dev'
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          port: ${{ secrets.SSH_PORT }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            cd ${{ secrets.DEPLOY_DEV_PATH }}
-            echo "hello world!"
-            #echo "run script"
-            #bash deploy.sh
-            echo "restart api service successfully!"
-
       - name: Deploy file to prod server
         if: github.ref == 'refs/heads/master'
         uses: wlixcc/SFTP-Deploy-Action@v1.0
@@ -50,9 +23,6 @@ jobs:
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
-
-      - name: Restart prod server
-        if: github.ref == 'refs/heads/master'
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
