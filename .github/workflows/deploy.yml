@@ -31,7 +31,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.DEPLOY_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd ${{ secrets.DEPLOY_DEV_PATH }}
             echo "hello world!"
@@ -58,7 +58,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.DEPLOY_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd ${{ secrets.DEPLOY_PROD_PATH }}
             echo "hello world!"
