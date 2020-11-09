@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Deploy file to prod server
+      - name: Deploy to prod server
         if: github.ref == 'refs/heads/master'
         uses: llxlr/fuck-deploy@v0.1.0
         with:
@@ -26,6 +26,9 @@ jobs:
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+
+      - name: Run service
+        if: github.ref == 'refs/heads/master'
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
