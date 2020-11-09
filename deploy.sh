@@ -3,7 +3,7 @@ set -eu
 
 echo "
 #=================================================
-#	System Required: Ubuntu
+#	System Required: Linux
 #	Description: Deploying Script
 #	Version: 0.0.1
 #	Author: James Yang
