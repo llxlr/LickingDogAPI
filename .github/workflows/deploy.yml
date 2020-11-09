@@ -19,7 +19,7 @@ jobs:
           #type: 'password'
           type: 'private_key'
           username: '${{ secrets.SSH_USERNAME }}'
-          server: '${{ secrets.SSH_HOST }}'
+          host: '${{ secrets.SSH_HOST }}'
           port: ${{ secrets.SSH_PORT }}
           #password: ${{ secrets.SSH_PASSWORD }}
           private_key: ${{ secrets.DEPLOY_KEY }}
