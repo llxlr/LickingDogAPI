@@ -25,7 +25,7 @@ jobs:
           private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
-          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+          #args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
 
       - name: Run service
         if: github.ref == 'refs/heads/master'
