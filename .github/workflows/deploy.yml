@@ -14,17 +14,27 @@ jobs:
 
       - name: Deploy to prod server
         if: github.ref == 'refs/heads/master'
-        uses: llxlr/fuck-deploy@v0.1.0
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          #type: 'password'
-          type: 'private_key'
           username: '${{ secrets.SSH_USERNAME }}'
-          host: '${{ secrets.SSH_HOST }}'
+          server: '${{ secrets.SSH_HOST }}'
           port: ${{ secrets.SSH_PORT }}
-          #password: ${{ secrets.SSH_PASSWORD }}
-          private_key: ${{ secrets.DEPLOY_KEY }}
+          ssh_private_key: ${{ secrets.DEPLOY_KEY }} 
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
+          args: '-o ConnectTimeout=5'
+
+        #uses: llxlr/fuck-deploy@v0.1.0
+        #with:
+          #type: 'password'
+          #type: 'private_key'
+          #username: '${{ secrets.SSH_USERNAME }}'
+          #host: '${{ secrets.SSH_HOST }}'
+          #port: ${{ secrets.SSH_PORT }}
+          #password: ${{ secrets.SSH_PASSWORD }}
+          #private_key: ${{ secrets.DEPLOY_KEY }}
+          #local_path: './*'
+          #remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           #args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
 
       - name: Run service
