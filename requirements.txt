@@ -21,7 +21,7 @@ pixivpy-async==1.2.11
 pydantic==1.7.2
 python-dotenv==0.14.0
 python-multipart==0.0.5
-requests==2.24.0
+requests==2.25.0
 selenium==3.141.0
 sqlalchemy==1.3.20
 starlette==0.13.6
