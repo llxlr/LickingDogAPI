@@ -4,8 +4,7 @@ from config import headers, cdn
 from lxml import etree
 import requests
 
-languages = requests.get(cdn+'language.json', headers=headers).json()
-spoken_langs = requests.get(cdn+'spoken_language.json', headers=headers).json()
+languages, spoken_langs = requests.get(cdn+'gh-trending.json', headers=headers).json()
 xp = [
     # trending
     '//article[@class="Box-row"]',  # 项目总榜
@@ -32,21 +31,21 @@ def url(type_, date, spoken_lang, language):
         if list(filter(lambda x: x["language"] == language, languages)):
             if list(filter(lambda x: x["spoken_language"] == spoken_lang, spoken_langs)):
                 if date in ['daily', 'weekly', 'monthly']:
-                    url_ += '/{}?since={}&spoken_language_code={}'.format(language, date, spoken_lang)
+                    url_ += f'/{language}?since={date}&spoken_language_code={spoken_lang}'
             else:
                 if date in ['daily', 'weekly', 'monthly']:
-                    url_ += '/?since={}&spoken_language_code={}'.format(date, spoken_lang)
+                    url_ += f'/?since={date}&spoken_language_code={spoken_lang}'
         else:
             if date in ['daily', 'weekly', 'monthly']:
-                url_ += '/?since={}'.format(date)
+                url_ += f'/?since={date}'
     elif type_ == 'developers':
         url_ = developers
         if list(filter(lambda x: x["language"] == language, languages)):
             if date in ['daily', 'weekly', 'monthly']:
-                url_ += '/{}?since={}'.format(language, date)
+                url_ += f'/{language}?since={date}'
         else:
             if date in ['daily', 'weekly', 'monthly']:
-                url_ += '/?since={}'.format(date)
+                url_ += f'/?since={date}'
     return url_
 
 
