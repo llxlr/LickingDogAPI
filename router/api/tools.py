@@ -95,7 +95,7 @@ async def ncov_api(name: NcovName):
 async def purge_cdn_cache(zone_id: str = None,
                           email: str = None,
                           global_api_key: str = None):
-    from items.cdn import cf_purge
+    from utils.cdn import cf_purge
     log.info('pv,清除一次cloudflare cdn缓存')
     data = {"status": 200,
             "copyright": Copyright,
