@@ -29,8 +29,7 @@ def save_cache(status=False):
     r.encoding = 'utf-8'
     cache_path, f_name, text = 'cache', 'ncov.html', ''
     if status:
-        f_name = cache_path + '/' + f_name
-        with open(f_name, 'w', encoding='utf-8') as f:
+        with open(f'{cache_path}/{f_name}', 'w', encoding='utf-8') as f:
             f.write(r.text)
     else:
         f_name = cache_path+'/'+f_name if os.path.exists(cache_path) else os.makedirs(cache_path, exist_ok=True)
