@@ -20,12 +20,13 @@ class Bilibili(object):
         self.vid = vid
         self.date = date
 
+    @property
     def av2bv(self):
         return self.vid if 'BV' in self.vid else aid2bvid(self.vid)
 
     def get_video_info(self):
         """"""
-        self.vid = self.vid if 'av' in self.vid else self.av2bv()
+        self.vid = self.vid if 'av' in self.vid else self.av2bv
         v = video.get_video_info(bvid=self.vid, verify=verify)
         return v
 
