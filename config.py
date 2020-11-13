@@ -16,7 +16,7 @@ parser.add_argument('-E', '--env', help='Custom PATH of dotenv file', action='st
 args = parser.parse_args()
 
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
-	SETUP = json.loads(f.read())
+    SETUP = json.loads(f.read())
 
 if os.path.exists(f'{path}/.env') and not args.env:
     load_dotenv(verbose=True)
