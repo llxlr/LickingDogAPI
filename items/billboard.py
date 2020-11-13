@@ -15,22 +15,19 @@ xpr = [
     '//span[@class="chart-element__image flex--no-shrink"]/@style',
 ]
 type_ = ['song', 'artist', 'now', 'last', 'peak', 'week', 'avater']
-data = []
+single, data = {}, []
 
-
-def parse(htm):
-    htm = etree.HTML(htm)
-    single = {}
-    for xp in xpr:
-        n = xpr.index(xp)
-        for content in htm.xpath(xp):
-            if n in [0, 1, 2]:
-                single[type_[n]] = content
-            elif n in [3, 4, 5]:
-                single[type_[n]] = content.split(' ')[0]
-            elif n == 6:
+def parse(html):
+    selector = etree.HTML(html)
+    for idx, xp in enumerate(xpr):
+        for content in selector.xpath(xp):
+            if idx in [0, 1, 2]:
+                single[type_[idx]] = content
+            elif idx in [3, 4, 5]:
+                single[type_[idx]] = content.split(' ')[0]
+            elif idx == 6:
                 if not content.split('"'):
-                    single[type_[n]] = content.split('"')[1]
+                    single[type_[idx]] = content.split('"')[1]
     return single
 
 
@@ -41,7 +38,3 @@ def get_content(chart):
     for li in map(lambda x: etree.tostring(x, encoding='utf-8').decode('utf-8'), lis):
         data.append(parse(li))
     return data
-
-
-if __name__ == '__main__':
-    pass
