@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dotenv import load_dotenv
+from fake_useragent import UserAgent
 from utils.log import LoggerV1
 import argparse
 import json
@@ -10,6 +11,8 @@ path = os.path.dirname(__file__)
 os.makedirs(f'{path}/cache/', exist_ok=True)
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 loginfo = log.read_log()
+ua = UserAgent(cache=False)
+headers = {"User-Agent": ua.random}
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-E', '--env', help='Custom PATH of dotenv file', action='store_true')
@@ -33,7 +36,6 @@ port = SETUP['PORT']  # 端口
 start_time = SETUP['START_TIME']  # 建站时间
 cdn = SETUP['CDN']
 Copyright = SETUP['COPYRIGHT']
-headers = SETUP['HEADER']
 domain = SETUP['DOMAIN']  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
