@@ -7,13 +7,10 @@
     "PORT": 8001,
     "START_TIME": 2019,
     "DOMAIN": "api.white-album.top",
+    "DESCRIPTION": "简单功能的个人实现 | 舔狗API 🍭",
+    "CDN": "https://cdn.jsdelivr.net/gh/llxlr/LickingDogAPI/data/".
     "COPYRIGHT": {
         "author": "星旅人",
         "url": "https://white-album.top/"
-    },
-    "DESCRIPTION": "简单功能的个人实现 | 舔狗API 🍭",
-    "CDN": "https://cdn.jsdelivr.net/gh/llxlr/LickingDogAPI/data/",
-    "HEADER": {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36 Edg/81.0.416.53"
     }
 }
