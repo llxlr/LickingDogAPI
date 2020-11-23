@@ -9,10 +9,16 @@ import os
 
 path = os.path.dirname(__file__)
 os.makedirs(f'{path}/cache/', exist_ok=True)
+
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 loginfo = log.read_log()
-ua = UserAgent(use_cache_server=False, cache=False, verify_ssl=False)
-headers = {"User-Agent": ua.random}
+
+try:
+    ua = UserAgent(cache=False)
+except FakeUserAgentError:
+    uadata = os.path.join(f'{path}/data/fake-useragent-0.1.11.json')
+    ua = fake_useragent.UserAgent(path=uadata)
+headers = {'User-Agent': ua.random}
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-E', '--env', help='Custom PATH of dotenv file', action='store_true')
