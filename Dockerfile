@@ -10,10 +10,8 @@ RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compo
     find . -path ./venv -prune -o -type d -name "__pycache__" | grep "__pycache__" | xargs rm -rf && \
     apt-get update -y && apt-get upgrade -y && \
     apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
-    pip3 install --upgrade pip --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip3 install -r requirements.txt \
-    #-i https://opentuna.cn/pypi/web/simple \
-    --no-cache-dir && \
+    pip3 install --upgrade pip --no-cache-dir -i https://opentuna.cn/pypi/web/simple && \
+    pip3 install -r requirements.txt -i https://opentuna.cn/pypi/web/simple --no-cache-dir && \
     apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     apt-get clean && rm -rf requirements.txt && rm -rf /tmp/* && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
