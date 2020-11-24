@@ -17,7 +17,7 @@ try:
     ua = UserAgent(cache=False)
 except FakeUserAgentError:
     uadata = os.path.join(f'{path}/data/fake-useragent-0.1.11.json')
-    ua = fake_useragent.UserAgent(path=uadata)
+    ua = UserAgent(path=uadata)
 headers = {'User-Agent': ua.random}
 
 parser = argparse.ArgumentParser()
