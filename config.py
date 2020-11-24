@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dotenv import load_dotenv
-from fake_useragent import UserAgent
+from fake_useragent import UserAgent, FakeUserAgentError
 from utils.log import LoggerV1
 import argparse
 import json
