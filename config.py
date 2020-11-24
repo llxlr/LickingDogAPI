@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dotenv import load_dotenv
-from fake_useragent import UserAgent, FakeUserAgentError
+from fake_useragent import UserAgent
 from utils.log import LoggerV1
 import argparse
 import json
@@ -13,11 +13,7 @@ os.makedirs(f'{path}/cache/', exist_ok=True)
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 loginfo = log.read_log()
 
-try:
-    ua = UserAgent(cache=False)
-except FakeUserAgentError:
-    uadata = os.path.join(f'{path}/data/fake-useragent-0.1.11.json')
-    ua = UserAgent(path=uadata)
+ua = UserAgent()
 headers = {'User-Agent': ua.random}
 
 parser = argparse.ArgumentParser()
