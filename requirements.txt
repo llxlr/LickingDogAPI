@@ -3,7 +3,7 @@ baidu-aip==2.2.18.0
 beautifulsoup4==4.9.3
 bilibili_api==2.1.4
 #bootstrap4
-cffi==1.14.3
+cffi==1.14.4
 cssutils==1.0.2
 email-validator==1.1.2
 eliot==1.12.0
