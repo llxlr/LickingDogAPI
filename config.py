@@ -16,8 +16,8 @@ loginfo = log.read_log()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-E', '--env', help='Custom PATH of dotenv file', action='store_true')
+parser = argparse.ArgumentParser(description='Config Options')
+parser.add_argument('-E', '--env', help='custom PATH of dotenv file')
 args = parser.parse_args()
 
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
