@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-
 python webdriver.py $()
-
 """
 from lxml import etree
 import requests
@@ -44,23 +42,14 @@ links = []
 for link in html.xpath('//pre/a/@href'):
     if 'LATEST_RELEASE' not in link and 'index.html' not in link and 'icons' not in link:
         v = link.split('/')[-2]
-        # print(v.split('.'))
         if len(v.split('.')) == 4:
-            # print(v.split('.'))
             e, f, g, h = v.split('.')
             if version in v:
-                # print(version)
                 links.append(version)
             elif a+b+c == e+f+g:
-                # print(v)
                 links.append(v)
             elif a == e:
-                # print(v)
                 links.append(version)
 
-if len(links) > 1:
-    version = links[-1]
-else:
-    version = links[0]
-
+version = links[-1] if len(links) > 1 else links[0]
 print(f"{url}/{version}/{pkg}")
