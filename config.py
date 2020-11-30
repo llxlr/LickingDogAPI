@@ -14,6 +14,7 @@ log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志
 loginfo = log.read_log()
 
 ua = UserAgent()
+ua.update()
 headers = {'User-Agent': ua.random}
 
 parser = argparse.ArgumentParser(description='Config Options')
