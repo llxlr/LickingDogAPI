@@ -21,7 +21,7 @@ MyQR==2.3.1
 #pandas==1.1.4
 Pillow==8.0.1
 pixivpy-async==1.2.11
-pydantic==1.7.2
+pydantic==1.7.3
 pysnooper
 python-dotenv==0.14.0
 python-multipart==0.0.5
