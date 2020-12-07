@@ -91,7 +91,7 @@ $ sudo docker-compose up -d
 
 ### Github Actions自动打包镜像
 
-配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`~~和`dev`~~分支，在项目设置`Secrets`里添加`GH_TOKEN`
+配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`分支，在项目设置`Secrets`里添加`GH_TOKEN`
 
 ```bash
 $ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:latest
