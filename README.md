@@ -19,7 +19,7 @@
     <img src="https://github.com/llxlr/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
-  <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#F03D41">❤</span> by james yang & Power by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
+  <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#f03d41">❤</span> by james yang & Powered by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
 </p>
 <blockquote><p align="center">敬我暗恋的人</p></blockquote>
 
@@ -91,7 +91,7 @@ $ sudo docker-compose up -d
 
 ### Github Actions自动打包镜像
 
-配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`和`dev`分支，在项目设置`Secrets`里添加`GH_TOKEN`
+配置文件是`.github/workflows/docker.yml`，文件里设置了默认打包`master`~~和`dev`~~分支，在项目设置`Secrets`里添加`GH_TOKEN`
 
 ```bash
 $ sudo docker pull docker.pkg.github.com/llxlr/lickingdogapi/ldapi:latest
