@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 from fake_useragent import UserAgent
 from utils.log import LoggerV1
-import argparse
+from manage import args
 import json
 import os
 
@@ -16,10 +16,6 @@ loginfo = log.read_log()
 ua = UserAgent()
 ua.update()
 headers = {'User-Agent': ua.random}
-
-parser = argparse.ArgumentParser(description='Config Options')
-parser.add_argument('-E', '--env', help='custom PATH of dotenv file')
-args = parser.parse_args()
 
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
     SETUP = json.loads(f.read())
