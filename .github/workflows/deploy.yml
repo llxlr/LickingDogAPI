@@ -14,28 +14,18 @@ jobs:
 
       - name: Deploy to prod server
         if: github.ref == 'refs/heads/master'
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: llxlr/fuck-deploy@v0.1.0
         with:
+          type: 'password'
+          #type: 'private_key'
           username: '${{ secrets.SSH_USERNAME }}'
-          server: '${{ secrets.SSH_HOST }}'
+          host: '${{ secrets.SSH_HOST }}'
           port: ${{ secrets.SSH_PORT }}
-          ssh_private_key: ${{ secrets.DEPLOY_KEY }} 
+          password: ${{ secrets.SSH_PASSWORD }}
+          #private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
-          args: '-o ConnectTimeout=5'
-
-        #uses: llxlr/fuck-deploy@v0.1.0
-        #with:
-          #type: 'password'
-          #type: 'private_key'
-          #username: '${{ secrets.SSH_USERNAME }}'
-          #host: '${{ secrets.SSH_HOST }}'
-          #port: ${{ secrets.SSH_PORT }}
-          #password: ${{ secrets.SSH_PASSWORD }}
-          #private_key: ${{ secrets.DEPLOY_KEY }}
-          #local_path: './*'
-          #remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
-          #args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
+          args: '-o ConnectTimeout=5 -o StrictHostKeyChecking=no'
 
       - name: Run service
         if: github.ref == 'refs/heads/master'
@@ -44,8 +34,8 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          #password: ${{ secrets.SSH_PASSWORD }}
-          key: ${{ secrets.DEPLOY_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          #key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd ${{ secrets.DEPLOY_PROD_PATH }}
             echo "hello world!"
