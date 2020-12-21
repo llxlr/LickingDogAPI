@@ -11,7 +11,7 @@ email-validator==1.1.2
 eliot==1.12.0
 eliot-tree==19.0.1
 fake-useragent==0.1.11
-fastapi==0.62.0
+fastapi==0.63.0
 #gunicorn==
 Jinja2==2.11.2
 lxml==4.6.2
