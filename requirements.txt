@@ -24,7 +24,7 @@ pixivpy-async==1.2.11
 playwright==0.170.0
 pydantic==1.7.3
 pysnooper==0.4.2
-python-dotenv==0.14.0
+python-dotenv==0.15.0
 python-multipart==0.0.5
 PyMySQL==0.9.3
 requests==2.25.0
