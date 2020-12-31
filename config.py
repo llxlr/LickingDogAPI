@@ -3,7 +3,6 @@
 from dotenv import load_dotenv
 from fake_useragent import UserAgent
 from utils.log import LoggerV1
-from manage import args
 import json
 import os
 
@@ -13,17 +12,16 @@ os.makedirs(f'{path}/cache/', exist_ok=True)
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 loginfo = log.read_log()
 
-ua = UserAgent()
-ua.update()
+ua = UserAgent(path=f'{path}/data/fake-useragent.json')
 headers = {'User-Agent': ua.random}
 
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
     SETUP = json.loads(f.read())
 
-if os.path.exists(f'{path}/.env') and not args.env:
+if os.path.exists(f'{path}/.env'):
     load_dotenv(verbose=True)
 else:
-    load_dotenv(dotenv_path=args.env, verbose=True)
+    load_dotenv(dotenv_path='/etc/api/.env', verbose=True)
 
 hometitle = SETUP['HOMETITLE']  # 主页标题
 title404 = SETUP['TITLE404']  # 404页标题
@@ -76,4 +74,5 @@ sckey = os.getenv('SCKEY')
 
 
 if __name__ == "__main__":
+    print(port)
     pass

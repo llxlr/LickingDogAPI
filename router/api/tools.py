@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from starlette.status import HTTP_404_NOT_FOUND
-from fastapi.responses import JSONResponse
 from fastapi import APIRouter, File, UploadFile
 from items import NcovName
 from config import *
@@ -73,9 +71,6 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
                 "msg": "this is a {}, everything is ok !".format(file.content_type.split('/')[1]),
                 "time": time.ctime(),
             }
-    else:
-        return JSONResponse(status_code=HTTP_404_NOT_FOUND,
-                            content={'msg': f'{file.filename} is not found'})
 
 
 @router.get('/ncov/')
@@ -109,3 +104,7 @@ async def purge_cdn_cache(zone_id: str = None,
     else:
         if cf_purge(cf_zone_id, cf_email, cf_global_api_key)["success"]:
             return data
+
+
+if __name__ == '__main__':
+    pass

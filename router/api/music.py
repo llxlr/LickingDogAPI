@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from starlette.status import HTTP_404_NOT_FOUND
-from fastapi.responses import JSONResponse
 from fastapi import APIRouter
 from items.music import CloudMusic, QQ, music_type
 from items import Charts, Music
@@ -45,6 +43,3 @@ async def billboard(chart: Charts):
             "data": get_content(chart),
             "time": time.ctime(),
         }
-    else:
-        return JSONResponse(status_code=HTTP_404_NOT_FOUND,
-                            content={'msg': f'{chart} is not found'})
