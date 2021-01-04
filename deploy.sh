@@ -51,24 +51,24 @@ sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 if [[ -d /etc/api/ ]]
 then
-    if [[ -f /etc/api/.env ]]
-    then
-        echo "The .env exist, everything is ok."
-    else
-        sudo cp .env.example /etc/api/.env
-    fi
-else
-    sudo mkdir /etc/api/
+  if [[ -f /etc/api/.env ]]
+  then
+    echo "The .env exist, everything is ok."
+  else
     sudo cp .env.example /etc/api/.env
+  fi
+else
+  sudo mkdir /etc/api/
+  sudo cp .env.example /etc/api/.env
 fi
 
 if [[ -f /etc/systemd/system/ldapi.service ]]
 then
-    echo "The ldapi.service exist, everything is ok."
+  echo "The ldapi.service exist, everything is ok."
 else
-    sudo cp ./conf/ldapi.service /etc/systemd/system/ldapi.service
-    path=$(pwd)
-    sed 's/${path//\//\\\/}/\/www\/html\/LickingDogAPI/g' /etc/systemd/system/ldapi.service >> /etc/systemd/system/ldapi.service
+  sudo cp ./conf/ldapi.service /etc/systemd/system/ldapi.service
+  path=$(pwd)
+  sed 's/${path//\//\\\/}/\/www\/html\/LickingDogAPI/g' /etc/systemd/system/ldapi.service >> /etc/systemd/system/ldapi.service
 fi
 
 echo "Delete downloaded file"
