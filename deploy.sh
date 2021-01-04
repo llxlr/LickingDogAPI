@@ -2,13 +2,13 @@
 set -eu
 
 echo "
-#=================================================
-#	System Required: Linux
-#	Description: Deploying Script
-#	Version: 0.0.1
-#	Author: James Yang
-#	Blog: https://white-album.top/
-#=================================================
+#=================================================#
+#             System Required: Linux              #
+#	  Description: Deploying Script           #
+#	          Version: 0.0.1                  #
+#	        Author: James Yang                #
+#	   Blog: https://white-album.top/         #
+#=================================================#
 "
 
 sudo apt-get install \
