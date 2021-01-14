@@ -13,13 +13,13 @@ async def read_log():
     return {'status': 200, 'data': loginfo}
 
 
-@router.get('/ip/')
+@router.get('/ip/', include_in_schema=True)
 async def ip():
     from items.ip import ip
     return ip
 
 
-@router.get('/hitokoto/')
+@router.get('/hitokoto/', include_in_schema=True)
 async def hitokoto():
     from items.hitokoto import hitokoto
     data = hitokoto()
@@ -32,12 +32,12 @@ async def hitokoto():
     }
 
 
-@router.get('/time/countdown/')
+@router.get('/time/countdown/', include_in_schema=True)
 async def count_down(type):
     return ''
 
 
-@router.get('/time/calendar/{type}')
+@router.get('/time/calendar/{type}', include_in_schema=True)
 async def calendar(type: str, year: str, month: str, day: str):
     from items.time import Calendar
     log.info("pv,请求一次公农历转换")
@@ -51,7 +51,7 @@ async def calendar(type: str, year: str, month: str, day: str):
         }
 
 
-# @router.post("/files/")
+# @router.post("/files/", include_in_schema=True)
 # async def catvsdog_create_file(file: bytes = File(...)):
 #     log.info('pv,请求一次')
 #     return {"file_size": len(file)}
@@ -59,9 +59,9 @@ async def calendar(type: str, year: str, month: str, day: str):
 
 @router.post("/catvsdog/upload/", include_in_schema=False)
 async def catvsdog_upload_image(file: UploadFile = File(...)):
-    log.info('pv,上传一次猫狗图片')
     _format_ = ['image/bmp', 'image/gif', 'image/jpeg', 'image/jpg', 'image/png', 'image/x-icon']
-    if file.filename != '':
+    if file.filename:
+        log.info(f'pv,上传一次猫狗图片,{file.filename}')
         if file.content_type in _format_:
             return {
                 "status": 200,
@@ -73,7 +73,7 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
             }
 
 
-@router.get('/ncov/')
+@router.get('/ncov/', include_in_schema=True)
 async def ncov_api(name: NcovName):
     from items.ncov import get_data
     log.info('pv,请求一次新冠肺炎数据')
@@ -86,10 +86,8 @@ async def ncov_api(name: NcovName):
     }
 
 
-@router.get('/pcc/cf/')
-async def purge_cdn_cache(zone_id: str = None,
-                          email: str = None,
-                          global_api_key: str = None):
+@router.get('/pcc/cf/', include_in_schema=True)
+async def purge_cdn_cache(zone_id=None, email=None, global_api_key=None):
     from utils.cdn import cf_purge
     log.info('pv,清除一次cloudflare cdn缓存')
     data = {"status": 200,
@@ -104,6 +102,13 @@ async def purge_cdn_cache(zone_id: str = None,
     else:
         if cf_purge(cf_zone_id, cf_email, cf_global_api_key)["success"]:
             return data
+
+
+@router.get('/okex/', include_in_schema=True)
+async def bitcoin_quotes():
+    from utils.spider import get
+    url = f"https://www.okex.com/v2/support/info/announce/listProject?&t={str(time.time()).replace('.', '')}"
+    return get(url)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from config import headers
+from config import ua
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from lxml import etree
@@ -11,7 +11,7 @@ def driver(url: str):
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    options.add_argument(f"user-agent='{headers['User-Agent']}'")
+    options.add_argument(f"user-agent='{ua.random}'")
     wd = webdriver.Chrome(options=options)
     wd.get(url)
     return wd

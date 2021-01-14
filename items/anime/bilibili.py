@@ -66,10 +66,10 @@ class Bilibili(object):
 
 
 if __name__ == '__main__':
-    # https://passkou.com/docs/bilibili_api/
-    # bili = Bilibili(vid="BV1uv411q7Mv")
+    # https://github.com/Passkou/bilibili_api/
+    bili = Bilibili(vid="BV1uv411q7Mv")
     # print(bili.get_danmaku())
-    # print(bili.get_video_url())
-    bgm = Bilibili().get_user_bangumi(166791985, 'bangumi')
-    print(bgm)
+    print(bili.get_video_url())
+    # bgm = Bilibili().get_user_bangumi(166791985, 'bangumi')
+    # print(bgm)
     pass

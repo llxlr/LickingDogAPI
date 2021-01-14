@@ -33,19 +33,15 @@ def url(type_, date, spoken_lang, language):
                 if date in ['daily', 'weekly', 'monthly']:
                     url_ += f'/{language}?since={date}&spoken_language_code={spoken_lang}'
             else:
-                if date in ['daily', 'weekly', 'monthly']:
-                    url_ += f'/?since={date}&spoken_language_code={spoken_lang}'
+                url_ += f'/?since={date}&spoken_language_code={spoken_lang}' if date in ['daily', 'weekly', 'monthly'] else ''
         else:
-            if date in ['daily', 'weekly', 'monthly']:
-                url_ += f'/?since={date}'
+            url_ += f'/?since={date}' if date in ['daily', 'weekly', 'monthly'] else ''
     elif type_ == 'developers':
         url_ = developers
         if list(filter(lambda x: x["language"] == language, languages)):
-            if date in ['daily', 'weekly', 'monthly']:
-                url_ += f'/{language}?since={date}'
+            url_ += f'/{language}?since={date}' if date in ['daily', 'weekly', 'monthly'] else ''
         else:
-            if date in ['daily', 'weekly', 'monthly']:
-                url_ += f'/?since={date}'
+            url_ += f'/?since={date}' if date in ['daily', 'weekly', 'monthly'] else ''
     return url_
 
 
