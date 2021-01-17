@@ -16,13 +16,12 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: llxlr/fuck-deploy@master
         with:
-          type: 'password'
-          #type: 'private_key'
+          type: 'private_key'
           username: '${{ secrets.SSH_USERNAME }}'
           host: '${{ secrets.SSH_HOST }}'
           port: ${{ secrets.SSH_PORT }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          #private_key: ${{ secrets.DEPLOY_KEY }}
+          #password: ${{ secrets.SSH_PASSWORD }}
+          private_key: ${{ secrets.DEPLOY_KEY }}
           local_path: './*'
           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
           #args: ''
@@ -34,11 +33,11 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          #key: ${{ secrets.DEPLOY_KEY }}
+          #password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd ${{ secrets.DEPLOY_PROD_PATH }}
             echo "hello world!"
             #echo "run script"
             #bash deploy.sh
-            echo "restart api service successfully!"
+            #echo "restart api service successfully!"
