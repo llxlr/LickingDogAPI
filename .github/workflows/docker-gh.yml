@@ -20,7 +20,7 @@ jobs:
       - name: Push Docker Image to GitHub Packages
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
-          
+
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           # Strip git ref prefix from version
@@ -34,6 +34,15 @@ jobs:
           VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
-          
+
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+
+      - name: Delete old package
+        uses: actions/delete-package-versions@v1
+        with:
+          owner: llxlr
+          repo: LickingDogAPI
+          package-name: ldapi
+          #num-old-versions-to-delete: 3
+          token: ${{ secrets.GH_TOKEN }}
