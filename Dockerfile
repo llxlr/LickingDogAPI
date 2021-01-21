@@ -1,22 +1,17 @@
 FROM python:3.8-slim-buster
-LABEL maintainer="James Yang <i@white-album.top>"
+LABEL maintainer="James Yang <i@xhlr.top>"
 
-COPY . /usr/src/app
+COPY . /app
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-RUN rm -rf ./{.env,.env.example,.gitattributes,.gitignore,deploy.sh,docker-compose.yml,Dockerfile,LICENSE,README.md} && \
-    rm -rf ./{.git,.github,.idea,.vscode,cache,conf,venv} && \
-    find . -path ./venv -prune -o -type d -name "__pycache__" | grep "__pycache__" | xargs rm -rf && \
-    apt-get update -y && apt-get upgrade -y && \
+RUN apt-get update -y && apt-get upgrade -y && \
     apt-get install g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     pip3 install --upgrade pip --no-cache-dir -i https://opentuna.cn/pypi/web/simple && \
     pip3 install -r requirements.txt --no-cache-dir -i https://opentuna.cn/pypi/web/simple && \
     apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
-    apt-get clean && rm -rf requirements.txt && rm -rf /tmp/* && \
-    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo 'Asia/Shanghai' > /etc/timezone
+    apt-get clean && rm -rf requirements.txt && rm -rf /tmp/*
 
-#EXPOSE 8001
+EXPOSE 8001
 
 CMD ["python", "manage.py"]

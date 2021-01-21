@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+https://docs.github.com/cn/rest
+
+https://docs.github.com/cn/graphql
+"""
 from config import headers, cdn
 from lxml import etree
 import requests
