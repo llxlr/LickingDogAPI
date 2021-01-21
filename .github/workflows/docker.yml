@@ -2,8 +2,7 @@ name: Docker Image
 
 on:
   push
-  release:
-    types: [created]
+  # release: [created]
 env:
   IMAGE_NAME: ldapi
 
