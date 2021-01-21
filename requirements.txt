@@ -19,7 +19,7 @@ MyQR==2.3.1
 # opencv-python==4.4.0.46
 # pandas==1.1.4
 Pillow==8.0.1
-pixivpy-async==1.2.11
+pixivpy==3.5.10
 # playwright==0.171.1
 pydantic==1.7.3
 # pysnooper==0.4.2
