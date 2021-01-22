@@ -53,7 +53,7 @@ jobs:
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]') # Change all uppercase to lowercase
 
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')  # Strip git ref prefix from version
-          [[ "${{ github.ref }}" == "refs/tags/v"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')  # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$VERSION
           #[ "$VERSION" == "master" ] && VERSION=latest  # Use Docker `latest` tag convention
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
