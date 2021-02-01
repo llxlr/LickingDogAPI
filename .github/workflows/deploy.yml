@@ -4,47 +4,15 @@ on:
   push:
     branches:
       - master
-      - dev
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      # 部署到宝塔服务器
+
       - name: Webhook
         uses: distributhor/workflow-webhook@v1
         env:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-
-#       - name: Deploy to prod server
-#         if: github.ref == 'refs/heads/master'
-#         uses: llxlr/fuck-deploy@master
-#         with:
-#           type: 'private_key'
-#           username: '${{ secrets.SSH_USERNAME }}'
-#           host: '${{ secrets.SSH_HOST }}'
-#           port: ${{ secrets.SSH_PORT }}
-#           #password: ${{ secrets.SSH_PASSWORD }}
-#           private_key: ${{ secrets.DEPLOY_KEY }}
-#           local_path: './*'
-#           remote_path: '${{ secrets.DEPLOY_PROD_PATH }}'
-#           #args: ''
-
-#       - name: Run service
-#         if: github.ref == 'refs/heads/master'
-#         uses: appleboy/ssh-action@master
-#         with:
-#           host: ${{ secrets.SSH_HOST }}
-#           username: ${{ secrets.SSH_USERNAME }}
-#           port: ${{ secrets.SSH_PORT }}
-#           #password: ${{ secrets.SSH_PASSWORD }}
-#           key: ${{ secrets.DEPLOY_KEY }}
-#           script: |
-#             cd ${{ secrets.DEPLOY_PROD_PATH }}
-#             echo "hello world!"
-#             #echo "run script"
-#             #bash deploy.sh
-#             #echo "restart api service successfully!"
