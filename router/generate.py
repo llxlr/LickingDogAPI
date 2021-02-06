@@ -6,15 +6,15 @@ from fastapi.templating import Jinja2Templates  # Templates
 from fastapi.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
 from fastapi import FastAPI, APIRouter
-from .api import github, music, user, tools
+from api import v1, v2
 from config import *
 api_router = APIRouter()
 app = FastAPI(
-    title=hometitle,
+    title=title,
     description=description,
-    version=docv,
-    openapi_url=f'{version}/openapi.json',
-    docs_url=f'{version}/docs/',
+    version=api_version,
+    openapi_url=f'{api_version}/openapi.json',
+    docs_url=f'{api_version}/docs/',
     redoc_url=None
 )
 
@@ -23,8 +23,8 @@ def custom_schema():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title=hometitle,
-        version=docv,
+        title=title,
+        version=api_version,
         description=description,
         routes=app.routes
     )
@@ -55,9 +55,9 @@ app.add_middleware(
     max_age=60,  # 浏览器缓存CORS返回结果的最大时长，默认为600(单位秒)
 )
 app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
-api_router.include_router(user.router, tags=["users"])
-api_router.include_router(music.router, prefix='/music', tags=["music"])
-api_router.include_router(github.router, prefix='/github', tags=["github"])
-api_router.include_router(tools.router, tags=["tools"])
-app.include_router(api_router, prefix=version)
+api_router.include_router(v1.user.router, prefix='/users', tags=["users"])
+api_router.include_router(v1.music.router, prefix='/music', tags=["music"])
+api_router.include_router(v1.github.router, prefix='/github', tags=["github"])
+api_router.include_router(v1.tools.router, prefix='/tools', tags=["tools"])
+app.include_router(api_router, prefix=api_version)
 templates = Jinja2Templates(directory="templates")  # 页面模板

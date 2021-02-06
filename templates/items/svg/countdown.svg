@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="36" width="720">
-    <!-- https://solstice23.top/archives/540 -->
-    <g>
-        <text xmlns="http://www.w3.org/2000/svg" text-anchor="start" letter-spacing="3" font-smoothing="antialiased"
-              font-family="sans-serif,KaiTi" font-size="30" y="30" x="0" stroke-width="5" stroke="#00000000"
-              fill="#5e72e4">还有 {{ date }} 就是 {{ year }} 年了
-        </text>
-    </g>
-</svg>

@@ -11,20 +11,42 @@ echo "
 #=================================================#
 "
 
+# sudo apt-get install \
+# unzip \
+# python3 \
+# python3-pip \
+# python3-venv \
+# libxss1 \
+# libappindicator1 \
+# libindicator7 \
+# fonts-liberation \
+# libatk-bridge2.0-0 \
+# libatspi2.0-0 \
+# libgbm1 \
+# libgtk-3-0 \
+# libnspr4 \
+# libnss3 \
+# xdg-utils -y
+
 sudo apt-get install \
+unzip \
 python3 \
 python3-pip \
 python3-venv \
-libxss1 \
-libappindicator1 \
-libindicator7 \
 fonts-liberation \
 libatk-bridge2.0-0 \
+libatk1.0-0 \
+libatomic1 \
 libatspi2.0-0 \
+libcairo2 \
+libcups2 \
 libgbm1 \
+libgdk-pixbuf2.0-0 \
 libgtk-3-0 \
 libnspr4 \
 libnss3 \
+libpango-1.0-0 \
+libxkbcommon0 \
 xdg-utils -y
 
 sudo python3 -m venv venv
@@ -32,22 +54,35 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo "Start install google chrome"
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome*.deb
-sudo apt --fix-broken install -y
-sudo dpkg -i google-chrome*.deb
-sed 's/exec -a "$0" "$HERE\/chrome" "$@"/exec -a "$0" "$HERE\/chrome" "$@" --user-data-dir --no-sandbox/g' /opt/google/chrome/google-chrome >> /opt/google/chrome/google-chrome
-version=$(google-chrome-stable --version)
-echo "google chrome version: ${version}"
+# echo "Start install google chrome"
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo dpkg -i google-chrome*.deb
+# sudo apt --fix-broken install -y
+# sudo dpkg -i google-chrome*.deb
+# sed 's/exec -a "$0" "$HERE\/chrome" "$@"/exec -a "$0" "$HERE\/chrome" "$@" --user-data-dir --no-sandbox/g' /opt/google/chrome/google-chrome >> /opt/google/chrome/google-chrome
+# version=$(google-chrome-stable --version)
+# echo "google chrome version: ${version}"
 
-echo "Start download chromedriver"
-wget $(python ./utils/webdriver.py ${version: 14: -1})
-unzip chromedriver_linux64.zip
-sudo chmod +x chromedriver
-sudo mv -f chromedriver /usr/local/share/chromedriver
-sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+# echo "Start install microsoft edge dev"
+# wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/microsoft-edge-dev_89.0.774.4-1_amd64.deb
+# sudo dpkg -i microsoft-edge*.deb
+# sudo apt --fix-broken install -y
+# sudo dpkg -i microsoft-edge*.deb
+# sed 's/exec -a "$0" "$HERE\/chrome" "$@"/exec -a "$0" "$HERE\/chrome" "$@" --user-data-dir --no-sandbox/g' /opt/microsoft/msedge-dev/microsoft-edge-dev >> /opt/microsoft/msedge-dev/microsoft-edge-dev
+# version=$(microsoft-edge-dev --version)
+# echo "microsoft edge dev version: ${version}"
+
+# webdriver="chromedriver"
+# webdriver="msedgedriver"
+# echo "Start download ${webdriver}"
+# wget $(python ./utils/webdriver.py ${version: 14: -1})  # Microsoft Edge 89.0.774.4 dev
+# unzip *driver_linux64.zip
+# sudo chmod +x ${webdriver}
+# sudo mv -f ${webdriver} /usr/local/share/${webdriver}
+# sudo ln -s /usr/local/share/${webdriver} /usr/local/bin/${webdriver}
+# sudo ln -s /usr/local/share/${webdriver} /usr/bin/${webdriver}
+# version=$(${webdriver} --version)
+# echo "${webdriver} version: ${version}"
 
 if [[ -d /etc/api/ ]]
 then
@@ -72,7 +107,7 @@ else
 fi
 
 echo "Delete downloaded file"
-sudo rm google-chrome*.deb chromedriver_linux64.zip
+sudo rm google-chrome*.deb microsoft-edge*.deb chromedriver_linux64.zip msedgedriver_linux64.zip
 echo "Delete successfully!"
 
 # Config Service And Restart Service

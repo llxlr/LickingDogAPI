@@ -38,21 +38,21 @@ body {
    margin:auto;
 }
 
-.night {
+.ready .night {
     background-color: #202124;
     color: #aaa;
 }
 
-.night img {
+.ready .night img {
     filter: brightness(40%);
 }
 
-.night ul li, .buttons a, #file, .upload-button button {
+.ready .night ul li, .buttons a, #file, .upload-button button {
     color: #aaaaaa;
     text-align: center;
 }
 
-.night ul li a, .night footer a {
+.ready .night ul li a, .ready .night footer a {
     color: #00bbfc;
 }
 
@@ -202,7 +202,7 @@ footer .icon {
     right: 0;
 }
 
-.night .github-corner svg {
+.ready .night .github-corner svg {
     fill: #64ceaa91;
     color: #333;
     position: absolute;

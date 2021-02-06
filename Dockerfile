@@ -12,6 +12,9 @@ RUN apt-get update -y && apt-get upgrade -y && \
     apt-get autoremove g++ gcc make build-essential libc-dev musl-dev libxslt-dev apt-utils -y && \
     apt-get clean && rm -rf requirements.txt && rm -rf /tmp/*
 
+ENV HOST 0.0.0.0
+ENV PORT 8001
+
 EXPOSE 8001
 
 CMD ["python", "manage.py"]

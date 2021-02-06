@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="22.0" width="256.5">
-    <g>
-        <text text-anchor="start" letter-spacing="1.5" font-smoothing="antialiased"
-              font-family="KaiTi, &quot;Segoe UI&quot;, &quot;Lucida Grande&quot;, Helvetica, Arial, &quot;Microsoft YaHei&quot;, FreeSans, Arimo, &quot;Droid Sans&quot;,&quot;wenquanyi micro hei&quot;,&quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, sans-serif"
-              font-size="20.0" id="svg_1" y="20.0" x="0" stroke-width="0" stroke="#000" fill="#000000">{{ content }}
-        </text>
-    </g>
-</svg>

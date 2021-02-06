@@ -3,6 +3,7 @@
 from dotenv import load_dotenv
 from fake_useragent import UserAgent
 from utils.log import LoggerV1
+import data
 import json
 import os
 
@@ -12,7 +13,7 @@ os.makedirs(f'{path}/cache/', exist_ok=True)
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
 loginfo = log.read_log()
 
-ua = UserAgent(path=f'{path}/data/fake-useragent.json')
+ua = UserAgent(path=data.fake_useragent())
 headers = {'User-Agent': ua.random}
 
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
@@ -23,12 +24,11 @@ if os.path.exists(f'{path}/.env'):
 else:
     load_dotenv(dotenv_path='/etc/api/.env', verbose=True)
 
-hometitle = SETUP['HOMETITLE']  # 主页标题
-title404 = SETUP['TITLE404']  # 404页标题
-docv = SETUP['DOCV']  # doc版本
+title = SETUP['TITLE']  # 主页标题
 version = SETUP['VERSION']  # api版本
+api_version = '/v1'
+api_test_version = '/v2'
 description = SETUP['DESCRIPTION']  # api描述
-night = SETUP['NIGHT']  # 夜间模式
 port = SETUP['PORT']  # 端口
 start_time = SETUP['START_TIME']  # 建站时间
 cdn = SETUP['CDN']
@@ -63,6 +63,14 @@ email = os.getenv('username')
 password = os.getenv('password')
 # Github
 github_token = os.getenv('TOKEN')
+# Gitalk
+gitalk_config = {
+    'clientID': os.getenv('gitalk_clientID'),
+    'clientSecret': os.getenv('gitalk_clientSecret'),
+    'repo': os.getenv('gitalk_repo'),
+    'owner': os.getenv('gitalk_owner'),
+    'admin': os.getenv('gitalk_admin'),
+}
 # Pixiv
 PIXIV_EMAIL = os.getenv('PIXIV_EMAIL')
 PIXIV_PASSWD = os.getenv('PIXIV_PASSWD')
@@ -74,5 +82,5 @@ sckey = os.getenv('SCKEY')
 
 
 if __name__ == "__main__":
-    print(port)
+    # print()
     pass

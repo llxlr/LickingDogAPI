@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from config import headers, cdn
+from data import hitokoto_
 from random import randint
 import requests
+import json
 
 
 def hitokoto():
     """一言"""
-    data = requests.get(cdn + 'hitokoto.json', headers=headers).json()
-    return data[randint(1, len(data))]
+    # data = requests.get(cdn + 'hitokoto.json', headers=headers).json()
+    # return data[randint(1, len(data))]
+    with open(hitokoto_(), 'r') as ff:
+        data = json.load(ff)
+        return data[randint(1, len(data))]
 
 
 def poem():

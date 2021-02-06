@@ -1,0 +1,6 @@
+# robots.txt generated at https://www.sojson.com/robots/
+Crawl-delay: 10
+Disallow:/admin/
+Disallow:/cdn-cgi/
+Allow: /
+User-agent: *

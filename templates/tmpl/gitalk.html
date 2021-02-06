@@ -1,0 +1,13 @@
+  <script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  {% if gitalk_config %}
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '{{ gitalk_config.clientID }}', //Github Application Client ID
+      clientSecret: '{{ gitalk_config.clientSecret }}', //Github Application Client Secret
+      repo: '{{ gitalk_config.repo }}', //Github repo
+      owner: '{{ gitalk_config.owner }}', //Github repo owner
+      admin: [{{ gitalk_config.admin }}], //Github repo collaborators, only these guys can initialize github issues
+      distractionFreeMode: false // facebook-like distraction free mode
+    })
+  </script>
+  {% endif %}

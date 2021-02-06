@@ -8,8 +8,13 @@ https://docs.github.com/cn/graphql
 from config import headers, cdn
 from lxml import etree
 import requests
+import data
+import json
 
-languages, spoken_langs = requests.get(cdn+'gh-trending.json', headers=headers).json()
+# languages, spoken_langs = requests.get(cdn+'gh-trending.json', headers=headers).json()
+with open(data.github_trending(), 'r') as ff:
+    data = json.load(ff)
+    languages, spoken_langs = data["languages"], data["spoken_languages"]
 xp = [
     # trending
     '//article[@class="Box-row"]',  # 项目总榜

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from config import port
-from router import app
+from router import app, templates
 import uvicorn
 
 if __name__ == '__main__':

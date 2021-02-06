@@ -22,7 +22,7 @@ function readlog() {
 //夜间模式
 function dark() {
     let body = document.getElementsByTagName('body');
-    if (body[0].className === 'night') {
+    if (body[0].className === 'ready night') {
         body[0].classList.remove("night");
     } else {
         body[0].classList.add("night");
@@ -51,4 +51,3 @@ function ResTime(x) {
     }
     return data;
 }
-

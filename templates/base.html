@@ -10,11 +10,7 @@
 {% block body %}
 {% block content%}
 {% endblock %}
-<!-- evanyou canvas -->
-<canvas id="evanyou"></canvas>
-<script src="{{ url_for('static', path='js/evanyou.js') }}"></script>
-<script>feather.replace()</script>
-{% include "tmpl/github-corner.html" ignore missing with context %}
+{% include "tmpl/body.html" ignore missing with context %}
 {% endblock %}
 </body>
 </html>
