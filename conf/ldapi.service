@@ -7,8 +7,7 @@ User=root
 Group=root
 WorkingDirectory=/www/html/LickingDogAPI
 Environment="PATH=/www/html/LickingDogAPI/venv/bin"
-#ExecStart=/www/html/LickingDogAPI/venv/bin/uvicorn manage:app --host 127.0.0.1 --port 8001
-ExecStart=/www/html/LickingDogAPI/venv/bin/python manage.py
+ExecStart=HOST&=127.0.0.1 PORT=8001 /www/html/LickingDogAPI/venv/bin/python manage.py
 KillMode=mixed
 TimeoutStopSec=5
 PrivateTmp=true
