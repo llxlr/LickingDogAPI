@@ -29,7 +29,6 @@ version = SETUP['VERSION']  # api版本
 api_version = '/v1'
 api_test_version = '/v2'
 description = SETUP['DESCRIPTION']  # api描述
-port = SETUP['PORT']  # 端口
 start_time = SETUP['START_TIME']  # 建站时间
 cdn = SETUP['CDN']
 Copyright = SETUP['COPYRIGHT']
