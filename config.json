@@ -1,7 +1,6 @@
 {
     "TITLE": "Licking Dog API",
     "VERSION": "1.0.0",
-    "PORT": 8001,
     "START_TIME": 2019,
     "DOMAIN": "api.white-album.top",
     "DESCRIPTION": "简单功能的个人实现 | 舔狗API 🍭",
