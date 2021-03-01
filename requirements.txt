@@ -22,7 +22,7 @@ orjson==3.4.8
 Pillow==8.1.0
 pixivpy==3.5.10
 # playwright==0.171.1
-pydantic==1.7.3
+pydantic==1.8
 # pysnooper==0.4.2
 python-dotenv==0.15.0
 python-multipart==0.0.5
