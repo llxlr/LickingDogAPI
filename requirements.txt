@@ -1,7 +1,7 @@
 aiofiles==0.6.0
 aiohttp==3.7.4.post0
 # aiomysql==0.0.21
-baidu-aip==2.2.18.0
+baidu-aip==4.15.9
 beautifulsoup4==4.9.3
 bilibili_api==4.0.1
 cffi==1.14.4
