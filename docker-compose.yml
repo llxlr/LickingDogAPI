@@ -1,0 +1,20 @@
+version: "3.0"
+services:
+    ldapi:
+        build: ./Dockerfile
+        image: ldapi:latest
+        ports:
+            - "8001:8001"
+        volumes:
+            - "/etc/api/.env:/.env"
+            - "./cache:/cache"
+        #command: ["python","wsgi.py"]
+        depends_on:
+            - selenium-chrome
+    selenium-chrome:
+        image: selenium/standalone-chrome:latest
+        ports:
+            - "4444:4444"
+        environment:
+            - TZ=Asia/Shanghai
+        shm_size: 2g

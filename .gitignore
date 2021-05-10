@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+.env
+venv/
+cache/
+__pycache__/
+.well-known/
+.htaccess
+.user.ini
+*.log
+*.db
+screenshot.png

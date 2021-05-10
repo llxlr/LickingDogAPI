@@ -1,0 +1,20 @@
+#  Ignore everything
+*
+
+# Except files
+!config.json
+!config.py
+!LICENSE
+!manage.py
+!README.md
+!requirements.txt
+
+# Except directories
+!api/
+!data/
+!items/
+!router/
+!static/
+!templates/
+!utils/
+*__pycache__/

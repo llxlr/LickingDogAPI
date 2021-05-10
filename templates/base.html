@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh">{# 声明网页语言 #}
+<!-- Be Pythonic Forever ! Mr. Pythonista -->
+<head>
+    {% include "tmpl/header.html" ignore missing with context %}
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+{% block content%}
+{% endblock %}
+{% include "tmpl/body.html" ignore missing with context %}
+{% endblock %}
+</body>
+</html>

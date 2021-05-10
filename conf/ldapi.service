@@ -1,0 +1,19 @@
+[Unit]
+Description=LickingDogAPI with Uvicorn
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/www/html/LickingDogAPI
+Environment="PATH=/www/html/LickingDogAPI/venv/bin"
+ExecStart=HOST&=127.0.0.1 PORT=8001 /www/html/LickingDogAPI/venv/bin/python manage.py
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=always
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

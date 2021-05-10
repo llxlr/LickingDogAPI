@@ -1,0 +1,24 @@
+<footer>
+    <div>
+        <small>
+            <a href="{{ url_for('static', path='../v1/docs') }}" target="_blank" rel="noopener noreferrer">API</a>/
+            <a href="javascript:void(0);" onclick="readlog()">统计</a>/
+            <a href="{{ url_for('static', path='../policy.html') }}">隐私政策</a>
+        </small>
+    </div>
+    &nbsp;
+    <div>
+        <small>
+            <span id="info"></span>
+        </small>
+        <script type="text/javascript">
+            $(function(){
+                document.getElementById("info").innerHTML = "响应耗时"+ResTime().res+"/"+"渲染耗时"+ResTime().tcp+"/"+"内存占用"+ResTime().ram;
+            });
+        </script>
+    </div>
+    &nbsp;
+    <div>
+        © 2020 <a href="https://white-album.top/" target="_blank">White Album</a> Made <span class="icon" style="color:red">❤</span> By <a href="https://github.com/llxlr/" target="_blank">James Yang</a>
+    </div>
+</footer>

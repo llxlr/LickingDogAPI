@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="22.0" width="256.5">
+    <g>
+        <text text-anchor="start" letter-spacing="1.5" font-smoothing="antialiased" font-family="{{ font_family }}" font-size="{{ font_size }}" id="svg_1" y="20.0" x="0" stroke-width="0" stroke="#000" fill="{{ color }}">
+            {{ content }}
+        </text>
+    </g>
+</svg>

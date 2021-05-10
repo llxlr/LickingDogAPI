@@ -1,0 +1,74 @@
+<!-- https://www.lovestu.com/api/project/cnmapyinqing/obj.php -->
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <script type="text/javascript" src="{{ url_for('static', path='libs/echarts.min.js') }}"></script>
+    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script>
+    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='app/echarts/ncov/ncov.css') }}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l+=new Date;ga('create', 'UA-126485680-6', 'auto');ga('send', 'pageview');</script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+</head>
+<body>
+<div>
+    <div class="title">{{ subtitle }}</div>
+    
+    <div class="tab">
+        <button onclick="showcn(this)" id="btn-cn" class="button btn-active">中国</button>
+        <button onclick="showworld(this)" id="btn-world" class="button">全球</button>
+    </div>
+    
+    <div class="info" id="cninfo" style="display: flex;">
+        <div>
+            <p>现存确诊</p>
+            <p style="color: rgb(247, 76, 49);"><span id="cn1"></span></p>
+        </div>
+        <div>
+            <p>境外输入</p>
+            <p style="color: rgb(247, 130, 7);"><span id="cn2"></span></p>
+        </div>
+        <div>
+            <p>死亡</p>
+            <p style="color: rgb(93, 112, 146);"><span id="cn3"></span></p>
+        </div>
+        <div>
+            <p>治愈</p>
+            <p style="color: rgb(40, 183, 163);"><span id="cn4"></span></p>
+        </div>
+    </div>
+    
+    <div class="info" id="worldinfo" style="display: none;">
+        <div>
+            <p>现存确诊</p>
+            <p style="color: rgb(247, 76, 49);"><span id="wd1"></span></p>
+        </div>
+        <div>
+            <p>累计确诊</p>
+            <p style="color: rgb(247, 130, 7);"><span id="wd2"></span></p>
+        </div>
+        <div>
+            <p>累计死亡</p>
+            <p style="color: rgb(93, 112, 146);"><span id="wd3"></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="cnmap" class="map"></div>
+
+<div id="worldmap" class="map"></div>
+
+<div class="copyright">
+    <a target="_blank" href="https://white-album.top/">White Album</a> (&copy;<a href="https://www.ghpym.com/user/applek/">applek</a>)
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', path='app/echarts/ncov/config.js') }}"></script>
+
+</body>
+</html>

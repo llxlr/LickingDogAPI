@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title%}{{ title }}{% endblock %}
+{% block content %}
+  <div class="leftTop">
+    <a href="javascript:void(0);" onclick="dark()">
+      <i data-feather="sun"></i>
+    </a>
+  </div>
+  <!-- body start -->
+  <div id="app">加载中...</div>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- boday end-->
+  {% include "tmpl/plugins.html" ignore missing with context %}
+  {% include "tmpl/gitalk.html" ignore missing with context %}
+{% endblock %}
