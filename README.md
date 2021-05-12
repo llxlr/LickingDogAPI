@@ -30,14 +30,10 @@
 ```bash
 $ git clone https://github.com/llxlr/LickingDogAPI.git
 $ cd LickingDogAPI
-$ python -m venv venv
-$ source venv/bin/activate
-$ pip install --upgrade pip
-$ pip install -r requirements.txt
+$ poetry install
 $ cp .env.example .env
 $ uvicorn manage:app --host 127.0.0.1 --port 8001
 ```
-
 
 ## 用作 Systemd 服务
 
@@ -46,7 +42,7 @@ $ sudo cp conf/ldapi.service /etc/systemd/system/ldapi.service
 $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 ```
 
-或者使用`gunicorn`（注：gunicorn仅支持Linux系统）:
+或者使用`gunicorn`（注：gunicorn不支持Windows系统）:
 将
 ```
 uvicorn manage:app --host 127.0.0.1 --port 8001

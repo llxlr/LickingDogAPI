@@ -78,9 +78,8 @@ pip install -r requirements.txt
 # wget $(python ./utils/webdriver.py ${version: 14: -1})  # Microsoft Edge 89.0.774.4 dev
 # unzip *driver_linux64.zip
 # sudo chmod +x ${webdriver}
-# sudo mv -f ${webdriver} /usr/local/share/${webdriver}
-# sudo ln -s /usr/local/share/${webdriver} /usr/local/bin/${webdriver}
-# sudo ln -s /usr/local/share/${webdriver} /usr/bin/${webdriver}
+# sudo mv -f ${webdriver} /usr/local/bin/${webdriver}
+# sudo ln -s /usr/local/bin/${webdriver} /usr/bin/${webdriver}
 # version=$(${webdriver} --version)
 # echo "${webdriver} version: ${version}"
 
