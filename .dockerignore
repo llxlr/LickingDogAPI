@@ -7,14 +7,15 @@
 !LICENSE
 !manage.py
 !README.md
-!requirements.txt
+!pyproject.toml
 
 # Except directories
 !api/
+!auth/
 !data/
 !items/
 !router/
+!sql/
 !static/
 !templates/
 !utils/
-*__pycache__/

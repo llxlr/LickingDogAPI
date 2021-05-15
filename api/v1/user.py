@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from fastapi import APIRouter, Depends, Form, HTTPException, Request, Response
+from fastapi import APIRouter, Depends, Form, HTTPException
 
 from sqlalchemy.orm import Session
-from utils.sql import get_db, crud, models, schemas
-from utils.sql.db import SessionLocal, engine
+from sql import get_db
+from sql import schemas, crud, models
+from sql import engine
 
 from typing import List
 from config import *

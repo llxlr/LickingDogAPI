@@ -11,29 +11,13 @@ echo "
 #=================================================#
 "
 
-# sudo apt-get install \
-# unzip \
-# python3 \
-# python3-pip \
-# python3-venv \
-# libxss1 \
-# libappindicator1 \
-# libindicator7 \
-# fonts-liberation \
-# libatk-bridge2.0-0 \
-# libatspi2.0-0 \
-# libgbm1 \
-# libgtk-3-0 \
-# libnspr4 \
-# libnss3 \
-# xdg-utils -y
-
 sudo apt-get install \
 unzip \
 python3 \
 python3-pip \
 python3-venv \
 fonts-liberation \
+libappindicator1 \
 libatk-bridge2.0-0 \
 libatk1.0-0 \
 libatomic1 \
@@ -43,10 +27,12 @@ libcups2 \
 libgbm1 \
 libgdk-pixbuf2.0-0 \
 libgtk-3-0 \
+libindicator7 \
 libnspr4 \
 libnss3 \
 libpango-1.0-0 \
 libxkbcommon0 \
+libxss1 \
 xdg-utils -y
 
 sudo python3 -m venv venv
