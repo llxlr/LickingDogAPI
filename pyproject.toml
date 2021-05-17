@@ -6,7 +6,7 @@ authors = ["llxlr <i@xhlr.top>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-aiofiles = "^0.6.0"
+aiofiles = "^0.7.0"
 aiohttp = "^3.7.4.post0"
 baidu-aip = "^2.2.18.0"
 beautifulsoup4 = "^4.9.3"
