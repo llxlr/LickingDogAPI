@@ -31,6 +31,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: llxlr/$IMAGE_NAME:latest
+          #tag_with_ref: true
+          #repository: llxlr/ldapi
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
