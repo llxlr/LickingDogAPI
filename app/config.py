@@ -19,8 +19,8 @@ headers = {'User-Agent': ua.random}
 with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
     SETUP = json.loads(f.read())
 
-if os.path.exists(f'{path}/.env'):
-    load_dotenv(verbose=True)
+if os.path.exists(f'{path}/../.env'):
+    load_dotenv(dotenv_path=f'{path}/../.env', verbose=True)
 else:
     load_dotenv(dotenv_path='/etc/api/.env', verbose=True)
 
@@ -81,5 +81,5 @@ sckey = os.getenv('SCKEY')
 
 
 if __name__ == "__main__":
-    # print()
+    print(port)
     pass

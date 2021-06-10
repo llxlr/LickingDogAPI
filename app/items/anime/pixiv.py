@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from config import headers, PIXIV_EMAIL, PIXIV_PASSWD
-from pixivpy_async import *
+from ...config import PIXIV_EMAIL, PIXIV_PASSWD
+from pixivpy3 import *
 import requests
 
 main_url = "https://www.pixiv.net"
+headers = {
+    'User-Agent': 'PixivAndroidApp/5.0.64 (Android 6.0)',
+    'Content-Type': 'application/x-www-form-urlencoded'
+}
 # client = PixivClient()
 # aapi = AppPixivAPI(client=client.start())
 # papi = PixivAPI(client=client)

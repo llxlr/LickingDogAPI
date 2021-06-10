@@ -2,21 +2,10 @@
 *
 
 # Except files
-!config.json
-!config.py
 !LICENSE
-!manage.py
 !README.md
 !poetry.lock
 !pyproject.toml
 
 # Except directories
-!api/
-!auth/
-!data/
-!items/
-!router/
-!sql/
-!static/
-!templates/
-!utils/
+!app/

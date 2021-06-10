@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from config import log
+from ..config import log
 import requests
 import yagmail
 

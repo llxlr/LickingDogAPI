@@ -7,7 +7,7 @@ https://www.runoob.com/http/http-content-type.html
 from fastapi.responses import FileResponse
 from fastapi import Response
 from .generate import app, templates
-from config import *
+from ..config import *
 
 
 @app.get('/favicon.ico', include_in_schema=False)
