@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://api.white-album.top/">
-    <img width="200px" src="./static/img/mur_cat.png" alt='LickingDogAPI'>
+    <img width="200px" src="./app/static/img/mur_cat.png" alt='LickingDogAPI'>
   </a>
   <br>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/syntax.yml">
