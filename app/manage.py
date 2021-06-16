@@ -3,7 +3,6 @@
 from router import app
 import uvicorn
 import config
-import os
 
 if __name__ == '__main__':
     uvicorn.run(app=app, host=config.HOST, port=config.PORT, log_level="info")

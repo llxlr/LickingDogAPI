@@ -83,5 +83,5 @@ sckey = os.getenv('SCKEY')
 
 
 if __name__ == "__main__":
-    print(port)
+    # TODO:
     pass
