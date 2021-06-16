@@ -10,7 +10,7 @@ router = APIRouter()
 @router.get('/log/', include_in_schema=False)
 async def read_log():
     log.info("查看日志")
-    return {'status': 200, 'data': loginfo}
+    return {'status': 200, 'data': log_info}
 
 
 @router.get('/ip/', include_in_schema=True)

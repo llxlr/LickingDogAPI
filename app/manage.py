@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 from router import app
 import uvicorn
+import config
 import os
 
 if __name__ == '__main__':
-    uvicorn.run(app=app, host=os.getenv('HOST'), port=os.getenv('PORT'), log_level="info")
+    uvicorn.run(app=app, host=config.HOST, port=config.PORT, log_level="info")

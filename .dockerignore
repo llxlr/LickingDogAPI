@@ -9,3 +9,7 @@
 
 # Except directories
 !app/
+app/.env
+app/test.py
+app/test/
+__pycache__/

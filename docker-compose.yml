@@ -6,8 +6,10 @@ services:
         ports:
             - "8001:8001"
         volumes:
-            - "/etc/api/.env:/.env"
-            - "./cache:/cache"
+            - "./.env:./.env"
+            - "./cache:./cache"
+        env_file:
+            - ./.env
         #command: ["python","manage.py"]
         depends_on:
             - selenium-chrome

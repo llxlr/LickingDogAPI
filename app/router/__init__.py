@@ -1,4 +1,4 @@
-from .pages import app, templates
+from router.pages import app
 from enum import Enum
 
 

@@ -1,20 +1,11 @@
 [tool.poetry]
 name = "LickingDogAPI"
-version = "0.0.1"
+version = "1.0.0"
 description = "舔狗API"
 authors = ["llxlr <i@xhlr.top>"]
 homepage = "https://api.white-album.top/"
 license = "MIT"
 readme = "README.md"
-classifiers = [
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "License :: OSI Approved :: MIT License"
-]
 
 [tool.poetry.dependencies]
 aiofiles = ">=^0.5.0"
@@ -23,7 +14,7 @@ baidu-aip = "^2.2.18.0"
 beautifulsoup4 = "^4.9.3"
 bilibili_api = ">=^5.0.3"
 cffi = "^1.14.4"
-click = ">=^7.*"
+click = "^7.1.2"
 cssutils = "^1.0.2"
 email-validator = "^1.1.2"
 eliot = "^1.13.0"
@@ -34,6 +25,7 @@ faust = "^1.10.4"
 graphene = "^2.1.8"
 gunicorn = "^20.0.4"
 Jinja2 = "^2.11.3"
+loguru = "^0.5.3"
 lxml = "^4.6.2"
 MyQR = "^2.3.1"
 # numpy = "^1.20.0"

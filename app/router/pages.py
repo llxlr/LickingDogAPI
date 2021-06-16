@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from fastapi.responses import HTMLResponse, ORJSONResponse, RedirectResponse
 from fastapi.requests import Request
-from .media import app, templates
-from ..config import *
+from router.media import app, templates
+from config import *
 
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)

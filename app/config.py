@@ -11,7 +11,7 @@ path = os.path.dirname(__file__)
 os.makedirs(f'{path}/cache/', exist_ok=True)
 
 log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
-loginfo = log.read_log()
+log_info = log.read_log()
 
 ua = UserAgent(path=data.fake_useragent())
 headers = {'User-Agent': ua.random}
@@ -36,6 +36,8 @@ domain = SETUP['DOMAIN']  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
 
+HOST = os.getenv('HOST', '0.0.0.0')
+PORT = os.getenv('PORT', 8001)
 # Admin
 Username = os.getenv('Username')
 Password = os.getenv('Password')
@@ -76,7 +78,7 @@ PIXIV_PASSWD = os.getenv('PIXIV_PASSWD')
 # RSA
 public_key = os.getenv('public_key')
 private_key = os.getenv('private_key')
-# Server
+# Server Chen Turbo
 sckey = os.getenv('SCKEY')
 
 

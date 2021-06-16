@@ -2,6 +2,7 @@
 .vscode/
 .env
 venv/
+test.py
 cache/
 __pycache__/
 .well-known/
