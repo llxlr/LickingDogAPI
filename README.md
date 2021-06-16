@@ -3,20 +3,20 @@
     <img width="200px" src="./static/img/mur_cat.png" alt='LickingDogAPI'>
   </a>
   <br>
-  <a href="https://github.com/llxlr/LickingDogAPI/actions">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Check%20Python%20Syntax/badge.svg" alt="Check Python Syntax">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/syntax.yml">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/syntax.yml/badge.svg" alt="Check Python Syntax">
   </a>
-  <a href="https://github.com/llxlr/LickingDogAPI/actions">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/CodeQL/badge.svg" alt="CodeQL">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/codeql-analysis.yml">
+    <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL">
   </a>
-  <a href="https://github.com/llxlr/LickingDogAPI/actions">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Auto%20Deploy/badge.svg" alt="Auto Deploy">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/deploy.yml">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/deploy.yml/badge.svg" alt="Auto Deploy">
   </a>
-  <a href="https://github.com/llxlr/LickingDogAPI/actions">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Docker%20Image/badge.svg" alt="Docker Image">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/docker.yml">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/docker.yml/badge.svg" alt="Docker Image">
   </a>
-  <a href="https://github.com/llxlr/LickingDogAPI/actions">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/Merge%20Imgbot/badge.svg" alt="Merge Imgbot">
+  <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/merge.yml">
+    <img src="https://github.com/llxlr/LickingDogAPI/workflows/merge.yml/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
   <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#f03d41">❤</span> by james yang & Powered by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
