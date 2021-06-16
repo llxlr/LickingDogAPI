@@ -4,19 +4,19 @@
   </a>
   <br>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/syntax.yml">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/syntax.yml/badge.svg" alt="Check Python Syntax">
+    <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/syntax.yml/badge.svg" alt="Check Python Syntax">
   </a>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/codeql-analysis.yml">
     <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL">
   </a>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/deploy.yml">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/deploy.yml/badge.svg" alt="Auto Deploy">
+    <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/deploy.yml/badge.svg" alt="Auto Deploy">
   </a>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/docker.yml">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/docker.yml/badge.svg" alt="Docker Image">
+    <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/docker.yml/badge.svg" alt="Docker Image">
   </a>
   <a href="https://github.com/llxlr/LickingDogAPI/actions/workflows/merge.yml">
-    <img src="https://github.com/llxlr/LickingDogAPI/workflows/merge.yml/badge.svg" alt="Merge Imgbot">
+    <img src="https://github.com/llxlr/LickingDogAPI/actions/workflows/merge.yml/badge.svg" alt="Merge Imgbot">
   </a>
   <br>
   <em>Licking Dog API | 舔狗API 🍭 - Made <span style="color:#f03d41">❤</span> by james yang & Powered by <a src="https://fastapi.tiangolo.com/">FastAPI</a></em>
