@@ -32,8 +32,8 @@ $ git clone https://github.com/llxlr/LickingDogAPI.git
 $ cd LickingDogAPI
 $ pip3 install --upgrade pip poetry==1.2.0a1
 $ poetry install
-$ cp .env.example .env
-$ uvicorn manage:app --host 127.0.0.1 --port 8001
+$ cp .env.example app/.env
+$ poetry run uvicorn app.manage:app --host 127.0.0.1 --port 8001
 ```
 
 ## 用作 Systemd 服务
