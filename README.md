@@ -72,7 +72,7 @@ $ sudo systemctl status ldapi #查看服务状态
 $ sudo docker run -d -p 4444:4444 --shm-size=2g  -e TZ=Asia/Shanghai selenium/standalone-chrome
 
 $ sudo mkdir /etc/api/ && sudo cp .env.example /etc/api/.env
-$ sudo docker build . -t ldapi:latest
+$ sudo docker build . -f ./Dockerfile -t ldapi:latest
 $ sudo docker run --rm -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t llxlr/ldapi:latest #临时调试
 $ sudo docker run -d -p 8001:8001 -v /etc/api/.env:/.env -v ./cache:/cache -t llxlr/ldapi:latest   #或直接部署
 
@@ -84,6 +84,10 @@ $ sudo docker import ./ldapi-latest.tar ldapi-latest #导入容器
 
 ```bash
 $ sudo docker-compose up -d
+```
+
+```bash
+$ sudo docker pull llxlr/ldapi:latest
 ```
 
 ### Github Actions自动打包镜像
