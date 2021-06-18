@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from requests.exceptions import ConnectionError, ConnectTimeout
 import requests
-from .. import config
+import config
 
 
 def get(url, params=None, headers: dict = None):
