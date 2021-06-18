@@ -4,19 +4,19 @@ services:
         build: ./Dockerfile
         image: ldapi:latest
         ports:
-            - "8001:8001"
+          - "8001:8001"
         volumes:
-            - "./.env:./.env"
-            - "./cache:./cache"
+          - "./.env:./.env"
+          - "./cache:./cache"
         env_file:
-            - ./.env
+          - ./.env
         #command: ["python","manage.py"]
         depends_on:
-            - selenium-chrome
+          - selenium-chrome
     selenium-chrome:
         image: selenium/standalone-chrome:latest
         ports:
-            - "4444:4444"
+          - "4444:4444"
         environment:
-            - TZ=Asia/Shanghai
+          - TZ=Asia/Shanghai
         shm_size: 2g

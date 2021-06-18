@@ -1,58 +1,49 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
+
 from dotenv import load_dotenv
 from fake_useragent import UserAgent
+
 from utils.log import LoggerV1
 import data
-import json
-import os
 
 path = os.path.dirname(__file__)
 os.makedirs(f'{path}/cache/', exist_ok=True)
-
-log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))  # 设置一个日志记录器
+# 设置一个日志记录器
+log = LoggerV1(os.path.join(f'{path}/cache/', 'info.log'))
 log_info = log.read_log()
-
+# 用户代理
 ua = UserAgent(path=data.fake_useragent())
 headers = {'User-Agent': ua.random}
-
-with open(f'{path}/config.json', 'r', encoding='utf-8') as f:
-    SETUP = json.loads(f.read())
 
 if os.path.exists(f'{path}/.env'):
     load_dotenv(verbose=True)
 else:
     load_dotenv(dotenv_path='/etc/api/.env', verbose=True)
 
-title = SETUP['TITLE']  # 主页标题
-version = SETUP['VERSION']  # api版本
+title = os.getenv('TITLE')  # 主页标题
+version = os.getenv('VERSION')  # api版本
 api_version = '/v1'
 api_test_version = '/v2'
-description = SETUP['DESCRIPTION']  # api描述
-start_time = SETUP['START_TIME']  # 建站时间
-cdn = SETUP['CDN']
-Copyright = SETUP['COPYRIGHT']
-domain = SETUP['DOMAIN']  # 二级域名
+description = os.getenv('DESCRIPTION')  # api描述
+start_time = os.getenv('START_TIME')  # 建站时间
+cdn = os.getenv('CDN')
+Copyright = {"author": os.getenv('AUTHOR'), "url": os.getenv('URL')}
+domain = f"api.{os.getenv('DOMAIN')}"  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
 
 HOST = os.getenv('HOST', '0.0.0.0')
 PORT = os.getenv('PORT', 8001)
-# Admin
-Username = os.getenv('Username')
-Password = os.getenv('Password')
+Username, Password = os.getenv('Username'), os.getenv('Password') # Admin
 # ANALYSIS
 analysis = {
     'google': os.getenv('GOOGLE_ANALYSIS'),
     'baidu': os.getenv('BAIDU_FENXI'),
 }
-# Baidu AI API
-Baidu_APP_ID = os.getenv('APP_ID')
-Baidu_API_KEY = os.getenv('API_KEY')
-Baidu_SECRET_KEY = os.getenv('SECRET_KEY')
-# Bilibili
-sessdata = os.getenv('sessdata')
-bili_jct = os.getenv('bili_jct')
+Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = os.getenv('APP_ID'), os.getenv('API_KEY'), os.getenv('SECRET_KEY')  # Baidu AI API
+sessdata, bili_jct = os.getenv('sessdata'), os.getenv('bili_jct')  # Bilibili
 # CloudFlare
 cf_zone_id = os.getenv('cf_zone_id')
 cf_user_id = os.getenv('cf_user_id')
@@ -60,10 +51,8 @@ cf_token = os.getenv('cf_token')
 cf_email = os.getenv('cf_email')
 cf_global_api_key = os.getenv('cf_global_api_key')
 # Email
-email = os.getenv('username')
-password = os.getenv('password')
-# Github
-github_token = os.getenv('TOKEN')
+email, password = os.getenv('username'), os.getenv('password')
+github_token = os.getenv('TOKEN')  # Github
 # Gitalk
 gitalk_config = {
     'clientID': os.getenv('gitalk_clientID'),
@@ -72,14 +61,9 @@ gitalk_config = {
     'owner': os.getenv('gitalk_owner'),
     'admin': os.getenv('gitalk_admin'),
 }
-# Pixiv
-PIXIV_EMAIL = os.getenv('PIXIV_EMAIL')
-PIXIV_PASSWD = os.getenv('PIXIV_PASSWD')
-# RSA
-public_key = os.getenv('public_key')
-private_key = os.getenv('private_key')
-# Server Chen Turbo
-sckey = os.getenv('SCKEY')
+PIXIV_EMAIL, PIXIV_PASSWD = os.getenv('PIXIV_EMAIL'), os.getenv('PIXIV_PASSWD')  # Pixiv
+public_key, private_key = os.getenv('public_key'), os.getenv('private_key')  # RSA
+sckey = os.getenv('SCKEY')  # Server Chen Turbo
 
 
 if __name__ == "__main__":
