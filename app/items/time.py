@@ -15,12 +15,14 @@ fontSize	否	25	字体大小，一个整数
 left	否	空	显示在倒计时左边的文字
 right	否	空	显示在倒计时右边的文字
 """
+from datetime import datetime
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
+
 from config import headers
-from datetime import datetime
-import time
 
 
 def _driver(url: str):

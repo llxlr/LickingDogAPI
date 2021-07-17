@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from config import headers
-from items import NcovName
-import requests
 import time
 import json
 import os
 import re
+
+import requests
+
+from config import headers
+from items import NcovName
 
 url = "https://ncov.dxy.cn/ncovh5/view/pneumonia"
 # regex

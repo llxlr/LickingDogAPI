@@ -34,25 +34,28 @@ domain = f"api.{os.getenv('DOMAIN')}"  # 二级域名
 sub, master, suffix = domain.split('.')
 origin_regex = r'^https?\:\/\/([\a-zA-Z]+\.)?(127\.0\.0\.1|localhost|\.{}\.{})'.format(master, suffix)
 
-HOST = os.getenv('HOST', '0.0.0.0')
-PORT = os.getenv('PORT', 8001)
-Username, Password = os.getenv('Username'), os.getenv('Password') # Admin
+HOST, PORT = os.getenv('HOST', '0.0.0.0'), os.getenv('PORT', 8001)
+# Admin
+Username, Password = os.getenv('USERNAME'), os.getenv('PASSWORD')
+# Email
+email, email_password = os.getenv('email'), os.getenv('email_password')
 # ANALYSIS
 analysis = {
     'google': os.getenv('GOOGLE_ANALYSIS'),
     'baidu': os.getenv('BAIDU_FENXI'),
 }
-Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = os.getenv('APP_ID'), os.getenv('API_KEY'), os.getenv('SECRET_KEY')  # Baidu AI API
-sessdata, bili_jct = os.getenv('sessdata'), os.getenv('bili_jct')  # Bilibili
+# Baidu AI API
+Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY = os.getenv('APP_ID'), os.getenv('API_KEY'), os.getenv('SECRET_KEY')
+# Bilibili
+sessdata, bili_jct, buvid3 = os.getenv('sessdata'), os.getenv('bili_jct'), os.getenv('buvid3')
 # CloudFlare
 cf_zone_id = os.getenv('cf_zone_id')
 cf_user_id = os.getenv('cf_user_id')
 cf_token = os.getenv('cf_token')
 cf_email = os.getenv('cf_email')
 cf_global_api_key = os.getenv('cf_global_api_key')
-# Email
-email, password = os.getenv('username'), os.getenv('password')
-github_token = os.getenv('TOKEN')  # Github
+# Github
+github_token = os.getenv('TOKEN')
 # Gitalk
 gitalk_config = {
     'clientID': os.getenv('gitalk_clientID'),
@@ -61,9 +64,14 @@ gitalk_config = {
     'owner': os.getenv('gitalk_owner'),
     'admin': os.getenv('gitalk_admin'),
 }
-PIXIV_EMAIL, PIXIV_PASSWD = os.getenv('PIXIV_EMAIL'), os.getenv('PIXIV_PASSWD')  # Pixiv
+# Pixiv
+PIXIV_USERNAME = os.getenv('PIXIV_USERNAME')
+PIXIV_PASSWD = os.getenv('PIXIV_PASSWD')
+PIXIV_REFRESH_TOKEN = os.getenv('PIXIV_REFRESH_TOKEN')
+# RSA
 public_key, private_key = os.getenv('public_key'), os.getenv('private_key')  # RSA
-sckey = os.getenv('SCKEY')  # Server Chen Turbo
+# Server Chen Turbo
+sckey = os.getenv('SCKEY')
 
 
 if __name__ == "__main__":

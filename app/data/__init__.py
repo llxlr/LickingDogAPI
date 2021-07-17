@@ -1,35 +1,39 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from pkg_resources import resource_filename
+from pkg_resources import resource_filename as rf
 
 
 def fake_useragent():
-    return resource_filename(__name__, "fake-useragent.json")
+    return rf(__name__, 'fake-useragent.json')
 
 
 def github_trending():
-    return resource_filename(__name__, "gh-trending.json")
+    return rf(__name__, 'gh-trending.json')
 
 
 def hitokoto_():
-    return resource_filename(__name__, "hitokoto.json")
+    return rf(__name__, 'hitokoto.json')
 
 
 def hubble():
-    return resource_filename(__name__, "hubble-birthdays-full-year.csv")
+    return rf(__name__, 'hubble-birthdays-full-year.csv')
 
 
 def mnist_images():
-    return resource_filename(__name__, "mnist_images.png")
+    return rf(__name__, 'mnist_images.png')
 
 
 def mnist_labels_uint8():
-    return resource_filename(__name__, "mnist_labels_uint8")
+    return rf(__name__, 'mnist_labels_uint8')
 
 
 def tiangou():
-    return resource_filename(__name__, "tiangou.json")
+    return rf(__name__, 'tiangou.json')
 
 
 def test():
-    return resource_filename(__name__, "test.json")
+    return rf(__name__, 'test.json')
+
+
+if __name__ == '__main__':
+    pass

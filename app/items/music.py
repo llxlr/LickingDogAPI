@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 from starlette.status import HTTP_404_NOT_FOUND
 from starlette.responses import JSONResponse
+import requests
+
 from config import headers
 from items import Music
-import requests
 
 
 class CloudMusic(object):

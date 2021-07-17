@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from random import randint
+import json
+
+import requests
+
 from config import headers, cdn
 from data import hitokoto_
-from random import randint
-import requests
-import json
 
 
 def hitokoto():

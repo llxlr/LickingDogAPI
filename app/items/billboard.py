@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from config import headers
 from lxml import etree
 import requests
+
+from config import headers
 
 url = 'https://www.billboard.com/charts/'
 xpr = [

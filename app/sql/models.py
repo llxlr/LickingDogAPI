@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from .db import Base
+from sql.db import Base
 
 
 class User(Base):

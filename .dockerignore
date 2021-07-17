@@ -10,6 +10,7 @@
 # Except directories
 !app/
 app/.env
+app/conf/
 app/test.py
 app/test/
 __pycache__/

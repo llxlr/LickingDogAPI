@@ -11,7 +11,7 @@ def driver(url: str):
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    options.add_argument(f"user-agent='{ua.random}'")
+    options.add_argument(f'--user-agent="{ua.random}"')
     wd = webdriver.Chrome(options=options)
     wd.get(url)
     return wd

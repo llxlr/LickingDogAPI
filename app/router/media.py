@@ -11,7 +11,7 @@ from config import *
 
 
 @app.get('/favicon.ico', include_in_schema=False)
-async def favicon_config():
+async def favicon():
     return FileResponse(path=f'{path}/static/favicon.ico', media_type='image/x-icon')
 
 
@@ -29,7 +29,7 @@ async def swjs():
 
 
 @app.get('/robots.txt', include_in_schema=False)
-async def docsify_config():
+async def robots():
     return Response(content=templates.get_template(name='robots.txt').render(
     ), media_type='text/plain; charset=utf-8')
 
@@ -45,7 +45,7 @@ async def readme_():
 
 
 @app.get('/_coverpage.md', include_in_schema=False)
-async def docsify_config():
+async def _coverpage():
     return Response(content=templates.get_template(name='docs/_coverpage.md').render(
         title=title,
         version=version,
@@ -56,13 +56,13 @@ async def docsify_config():
 
 
 @app.get('/_sidebar.md', include_in_schema=False)
-async def docsify_config():
+async def _sidebar():
     return Response(content=templates.get_template(name='docs/_sidebar.md').render(
     ), media_type='text/markdown; charset=utf-8')
 
 
 @app.get('/_navbar.md', include_in_schema=False)
-async def docsify_config():
+async def _navbar():
     return Response(content=templates.get_template(name='docs/_navbar.md').render(
     ), media_type='text/markdown; charset=utf-8')
 
@@ -110,10 +110,10 @@ async def mnist():
 
 
 @app.get('/countdown.svg', include_in_schema=False)
-async def favicon_config(year=None,
-                         color=None,
-                         font_size=None,
-                         font_family=None):
+async def countdown(year=None,
+                    color=None,
+                    font_size=None,
+                    font_family=None):
     return Response(templates.get_template(name='docs/items/countdown.svg').render(
         year=year,
         date=None,
@@ -124,10 +124,10 @@ async def favicon_config(year=None,
 
 
 @app.get('/poem.svg', include_in_schema=False)
-async def favicon_config(color=None,
-                         font_size=None,
-                         font_family=None,
-                         content=None):
+async def poem(color=None,
+               font_size=None,
+               font_family=None,
+               content=None):
     return Response(templates.get_template(name='docs/items/poem.svg').render(
         color=color if color else '#5e72e4',
         font_size=font_size if font_size else '30',

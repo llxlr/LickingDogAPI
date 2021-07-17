@@ -1,5 +1,7 @@
-from . import models
-from .db import SessionLocal, engine
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from sql import models
+from sql.db import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 

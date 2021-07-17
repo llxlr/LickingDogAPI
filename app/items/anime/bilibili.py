@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import bilibili_api
-from bilibili_api import aid2bvid, Verify, video, user
+from bilibili_api.utils.aid_bvid_transformer import aid2bvid, bvid2aid
+from bilibili_api import Credential, video, user
 from config import sessdata, bili_jct
 
-bilibili_api.request_settings = {
-    "use_https": True,
-    "proxies": {}
-}
-verify = Verify(sessdata=sessdata, csrf=bili_jct)
+credential = Credential(sessdata=sessdata, bili_jct=bili_jct)
 
 
 class Bilibili(object):

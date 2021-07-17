@@ -9,7 +9,7 @@ import time
 
 def delay(func):
     """延迟调用函数"""
-    print(f"initial cache for {func.__name__}")
+    print(f'initial cache for {func.__name__}')
     cache = {}
 
     @wraps(func)
@@ -19,13 +19,13 @@ def delay(func):
         if key in cache.keys():  # 判断是否存在缓存
             (result, updateTime) = cache[key]
             if time.time() - updateTime < 10:  # 过期时间固定为10秒
-                print("limit call 10s", key)
+                print('limit call 10s', key)
                 result = updateTime
             else:
-                print("cache expired !!! can call ")
+                print('cache expired !!! can call ')
                 result = None
         else:
-            print("no cache for ", key)
+            print('no cache for ', key)
         if result is None:  # 如果过期，或则没有缓存调用方法
             result = func(*args, **kwargs)
             cache[key] = (result, time.time())

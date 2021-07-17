@@ -5,11 +5,13 @@ https://docs.github.com/cn/rest
 
 https://docs.github.com/cn/graphql
 """
-from config import headers, cdn
+import json
+
 from lxml import etree
 import requests
+
+from config import headers, cdn
 import data
-import json
 
 # languages, spoken_langs = requests.get(cdn+'gh-trending.json', headers=headers).json()
 with open(data.github_trending(), 'r') as ff:
