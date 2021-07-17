@@ -14,4 +14,4 @@ RUN apt-get update -y && apt-get upgrade -y && \
 
 EXPOSE 8001
 
-ENTRYPOINT ["python", "manage.py"]
+ENTRYPOINT ["python", "main.py"]

@@ -33,7 +33,7 @@ $ cd LickingDogAPI
 $ pip3 install --upgrade pip poetry==1.2.0a1
 $ poetry install
 $ cp app/conf/.env.example app/.env
-$ poetry run uvicorn app.manage:app --host 127.0.0.1 --port 8001
+$ poetry run uvicorn app.main:app --host 127.0.0.1 --port 8001
 ```
 
 ## 用作 Systemd 服务
@@ -46,11 +46,11 @@ $ sudo nano /etc/systemd/system/ldapi.service  # 项目路径改成自己的
 或者使用`gunicorn`:
 将
 ```
-uvicorn manage:app --host 127.0.0.1 --port 8001
+uvicorn main:app --host 127.0.0.1 --port 8001
 ```
 替换为
 ```
-gunicorn manage:app -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker
+gunicorn main:app -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker
 ```
 
 有以下命令：

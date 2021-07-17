@@ -10,4 +10,4 @@ services:
       - "./cache:./cache"
     env_file:
       - ./.env
-    #command: ["python","manage.py"]
+    #command: ["python","main.py"]
