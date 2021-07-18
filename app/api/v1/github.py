@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from fastapi import APIRouter, File, UploadFile
-from items.github import Github
+from plugins.github import Github
 from utils.spider import put, delete
 from config import *
 import time

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from fastapi import APIRouter, File, UploadFile
-from items import NcovName
+from plugins import NcovName
 from config import *
 import time
 router = APIRouter()
@@ -15,13 +15,13 @@ async def read_log():
 
 @router.get('/ip/', include_in_schema=True)
 async def ip():
-    from items.ip import ip
+    from plugins.ip import ip
     return ip
 
 
 @router.get('/hitokoto/', include_in_schema=True)
 async def hitokoto():
-    from items.hitokoto import hitokoto
+    from plugins.hitokoto import hitokoto
     data = hitokoto()
     log.info("pv,请求一次一言")
     return {
@@ -39,7 +39,7 @@ async def count_down(type):
 
 @router.get('/time/calendar/{type}', include_in_schema=True)
 async def calendar(type: str, year: str, month: str, day: str):
-    from items.time import Calendar
+    from plugins.time import Calendar
     log.info("pv,请求一次公农历转换")
     if type in ['s2l', 'l2s']:
         return {
@@ -75,7 +75,7 @@ async def catvsdog_upload_image(file: UploadFile = File(...)):
 
 @router.get('/ncov/', include_in_schema=True)
 async def ncov_api(name: NcovName):
-    from items.ncov import get_data
+    from plugins.ncov import get_data
     log.info('pv,请求一次新冠肺炎数据')
     return {
         "status": 200,

@@ -3,9 +3,7 @@
 from fastapi import APIRouter, Depends, Form, HTTPException
 
 from sqlalchemy.orm import Session
-from sql import get_db
-from sql import schemas, crud, models
-from sql import engine
+from sql import get_db, schemas, crud, models, engine
 
 from typing import List
 from config import *
@@ -64,9 +62,7 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 
 
 @router.post("/users/{user_id}/items/", response_model=schemas.Item)
-def create_item_for_user(
-    user_id: int, item: schemas.ItemCreate, db: Session = Depends(get_db)
-):
+def create_item_for_user(user_id: int, item: schemas.ItemCreate, db: Session = Depends(get_db)):
     return crud.create_user_item(db=db, item=item, user_id=user_id)
 
 

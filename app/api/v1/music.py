@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from fastapi import APIRouter
-from items.music import CloudMusic, QQ, music_type
-from items import Charts, Music
+from plugins.music import CloudMusic, QQ, music_type
+from plugins.billboard import get_content
+from plugins import Charts, Music
 from config import *
 import time
 router = APIRouter()
@@ -22,7 +23,6 @@ async def cloud_music(type: Music.Type, id: int):
 @router.get("/qq/")
 async def qq_music(type: Music.Type, id: int):
     log.info('pv,请求一次QQ音乐api')
-
     return {
         "status": 200,
         "copyright": Copyright,
@@ -33,7 +33,6 @@ async def qq_music(type: Music.Type, id: int):
 
 @router.get("/billboard/{chart}")
 async def billboard(chart: Charts):
-    from items.billboard import get_content
     log.info('pv,请求一次公告牌数据')
     if chart in (Charts.hot100, Charts.billboard200,
                  Charts.artist100, Charts.social50):
