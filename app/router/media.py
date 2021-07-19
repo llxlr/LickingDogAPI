@@ -6,7 +6,8 @@ https://www.runoob.com/http/http-content-type.html
 """
 from fastapi.responses import FileResponse
 from fastapi import Response
-from router.generate import app, templates
+
+from router.generate import app, templates, limiter
 from config import *
 
 
@@ -50,8 +51,8 @@ async def _coverpage():
         title=title,
         version=version,
         description=description,
-        domain=f"https://{master}.{suffix}/",
-        docs_domain=f"https://{domain}/v1/docs/",
+        domain=f'https://{master}.{suffix}/',
+        docs_domain=f'https://{domain}/v1/docs/',
     ), media_type='text/markdown; charset=utf-8')
 
 
@@ -91,25 +92,28 @@ async def home():
     ), media_type='text/markdown; charset=utf-8')
 
 
-@app.get("/items/catvsdog.md", include_in_schema=False)
+@app.get('/items/catvsdog.md', include_in_schema=False)
+@limiter.exempt
 async def catvsdog():
     log.info('ts,访问一次Cat VS Dog')
     return Response(templates.get_template(name='docs/items/catvsdog.md').render(
-        title="Cat VS Dog",
-        description="迁移学习实现猫狗识别",
+        title='Cat VS Dog',
+        description='迁移学习实现猫狗识别',
     ), media_type='text/markdown; charset=utf-8')
 
 
-@app.get("/items/mnist.md", include_in_schema=False)
+@app.get('/items/mnist.md', include_in_schema=False)
+@limiter.exempt
 async def mnist():
     log.info('ts,访问一次Tenserflow.js实现Mnist手写字识别')
     return Response(templates.get_template(name='docs/items/mnist.md').render(
-        title="Tenserflow.js实现Mnist手写字识别",
-        description="迁移学习实现猫狗识别",
+        title='Tenserflow.js实现Mnist手写字识别',
+        description='迁移学习实现猫狗识别',
     ), media_type='text/markdown; charset=utf-8')
 
 
 @app.get('/countdown.svg', include_in_schema=False)
+@limiter.limit('5/minute')
 async def countdown(year=None,
                     color=None,
                     font_size=None,
@@ -124,6 +128,7 @@ async def countdown(year=None,
 
 
 @app.get('/poem.svg', include_in_schema=False)
+@limiter.limit('5/minute')
 async def poem(color=None,
                font_size=None,
                font_family=None,

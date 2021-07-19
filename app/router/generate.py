@@ -6,8 +6,15 @@ from fastapi.templating import Jinja2Templates  # Templates
 from fastapi.staticfiles import StaticFiles  # Static
 from fastapi.openapi.utils import get_openapi  # custom openapi
 from fastapi import FastAPI, APIRouter
+
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi.errors import RateLimitExceeded
+
 from api import v1, v2
 from config import *
+
 api_router = APIRouter()
 app = FastAPI(
     title=title,
@@ -15,7 +22,13 @@ app = FastAPI(
     version=api_version,
     openapi_url=f'{api_version}/openapi.json',
     docs_url=f'{api_version}/docs/',
-    redoc_url=None
+    redoc_url=None,
+)
+limiter = Limiter(
+    key_func=get_remote_address,
+    default_limits=['6/minute'],  # 默认限制每分钟请求6次
+    # enabled=False,  # 全局限制器开关
+    # storage_uri="redis://<host>:<port>/n",  # 使用redis作为后端
 )
 
 
@@ -36,6 +49,19 @@ def custom_schema():
 
 
 app.openapi = custom_schema
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
+templates = Jinja2Templates(directory="templates")  # 页面模板
+
+api_router.include_router(v1.user.router, prefix='/users', tags=["users"])
+api_router.include_router(v1.music.router, prefix='/music', tags=["music"])
+api_router.include_router(v1.github.router, prefix='/github', tags=["github"])
+api_router.include_router(v1.tools.router, prefix='/tools', tags=["tools"])
+app.include_router(api_router, prefix=api_version)
+
 app.add_middleware(
     TrustedHostMiddleware,
     allowed_hosts=[
@@ -54,10 +80,4 @@ app.add_middleware(
     expose_headers=[],  # 对浏览器可见的返回结果头信息，默认为[]
     max_age=60,  # 浏览器缓存CORS返回结果的最大时长，默认为600(单位秒)
 )
-app.mount("/static", StaticFiles(directory="static", packages=[]), name="static")  # 静态资源设置
-api_router.include_router(v1.user.router, prefix='/users', tags=["users"])
-api_router.include_router(v1.music.router, prefix='/music', tags=["music"])
-api_router.include_router(v1.github.router, prefix='/github', tags=["github"])
-api_router.include_router(v1.tools.router, prefix='/tools', tags=["tools"])
-app.include_router(api_router, prefix=api_version)
-templates = Jinja2Templates(directory="templates")  # 页面模板
+app.add_middleware(SlowAPIMiddleware)
