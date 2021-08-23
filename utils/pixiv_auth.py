@@ -37,8 +37,8 @@ CLIENT_ID = "MOBrBDS8blbauoSck0ZfDbtuzpyT"
 CLIENT_SECRET = "lsACyCD94FhDUtGTXi3QzcFE2uU1hqtDaKeqrdwj"
 REQUESTS_KWARGS = {
     'proxies': {
-        'http': 'socks5://127.0.0.1:11223',
-        'https': 'socks5://127.0.0.1:11223',
+        'http': 'socks5://127.0.0.1:8889',
+        'https': 'socks5://127.0.0.1:8889',
     },
     'verify': False
 }

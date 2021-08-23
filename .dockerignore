@@ -1,16 +1,22 @@
-#  Ignore everything
-*
-
-# Except files
-!LICENSE
-!README.md
-!poetry.lock
-!pyproject.toml
-
-# Except directories
-!app/
-app/.env
-app/conf/
-app/test.py
-app/test/
+.idea/
+.vscode/
+.well-known/
+cache/
+conf/
+test/
+venv/
 __pycache__/
+.dockerignore
+.env
+.gitattributes
+.gitignore
+.htaccess
+.user.ini
+*.log
+*.db
+docker-compose.yml
+Dockerfile
+LICENSE
+README.md
+screenshot.png
+test.py

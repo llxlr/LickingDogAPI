@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from ...config import PIXIV_EMAIL, PIXIV_PASSWD
+from config import PIXIV_USERNAME, PIXIV_PASSWD, PIXIV_REFRESH_TOKEN
 from pixivpy3 import *
 import requests
 

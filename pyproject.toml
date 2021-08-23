@@ -12,11 +12,11 @@ python = ">=3.8,<4.0"
 
 aiofiles = ">=0.5.0"
 aiohttp = "^3.7.4.post0"
-aiomysql = "^0.0.21"
 aioredis = "^1.3.1"
+amzqr = "^0.0.1"
 baidu-aip = "^2.2.18.0"
 beautifulsoup4 = "^4.9.3"
-bilibili_api = "^6.1.2"
+bilibili_api = "^7.0.1"
 celery = "^5.1.2"
 cffi = "^1.14.5"
 click = "^7.1.2"
@@ -25,18 +25,17 @@ email-validator = "^1.1.2"
 eliot = "^1.13.0"
 eliot-tree = "^21.0.0"
 fake-useragent = "^0.1.11"
-fastapi = "^0.66.0"
+fastapi = "^0.68.0"
 faust = "^1.10.4"
 graphene = "^2.1.8"
 gunicorn = "^20.1.0"
 Jinja2 = "^2.11.3"
 loguru = "^0.5.3"
 lxml = "^4.6.2"
-MyQR = "^2.3.1"
-# numpy = "^1.20.3"
+numpy = "^1.20.3"
 # opencv-python = "^4.4.0.46"
 orjson = "^3.5.3"
-# pandas = "^1.1.5"
+pandas = "^1.1.5"
 passlib = {version = "^1.7.4", extras = ["bcrypt"]}
 Pillow = "^8.3.1"
 pixivpy = "^3.6.0"
@@ -59,7 +58,6 @@ uvicorn = {version = "^0.14.0", extras = ["standard"]}
 yagmail = "^0.14.256"
 
 [tool.poetry.dev-dependencies]
-pycparser = "^2.20"
 pytest = "^6.2.4"
 
 [[tool.poetry.source]]
@@ -68,5 +66,5 @@ url = "https://mirrors.bfsu.edu.cn/pypi/web/simple"
 default = true
 
 [build-system]
-requires = ["poetry-core>=1.2.0a1"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
