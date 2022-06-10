@@ -36,21 +36,21 @@ AUTH_TOKEN_URL = "https://oauth.secure.pixiv.net/auth/token"
 CLIENT_ID = "MOBrBDS8blbauoSck0ZfDbtuzpyT"
 CLIENT_SECRET = "lsACyCD94FhDUtGTXi3QzcFE2uU1hqtDaKeqrdwj"
 REQUESTS_KWARGS = {
-    'proxies': {
-        'http': 'socks5://127.0.0.1:8889',
-        'https': 'socks5://127.0.0.1:8889',
-    },
-    'verify': False
+    # 'proxies': {
+    #     'https': 'http://127.0.0.1:1087',
+    # },
+    # 'verify': False
 }
-
 
 def s256(data):
     """S256 transformation method."""
+
     return urlsafe_b64encode(sha256(data).digest()).rstrip(b"=").decode("ascii")
 
 
 def oauth_pkce(transform):
     """Proof Key for Code Exchange by OAuth Public Clients (RFC7636)."""
+
     code_verifier = token_urlsafe(32)
     code_challenge = transform(code_verifier.encode("ascii"))
 
@@ -77,7 +77,7 @@ def login():
     caps = DesiredCapabilities.CHROME.copy()
     caps["goog:loggingPrefs"] = {"performance": "ALL"}  # enable performance logs
 
-    driver = webdriver.Chrome(desired_capabilities=caps)
+    driver = webdriver.Chrome("./chromedriver", desired_capabilities=caps)
 
     code_verifier, code_challenge = oauth_pkce(s256)
     login_params = {

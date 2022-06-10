@@ -25,9 +25,7 @@ email-validator = "^1.1.2"
 eliot = "^1.13.0"
 eliot-tree = "^21.0.0"
 fake-useragent = "^0.1.11"
-fastapi = "^0.68.0"
 faust = "^1.10.4"
-graphene = "^2.1.8"
 gunicorn = "^20.1.0"
 Jinja2 = "^2.11.3"
 loguru = "^0.5.3"
@@ -39,7 +37,7 @@ pandas = "^1.1.5"
 passlib = {version = "^1.7.4", extras = ["bcrypt"]}
 Pillow = "^8.3.1"
 pixivpy = "^3.6.0"
-pixivpy-async = "^1.2.12"
+#pixivpy-async = "^1.2.12"
 # playwright = "^0.171.1"
 pydantic = "^1.8.2"
 PyMySQL = "^0.9.3"
@@ -48,17 +46,22 @@ python-dotenv = "^0.18.0"
 python-jose = {version = "^3.3.0", extras = ["cryptography"]}
 python-multipart = "^0.0.5"
 requests = "^2.25.1"
-ruia = "^0.8.4"
-selenium = "^3.141.0"
 slowapi = "^0.1.4"
 SQLAlchemy = "^1.4.21"
 starlette = ">=0.14.2"
 twint = "^2.1.20"
 uvicorn = {version = "^0.14.0", extras = ["standard"]}
 yagmail = "^0.14.256"
+pyppeteer = "^0.2.6"
+fastapi = "^0.70.0"
+selenium = "<4.0.0"
+strawberry-graphql = "^0.83.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
+poethepoet = "^0.10.0"
+pytest-cov = "^2.12.1"
+pytest-xdist = "^2.3.0"
 
 [[tool.poetry.source]]
 name = "bfsu"
@@ -66,5 +69,5 @@ url = "https://mirrors.bfsu.edu.cn/pypi/web/simple"
 default = true
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.0", "setuptools"]
 build-backend = "poetry.core.masonry.api"
