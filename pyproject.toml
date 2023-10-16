@@ -35,7 +35,7 @@ numpy = "^1.20.3"
 orjson = "^3.5.3"
 pandas = "^1.1.5"
 passlib = {version = "^1.7.4", extras = ["bcrypt"]}
-Pillow = "^8.3.1"
+Pillow = "^10.1.0"
 pixivpy = "^3.6.0"
 #pixivpy-async = "^1.2.12"
 # playwright = "^0.171.1"
