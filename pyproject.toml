@@ -42,7 +42,7 @@ pixivpy = "^3.6.0"
 pydantic = "^1.8.2"
 PyMySQL = "^0.9.3"
 # pysnooper = "^0.4.2"
-python-dotenv = "^0.18.0"
+python-dotenv = "^1.0.1"
 python-jose = {version = "^3.3.0", extras = ["cryptography"]}
 python-multipart = "^0.0.5"
 requests = "^2.25.1"
