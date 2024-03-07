@@ -47,7 +47,7 @@ python-jose = {version = "^3.3.0", extras = ["cryptography"]}
 python-multipart = "^0.0.5"
 requests = "^2.25.1"
 slowapi = "^0.1.4"
-SQLAlchemy = "^1.4.21"
+SQLAlchemy = "^1.4.52"
 starlette = ">=0.14.2"
 twint = "^2.1.20"
 uvicorn = {version = "^0.14.0", extras = ["standard"]}
