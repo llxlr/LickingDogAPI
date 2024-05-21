@@ -45,7 +45,7 @@ PyMySQL = "^0.9.3"
 python-dotenv = "^0.18.0"
 python-jose = {version = "^3.3.0", extras = ["cryptography"]}
 python-multipart = "^0.0.5"
-requests = "^2.25.1"
+requests = "^2.31.0"
 slowapi = "^0.1.4"
 SQLAlchemy = "^1.4.21"
 starlette = ">=0.14.2"
